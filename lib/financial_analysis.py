@@ -1,19 +1,19 @@
-
+# -*- coding: utf-8 -*-
 import csv
 
 class FinancialAnalyzer:
-   def __init__(self):
-       pass
+    def __init__(self):
+        pass
 
-   def analyze_financials(self, financial_data):
-       # à–±ƒf[ƒ^‚ğ•ªÍ
-       pass
+    def analyze_financials(self, financial_data):
+        # è²¡å‹™ãƒ‡ãƒ¼ã‚¿ã‚’åˆ†æ
+        return ["è²¡å‹™åˆ†æçµæœã®ãƒ€ãƒŸãƒ¼"]
 
-   def detect_anomalies(self, financial_data):
-       # OpenAI API‚ğg—p‚µ‚ÄˆÙí’l‚ğŒŸ’m
-       pass
+    def detect_anomalies(self, financial_data):
+        # OpenAI APIã‚’ä½¿ç”¨ã—ã¦ç•°å¸¸å€¤ã‚’æ¤œçŸ¥
+        return ["ç•°å¸¸å€¤ã®ãƒ€ãƒŸãƒ¼"]
 
-   def save_analysis_results(self, results, file_path):
-       with open(file_path, 'w', newline='') as file:
-           writer = csv.writer(file)
-           writer.writerows(results)
+    def save_analysis_results(self, results, file_path):
+        with open(file_path, 'w', newline='', encoding='utf-8') as file:
+            writer = csv.writer(file)
+            writer.writerows(results)

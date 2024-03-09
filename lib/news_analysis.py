@@ -1,18 +1,18 @@
-
+# -*- coding: utf-8 -*-
 import json
 
 class NewsAnalyzer:
-   def __init__(self):
-       pass
+    def __init__(self):
+        pass
 
-   def extract_related_companies(self, news_data):
-       # OpenAI APIやClaude APIを使用して関連企業を抽出
-       pass
+    def extract_related_companies(self, news_data):
+        # OpenAI API繧Гlaude API繧剃ｽｿ逕ｨ縺励※髢｢騾｣莨∵･ｭ繧呈歓蜃ｺ
+        pass
 
-   def perform_sentiment_analysis(self, news_data):
-       # OpenAI APIやClaude APIを使用してセンチメント分析を実施
-       pass
+    def perform_sentiment_analysis(self, news_data):
+        # OpenAI API繧Гlaude API繧剃ｽｿ逕ｨ縺励※繧ｻ繝ｳ繝√Γ繝ｳ繝亥��譫舌ｒ螳滓命
+        pass
 
-   def save_analysis_results(self, results, file_path):
-       with open(file_path, 'w') as file:
-           json.dump(results, file)
+    def save_analysis_results(self, results, file_path):
+        with open(file_path, 'w', encoding='utf-8') as file:
+            json.dump(results, file)

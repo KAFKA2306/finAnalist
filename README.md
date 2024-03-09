@@ -92,14 +92,6 @@ investment_theme_analysis/
 │   ├── report_template.md
 │   └── graph_template.html
 │
-├── tests/
-│   ├── test_data_collection.py
-│   ├── test_news_analysis.py
-│   ├── test_company_analysis.py
-│   ├── test_financial_analysis.py
-│   ├── test_report_generation.py
-│   └── test_simulation.py
-│
 ├── main.py
 ├── requirements.txt
 ```
@@ -120,7 +112,6 @@ investment_theme_analysis/
 - `logs/`: 実行ログを記録するフォルダ
 - `reports/`: 生成されたレポートをMarkdown形式で保存
 - `templates/`: レポートやグラフのテンプレートを格納
-- `tests/`: 各モジュールの単体テストを格納
 - `main.py`: メイン実行モジュール
 - `requirements.txt`: 必要なPythonパッケージを記述
 
@@ -171,7 +162,7 @@ investment_theme_analysis/
 
 本ツールは、多様なAPIを組み合わせることで、個人投資家からプロの投資アナリストまで、幅広いユーザーのニーズに対応できる高度な分析プラットフォームを目指しています。適切なデータ収集と分析フローにより、投資テーマに関する包括的な分析を効率的に実施し、ユーザーの投資判断をサポートします。
 
-実装に際しては、モジュール化を徹底し、各機能の独立性を高めることで、保守性と拡張性を確保します。また、単体テストを充実させ、品質の維持・向上に努めます。データの管理には、バージョン管理システムを導入し、分析の再現性を担保します。
+実装に際しては、モジュール化を徹底し、各機能の独立性を高めることで、保守性と拡張性を確保します。
 
 ユーザーインターフェースについては、レポートのテンプレートを柔軟に設定できるようにし、ユーザーの好みに合わせたカスタマイズを可能にします。また、グラフやチャートを効果的に活用し、情報の視覚化を図ります。
 

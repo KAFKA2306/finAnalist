@@ -7,7 +7,7 @@ from lib.report_generation import ReportGenerator
 from lib.simulation import InvestmentSimulator
 
 def main():
-    investment_theme = input("input investing theme: ")
+    investment_theme = input("投資テーマを入力してください: ")
 
     data_collector = DataCollector()
     news_analyzer = NewsAnalyzer()
@@ -51,4 +51,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

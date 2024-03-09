@@ -9,11 +9,11 @@ class DataCollector:
         self.api_keys = config['API_KEYS']
 
     def collect_news_data(self, theme):
-        # NewsAPIを使用してニュースデータを収集
+        # NewsAPIを使用してニュース記事を収集
         pass
 
     def collect_twitter_data(self, theme):
-        # Twitter APIを使用してツイートデータを収集
+        # Twitter APIを使用してツイートを収集
         pass
 
     def collect_financial_data(self, companies):

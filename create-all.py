@@ -1,16 +1,17 @@
+# -*- coding: utf-8 -*-
 import os
 
 def create_directory(directory_path):
    os.makedirs(directory_path, exist_ok=True)
 
 def create_file(file_path, content):
-   with open(file_path, "w") as file:
+   with open(file_path, "w", encoding='utf-8') as file:
        file.write(content)
 
 def create_config_directory_and_files():
    create_directory("config")
    
-   config_content = """
+   config_content = """# -*- coding: utf-8 -*-
 [API_KEYS]
 news_api = your_news_api_key
 claude_api = your_claude_api_key
@@ -37,8 +38,7 @@ def create_data_directory_and_files():
 def create_lib_directory_and_files():
    create_directory("lib")
    
-   data_collection_content = """
-# -*- coding: utf-8 -*-
+   data_collection_content = """# -*- coding: utf-8 -*-
 import configparser
 import requests
 
@@ -66,7 +66,7 @@ class DataCollector:
 """
    create_file("lib/data_collection.py", data_collection_content)
    
-   news_analysis_content = """
+   news_analysis_content = """# -*- coding: utf-8 -*-
 import json
 
 class NewsAnalyzer:
@@ -82,12 +82,13 @@ class NewsAnalyzer:
        pass
 
    def save_analysis_results(self, results, file_path):
-       with open(file_path, 'w') as file:
+       with open(file_path, 'w', encoding='utf-8') as file:
            json.dump(results, file)
 """
    create_file("lib/news_analysis.py", news_analysis_content)
    
-   company_analysis_content = """
+   company_analysis_content = """# -*- coding: utf-8 -*-
+
 import csv
 
 class CompanyAnalyzer:
@@ -96,22 +97,21 @@ class CompanyAnalyzer:
 
     def analyze_companies(self, companies, financial_data):
         if companies is None:
-            companies = []  # companiesがNoneの場合、空のリストを使用
-        results = []  # 結果を格納するリストを初期化
+            companies = []
+        results = []
         for company in companies:
-            # 企業ごとの分析結果をresultsリストに追加
             analysis_result = self.analyze_company(company, financial_data.get(company, {}))
-            if analysis_result is not None:  # analysis_resultがNoneでない場合のみ追加
+            if analysis_result is not None:  # 修正
                 results.append(analysis_result)
-        return results  # 分析結果のリストを返す
+        return results
 
     def analyze_company(self, company, financial_data):
-        # 特定の企業に対する分析ロジック
-        return [company, "分析結果のダミー"]
+        # 特定の企業に対する分析ロジックを実装
+        return [company, "分析結果のダミー"]  # ダミーの分析結果を返す
 """
    create_file("lib/company_analysis.py", company_analysis_content)
    
-   financial_analysis_content = """
+   financial_analysis_content = """# -*- coding: utf-8 -*-
 import csv
 
 class FinancialAnalyzer:
@@ -120,20 +120,20 @@ class FinancialAnalyzer:
 
    def analyze_financials(self, financial_data):
        # 財務データを分析
-       pass
+       return ["財務分析結果のダミー"]
 
    def detect_anomalies(self, financial_data):
        # OpenAI APIを使用して異常値を検知
-       pass
+       return ["異常値のダミー"]
 
    def save_analysis_results(self, results, file_path):
-       with open(file_path, 'w', newline='') as file:
+       with open(file_path, 'w', newline='', encoding='utf-8') as file:
            writer = csv.writer(file)
            writer.writerows(results)
 """
    create_file("lib/financial_analysis.py", financial_analysis_content)
    
-   report_generation_content = """
+   report_generation_content = """# -*- coding: utf-8 -*-
 import markdown
 import matplotlib.pyplot as plt
 
@@ -143,22 +143,21 @@ class ReportGenerator:
 
    def generate_report(self, analysis_results):
        # 分析結果を基にレポートを生成
-       pass
-
-   def save_report(self, report, file_path):
-       with open(file_path, 'w') as file:
-           file.write(report)
+       report = "# 投資レポート\n\n"
+       report += "## センチメント分析結果\n"
+       report += f"ポジティブ: {analysis_results['sentiment_results']['positive']}\n"
+       report += f"ネガティブ: {analysis_results['sentiment_results']['negative']}\n"
+       report += f"ニュートラル: {analysis_results['sentiment_results']['neutral']}\n"
+       # 他の分析結果も同様に追加
+       return report
 
    def save_visualizations(self, visualizations, folder_path):
-       for viz_name, viz_data in visualizations.items():
-           plt.figure()
-           # グラフを作成
-           plt.savefig(f"{folder_path}/{viz_name}.png")
-           plt.close()
+       # ここでは、グラフの保存をスキップする例を示します。
+       pass
 """
    create_file("lib/report_generation.py", report_generation_content)
    
-   simulation_content = """
+   simulation_content = """# -*- coding: utf-8 -*-
 import csv
 
 class InvestmentSimulator:
@@ -167,14 +166,14 @@ class InvestmentSimulator:
 
    def simulate_investment_strategies(self, stock_price_data):
        # 投資戦略をシミュレーション
-       pass
+       return ["シミュレーション結果のダミー"]
 
    def evaluate_strategies(self, simulation_results):
        # シミュレーション結果を評価
-       pass
+       return ["評価結果のダミー"]
 
    def save_simulation_results(self, results, file_path):
-       with open(file_path, 'w', newline='') as file:
+       with open(file_path, 'w', newline='', encoding='utf-8') as file:
            writer = csv.writer(file)
            writer.writerows(results)
 """
@@ -189,7 +188,7 @@ def create_reports_directory():
 def create_templates_directory_and_files():
    create_directory("templates")
    
-   report_template_content = """
+   report_template_content = """# -*- coding: utf-8 -*-
 # Investment Theme Analysis Report
 
 ## News Sentiment Analysis
@@ -211,7 +210,7 @@ def create_templates_directory_and_files():
 """
    create_file("templates/report_template.md", report_template_content)
    
-   graph_template_content = """
+   graph_template_content = """# -*- coding: utf-8 -*-
 <!DOCTYPE html>
 <html>
 <head>
@@ -292,7 +291,7 @@ def create_templates_directory_and_files():
 def create_tests_directory_and_files():
    create_directory("tests")
    
-   test_data_collection_content = """
+   test_data_collection_content = """# -*- coding: utf-8 -*-
 import unittest
 from lib.data_collection import DataCollector
 
@@ -301,27 +300,35 @@ class TestDataCollector(unittest.TestCase):
        self.data_collector = DataCollector()
 
    def test_collect_news_data(self):
-       # collect_news_data関数のテストケースを作成
-       pass
+       theme = "電気自動車"
+       news_data = self.data_collector.collect_news_data(theme)
+       self.assertIsInstance(news_data, list)
+       self.assertGreater(len(news_data), 0)
 
    def test_collect_twitter_data(self):
-       # collect_twitter_data関数のテストケースを作成
-       pass
+       theme = "電気自動車"
+       tweet_data = self.data_collector.collect_twitter_data(theme)
+       self.assertIsInstance(tweet_data, list)
+       self.assertGreater(len(tweet_data), 0)
 
    def test_collect_financial_data(self):
-       # collect_financial_data関数のテストケースを作成
-       pass
+       companies = ["テスラ", "ゼネラルモーターズ", "フォード"]
+       financial_data = self.data_collector.collect_financial_data(companies)
+       self.assertIsInstance(financial_data, dict)
+       self.assertEqual(len(financial_data), len(companies))
 
    def test_collect_stock_price_data(self):
-       # collect_stock_price_data関数のテストケースを作成
-       pass
+       companies = ["テスラ", "ゼネラルモーターズ", "フォード"]
+       stock_price_data = self.data_collector.collect_stock_price_data(companies)
+       self.assertIsInstance(stock_price_data, dict)
+       self.assertEqual(len(stock_price_data), len(companies))
 
 if __name__ == '__main__':
    unittest.main()
 """
    create_file("tests/test_data_collection.py", test_data_collection_content)
    
-   test_news_analysis_content = """
+   test_news_analysis_content = """# -*- coding: utf-8 -*-
 import unittest
 from lib.news_analysis import NewsAnalyzer
 
@@ -346,7 +353,7 @@ if __name__ == '__main__':
 """
    create_file("tests/test_news_analysis.py", test_news_analysis_content)
    
-   test_company_analysis_content = """
+   test_company_analysis_content = """# -*- coding: utf-8 -*-
 import unittest
 from lib.company_analysis import CompanyAnalyzer
 
@@ -367,7 +374,7 @@ if __name__ == '__main__':
 """
    create_file("tests/test_company_analysis.py", test_company_analysis_content)
    
-   test_financial_analysis_content = """
+   test_financial_analysis_content = """# -*- coding: utf-8 -*-
 import unittest
 from lib.financial_analysis import FinancialAnalyzer
 
@@ -392,7 +399,7 @@ if __name__ == '__main__':
 """
    create_file("tests/test_financial_analysis.py", test_financial_analysis_content)
    
-   test_report_generation_content = """
+   test_report_generation_content = """# -*- coding: utf-8 -*-
 import unittest
 from lib.report_generation import ReportGenerator
 
@@ -417,7 +424,7 @@ if __name__ == '__main__':
 """
    create_file("tests/test_report_generation.py", test_report_generation_content)
    
-   test_simulation_content = """
+   test_simulation_content = """# -*- coding: utf-8 -*-
 import unittest
 from lib.simulation import InvestmentSimulator
 
@@ -497,8 +504,8 @@ def main():
     evaluated_strategies = investment_simulator.evaluate_strategies(simulation_results)
     investment_simulator.save_simulation_results(evaluated_strategies, "data/simulations/results.csv")
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+#    main() #ここは実行するのではなくてファイルを作成する必要がある。
 
 def create_requirements_file():
     requirements_content = """
@@ -572,9 +579,11 @@ def create_project_structure():
     create_reports_directory()
     create_templates_directory_and_files()
     create_tests_directory_and_files()
-    create_main_file()
     create_requirements_file()
     create_poetry_files()
 
 if __name__ == "__main__":
     create_project_structure()
+    
+    
+    
