@@ -447,7 +447,6 @@ from lib.company_analysis import CompanyAnalyzer
 from lib.financial_analysis import FinancialAnalyzer
 from lib.report_generation import ReportGenerator
 from lib.simulation import InvestmentSimulator
-
 def main():
     investment_theme = input("input investing theme: ")
 
@@ -500,9 +499,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-"""
-# -*- coding: utf-8 -*-
-    create_file("main.py", main_content)
 
 def create_requirements_file():
     requirements_content = """
