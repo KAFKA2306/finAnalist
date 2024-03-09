@@ -581,7 +581,7 @@ def create_project_structure():
     create_tests_directory_and_files()
     create_requirements_file()
     create_poetry_files()
-
+すとっぷ
 if __name__ == "__main__":
     create_project_structure()
     

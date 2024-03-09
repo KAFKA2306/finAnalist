@@ -83,12 +83,11 @@ class NewsAnalyzer:
 
     def save_analysis_results(self, results, file_path):
         with open(file_path, 'w', encoding='utf-8') as file:
-            json.dump(results, file)
+            json.dump(results, file, ensure_ascii=False)
 """
     create_file("lib/news_analysis.py", news_analysis_content)
     
     company_analysis_content = """# -*- coding: utf-8 -*-
-
 import csv
 
 class CompanyAnalyzer:
@@ -101,8 +100,7 @@ class CompanyAnalyzer:
         results = []
         for company in companies:
             analysis_result = self.analyze_company(company, financial_data.get(company, {}))
-            if analysis_result is not None:  # 修正
-                results.append(analysis_result)
+            results.append(analysis_result)
         return results
 
     def analyze_company(self, company, financial_data):
@@ -142,7 +140,6 @@ class FinancialAnalyzer:
     
     report_generation_content = """# -*- coding: utf-8 -*-
 import markdown
-import matplotlib.pyplot as plt
 
 class ReportGenerator:
     def __init__(self):
@@ -157,6 +154,10 @@ class ReportGenerator:
         report += f"ニュートラル: {analysis_results['sentiment_results']['neutral']}\\n"
         # 他の分析結果も同様に追加
         return report
+
+    def save_report(self, report, file_path):
+        with open(file_path, 'w', encoding='utf-8') as file:
+            file.write(report)
 
     def save_visualizations(self, visualizations, folder_path):
         # ここでは、グラフの保存をスキップする例を示します。
@@ -274,7 +275,7 @@ if __name__ == "__main__":
 """
     create_file("main.py", main_content)
 
-# 以下の関数呼び出しを追加して、スクリプトが実際にディレクトリとファイルを生成するようにします。
+以下の関数呼び出しを追加して、スクリプトが実際にディレクトリとファイルを生成するようにします。
 if __name__ == "__main__":
     create_config_directory_and_files()
     create_data_directory_and_files()

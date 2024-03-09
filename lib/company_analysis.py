@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import csv
 
 class CompanyAnalyzer:
@@ -12,8 +11,7 @@ class CompanyAnalyzer:
         results = []
         for company in companies:
             analysis_result = self.analyze_company(company, financial_data.get(company, {}))
-            if analysis_result is not None:  # 修正
-                results.append(analysis_result)
+            results.append(analysis_result)
         return results
 
     def analyze_company(self, company, financial_data):
