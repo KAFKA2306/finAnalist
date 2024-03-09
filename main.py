@@ -1,16 +1,13 @@
-import os
-from data_collection import DataCollector
-from news_analysis import NewsAnalyzer
-from company_analysis import CompanyAnalyzer
-from financial_analysis import FinancialAnalyzer
-from report_generation import ReportGenerator
-from simulation import InvestmentSimulator
+# -*- coding: utf-8 -*-
+from lib.data_collection import DataCollector
+from lib.news_analysis import NewsAnalyzer
+from lib.company_analysis import CompanyAnalyzer
+from lib.financial_analysis import FinancialAnalyzer
+from lib.report_generation import ReportGenerator
+from lib.simulation import InvestmentSimulator
 
 def main():
-    # 必要なファイルの作成
-    create_necessary_files()
-
-    investment_theme = input("投資テーマを入力してください: ")
+    investment_theme = input("input investing theme: ")
 
     data_collector = DataCollector()
     news_analyzer = NewsAnalyzer()
@@ -19,42 +16,39 @@ def main():
     report_generator = ReportGenerator()
     investment_simulator = InvestmentSimulator()
 
-    # データ収集
     news_data = data_collector.collect_news_data(investment_theme)
-    company_names = news_analyzer.extract_companies(news_data)
-    company_data = data_collector.collect_company_data(company_names)
-    financial_data = data_collector.collect_financial_data(company_names)
+    tweet_data = data_collector.collect_twitter_data(investment_theme)
 
-    # ニュース分析
-    news_analysis_results = news_analyzer.analyze_news_content(news_data)
-    news_analyzer.save_news_analysis_results(news_analysis_results)
+    related_companies = news_analyzer.extract_related_companies(news_data)
+    sentiment_results = news_analyzer.perform_sentiment_analysis(news_data)
+    news_analyzer.save_analysis_results(sentiment_results, "data/news_analysis/sentiment.json")
 
-    # 企業分析
-    company_analysis_results = company_analyzer.analyze_company_info(company_data)
-    company_analyzer.analyze_financial_statements(financial_data)
-    company_analyzer.save_company_analysis_results(company_analysis_results)
+    financial_data = data_collector.collect_financial_data(related_companies)
+    stock_price_data = data_collector.collect_stock_price_data(related_companies)
 
-    # 財務分析
-    valuation_metrics = financial_analyzer.calculate_valuation_metrics(financial_data)
-    financial_analyzer.compare_with_industry_average(valuation_metrics)
-    dcf_valuation_results = financial_analyzer.perform_dcf_valuation(financial_data, growth_forecast)
+    company_analysis_results = company_analyzer.analyze_companies(related_companies, financial_data)
+    company_analyzer.save_analysis_results(company_analysis_results, "data/company_analysis/results.csv")
+
+    financial_analysis_results = financial_analyzer.analyze_financials(financial_data)
     anomalies = financial_analyzer.detect_anomalies(financial_data)
-    financial_analyzer.save_financial_analysis_results(financial_analysis_results)
+    financial_analyzer.save_analysis_results(financial_analysis_results, "data/financial_analysis/results.csv")
 
-    # レポート生成
-    markdown_report = report_generator.generate_markdown_report(analysis_results)
-    visualizations = report_generator.generate_visualizations(analysis_results)
-    interactive_report = report_generator.generate_interactive_report(markdown_report, visualizations)
-    investment_suggestions = report_generator.provide_investment_suggestions(analysis_results)
+    report = report_generator.generate_report({
+        "sentiment_results": sentiment_results,
+        "company_analysis_results": company_analysis_results,
+        "financial_analysis_results": financial_analysis_results,
+        "anomalies": anomalies
+    })
+    report_generator.save_report(report, "reports/investment_report.md")
+    report_generator.save_visualizations({
+        "sentiment_chart": sentiment_results,
+        "financial_chart": financial_analysis_results
+    }, "reports/visualizations")
 
-    # 投資シミュレーション
-    historical_data = investment_simulator.load_historical_price_data(company_names)
-    backtest_results = investment_simulator.backtest_investment_strategies(historical_data, strategies)
-    risk_return_evaluation = investment_simulator.evaluate_risk_return(backtest_results)
-    optimal_strategy = investment_simulator.propose_optimal_strategy(risk_return_evaluation)
-
-    # レポートの共有
-    share_report_on_slack(interactive_report)
+    simulation_results = investment_simulator.simulate_investment_strategies(stock_price_data)
+    evaluated_strategies = investment_simulator.evaluate_strategies(simulation_results)
+    investment_simulator.save_simulation_results(evaluated_strategies, "data/simulations/results.csv")
 
 if __name__ == "__main__":
     main()
+
