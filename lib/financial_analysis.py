@@ -22,7 +22,11 @@ class FinancialAnalyzer:
 
     @staticmethod
     def _optional_number(value: Any) -> float | None:
-        if value in {None, "", "None", "-"}:
+        if value is None or isinstance(value, (dict, list, tuple, set)):
+            return None
+        if isinstance(value, str) and value.strip() in {"", "None", "-"}:
+            return None
+        if isinstance(value, bool):
             return None
         try:
             result = float(value)
