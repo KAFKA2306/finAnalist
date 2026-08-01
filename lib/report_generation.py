@@ -1,27 +1,70 @@
-# -*- coding: utf-8 -*-
-import markdown
+from __future__ import annotations
+
+import json
+from pathlib import Path
+from typing import Any, Mapping
+
 
 class ReportGenerator:
-    def __init__(self):
-        pass
+    def generate_report(self, analysis_results: Mapping[str, Any]) -> str:
+        metadata = analysis_results.get("metadata", {})
+        company_results = analysis_results.get("company_results", [])
+        financial_results = analysis_results.get("financial_results", [])
+        anomaly_flags = analysis_results.get("anomaly_flags", [])
+        simulations = analysis_results.get("simulation_results", [])
+        news_summary = analysis_results.get("news_summary")
 
-    def generate_report(self, analysis_results):
-        # 分析結果を基にレポートを生成
-        report = "# 投資レポート\n\n"
-        
-        if analysis_results.get("sentiment_results"):
-            report += "## センチメント分析結果\n"
-            report += f"ポジティブ: {analysis_results['sentiment_results'].get('positive', 0)}\n"
-            report += f"ネガティブ: {analysis_results['sentiment_results'].get('negative', 0)}\n"
-            report += f"ニュートラル: {analysis_results['sentiment_results'].get('neutral', 0)}\n"
-        
-        # 他の分析結果も同様に追加
-        return report
+        lines = [
+            "# 投資テーマ記述レポート",
+            "",
+            "> 本レポートはAPI観測値の整理であり、投資助言、企業価値評価、将来予測、最適戦略の提案ではありません。",
+            "",
+            "## 実行情報",
+            "",
+            "```json",
+            json.dumps(metadata, ensure_ascii=False, indent=2, default=str),
+            "```",
+            "",
+        ]
+        if news_summary is not None:
+            lines.extend(
+                [
+                    "## ニュース取得結果",
+                    "",
+                    "センチメント分析と企業名の自動抽出は実施していません。",
+                    "",
+                    "```json",
+                    json.dumps(news_summary, ensure_ascii=False, indent=2, default=str),
+                    "```",
+                    "",
+                ]
+            )
 
-    def save_report(self, report, file_path):
-        with open(file_path, 'w', encoding='utf-8') as file:
-            file.write(report)
+        for title, value in (
+            ("企業基本情報", company_results),
+            ("財務指標", financial_results),
+            ("データ品質フラグ", anomaly_flags),
+            ("買持ち記述バックテスト", simulations),
+        ):
+            lines.extend(
+                [
+                    f"## {title}",
+                    "",
+                    "```json",
+                    json.dumps(value, ensure_ascii=False, indent=2, default=str),
+                    "```",
+                    "",
+                ]
+            )
+        return "\n".join(lines)
 
-    def save_visualizations(self, visualizations, folder_path):
-        # ここでは、グラフの保存をスキップする例を示します。
-        pass
+    def save_report(self, report: str, file_path: str) -> None:
+        path = Path(file_path)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(report, encoding="utf-8")
+
+    def save_visualizations(self, visualizations, folder_path: str) -> None:
+        raise NotImplementedError(
+            "Visualization output is disabled until chart definitions include source, "
+            "as-of date, units, and semantic validation."
+        )
