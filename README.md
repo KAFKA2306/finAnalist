@@ -1,134 +1,116 @@
-# finAnalist — 投資テーマ分析パイプラインの試作
+# finAnalist — 出典付き投資テーマ記述パイプライン
 
-**リポジトリ:** https://github.com/KAFKA2306/finAnalist
+入力テーマのニュースと、利用者が明示した市場シンボルの企業・財務・価格データを取得し、記述レポートへまとめるPythonプロトタイプです。
 
-入力した投資テーマから関連ニュースと企業候補を収集し、定性分析、財務分析、レポート、簡易シミュレーションへ渡すPythonパイプラインの試作です。
+**企業名の自動推測、センチメント、DCF、将来予測、異常値のAI判定、最適投資戦略の提案は行いません。**
 
-READMEに以前記載されていた多数のAPI連携や「最適戦略の提案」は、すべてが現在利用可能・契約済み・検証済みであることを確認できません。実際に動作する範囲は、`main.py`と`lib/`配下の現在の実装を正としてください。
+## 監査で確認した問題
 
-## 現在の処理フロー
+過去実装は次の状態でした。
 
-`main.py`は次のクラスを順番に呼び出します。
+- `main.py`が引数必須の`NewsAnalyzer`を引数なしで生成し、起動時に失敗
+- 廃止済みの`text-davinci-002`と旧Claude completion APIへ依存
+- ニュースAPIキーをURLへ埋め込み
+- HTTPタイムアウトなし
+- Alpha Vantage、Finnhub、Polygonの異なるJSONを同じ辞書へ上書き結合
+- 先行APIが失敗すると未初期化辞書を`.update()`して例外
+- Finnhubの取得期間が固定Unix時刻、Polygonの期間が固定日付
+- 企業分析が`分析結果のダミー`を返す
+- 財務分析と異常検知がダミー文字列を返す
+- 投資シミュレーションと評価がダミー文字列を返す
+- レポートが未計算センチメントを実結果として表示
 
-```text
-投資テーマを入力
-  → DataCollectorでニュース・SNS候補を取得
-  → NewsAnalyzerで企業候補とセンチメントを生成
-  → DataCollectorで財務・株価候補を取得
-  → CompanyAnalyzerで企業分析
-  → FinancialAnalyzerで財務指標・異常候補を生成
-  → ReportGeneratorでMarkdownと図を出力
-  → InvestmentSimulatorで戦略候補を評価
-```
-
-## 主なモジュール
-
-| ファイル | 役割 |
-| --- | --- |
-| `main.py` | 全処理の呼び出し |
-| `lib/data_collection.py` | ニュース、SNS、財務、株価の取得 |
-| `lib/news_analysis.py` | 関連企業抽出、センチメント分析 |
-| `lib/company_analysis.py` | 企業別の定性・定量整理 |
-| `lib/financial_analysis.py` | 財務指標と異常候補の計算 |
-| `lib/report_generation.py` | Markdown・可視化出力 |
-| `lib/simulation.py` | 過去データを使ったシミュレーション |
-
-## 出力先
+## 現在の処理
 
 ```text
-data/news_analysis/
-data/company_analysis/
-data/financial_analysis/
-data/simulations/
-reports/
+テーマと検証済み市場シンボルを明示
+  → NewsAPIで記事メタデータを取得
+  → 記事数・媒体・日付・欠損を記述集計
+  → Alpha Vantage OVERVIEWを出典別に保存
+  → 公開フィールドを企業情報・財務指標へ正規化
+  → Alpha Vantage TIME_SERIES_DAILYのraw closeを取得
+  → 単純買持ちの価格リターン・ボラティリティ・DDを記述
+  → MarkdownレポートとCSVを保存
 ```
 
-各出力には、対象期間、取得日時、データ源、使用モデル、設定を追加する必要があります。
+NewsAPIの`/v2/everything`を記事探索に使い、APIキーは`X-Api-Key`ヘッダーで送信します。Alpha Vantageは`OVERVIEW`と`TIME_SERIES_DAILY`だけを使用し、プロバイダーを跨いだJSON結合は行いません。
 
 ## セットアップ
 
 ```bash
-git clone https://github.com/KAFKA2306/finAnalist.git
-cd finAnalist
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+export NEWS_API_KEY="..."
+export ALPHA_VANTAGE_API_KEY="..."
 ```
-
-Windowsでは仮想環境の有効化コマンドを環境に合わせて変更してください。
 
 ## 実行
 
+企業はニュース本文から推測せず、市場シンボルを明示します。
+
 ```bash
-python main.py
+python main.py \
+  "semiconductor manufacturing equipment" \
+  --symbol ASML \
+  --symbol AMAT
 ```
 
-入力例:
+## 現在の出力
 
 ```text
-次世代電池の技術進展と上場企業
+data/news_analysis/articles.json
+  - 記事タイトル、媒体、公開日時、URL、説明
+  - source_counts
+  - sentiment_status: not_computed
+  - company_extraction_status: not_computed
+
+data/company_analysis/results.csv
+  - 企業名、取引所、通貨、国、セクター、業種等
+data/financial_analysis/results.csv
+  - Alpha Vantage OVERVIEWの数値フィールド
+data/financial_analysis/quality_flags.csv
+  - 欠損値・負値等の決定論的品質フラグ
+data/simulations/results.csv
+  - raw closeの買持ち記述統計
+reports/investment_report.md
 ```
 
-投資判断を直接尋ねるテーマより、技術、需要、供給、競争、財務指標などの検証可能な問いへ分解する方が安全です。
+## 価格バックテストの意味
 
-## APIキー
+`TIME_SERIES_DAILY`の`4. close`を使用します。
 
-コードが要求する場合は、環境変数またはGit管理外の設定ファイルへ保存します。
+- raw closeであり、配当を含みません
+- 株式分割調整済みとは扱いません
+- 総合リターンではありません
+- 手数料、税、スプレッド、約定を含みません
+- 価格リターン、年率ボラティリティ、最大ドローダウンの記述だけです
+- `descriptive_not_recommendation`と`no_strategy_optimization_performed`を保存します
 
-想定されていたサービス例:
+## 停止している機能
 
-- NewsAPI
-- FRED
-- Alpha Vantage
-- Finnhub
-- Polygon
-- Financial Modeling Prep
-- SimFin
-- OpenAI互換API
-- Anthropic API
-- SNS API
-- Discord
+- Twitter/X取得 — 認証、レート制限、個人情報、出典契約が未実装
+- 企業名自動抽出 — 評価済みEntity Linkingがない
+- センチメント — ラベル付き評価データ、モデル版、棄却規則がない
+- 可視化 — 出典、単位、as-of、グラフ意味検証が未実装
+- 企業価値評価・予測・推奨 — 根拠とOOS検証がない
 
-すべてを契約する必要があるとは限りません。現在のコードが実際にimport・呼び出しているサービスだけを設定してください。
+これらを呼ぶとダミー結果を返さず、`NotImplementedError`で停止します。
 
-APIキーを`config.ini`へ平文保存する場合は、ファイルを`.gitignore`へ追加し、既に漏えいしていないか履歴も確認してください。
+## テスト
 
-## 分析品質の原則
+```bash
+python -m unittest discover -s tests -v
+```
 
-### ニュース
+確認項目:
 
-- 発生日と記事公開日を分ける
-- 元記事と転載を重複排除する
-- 企業IR・規制開示を優先する
-- LLMのセンチメントを事実として扱わない
-
-### 財務
-
-- 年次、四半期、時点値を混ぜない
-- 通貨、単位、連結・単体を保存する
-- 実績、会社予想、コンセンサス、独自推計を分ける
-- PERやPBRの株価基準日を記録する
-
-### シミュレーション
-
-- 未来情報を入力へ含めない
-- 上場廃止と銘柄入替を考慮する
-- 手数料、スプレッド、税を明示する
-- インサンプルとOOSを分ける
-- LLMに「最適戦略」を決めさせない
-
-## セキュリティ
-
-- 外部記事本文を無制限に保存しない
-- SNS投稿の個人情報を保存しない
-- APIキーをログへ出さない
-- Discordへ機密レポートを自動投稿しない
-- 外部入力をプロンプトやシェルへ直接渡さない
-
-## 現在の位置づけ
-
-本リポジトリは、複数の金融情報処理を一つの流れへまとめる初期プロトタイプです。データ取得の完全性、分析精度、バックテストの再現性は未保証です。
+- NewsAPIキーをURLではなくヘッダーで送る
+- APIのレート制限・エラーpayloadを成功扱いしない
+- 企業・財務分析にダミー文字列が混入しない
+- 未実装センチメントが偽結果を返さない
+- raw closeバックテストが非推奨・配当なしと表示される
 
 本プロジェクトは投資助言や売買推奨ではありません。
 
-**README最終監査:** 2026-08-01
+**README最終監査:** 2026-08-02
