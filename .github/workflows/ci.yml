@@ -11,13 +11,15 @@ permissions:
 jobs:
   consumer-ai:
     runs-on: ubuntu-latest
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
-      - name: Compile current consumer-AI code
-        run: python -m compileall -q research tests/test_openai_signals_collector.py
+      - name: Parse current consumer-AI code
+        run: python -c "import ast, pathlib; files = list(pathlib.Path('research').glob('*.py')) + [pathlib.Path('tests/test_openai_signals_collector.py')]; [ast.parse(path.read_text(encoding='utf-8'), filename=str(path)) for path in files]"
       - name: Test OpenAI Signals collector
         run: python -m unittest tests.test_openai_signals_collector -v
       - name: Validate Google observations
