@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  consumer-ai:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Compile current consumer-AI code
+        run: python -m compileall -q research tests/test_openai_signals_collector.py
+      - name: Test OpenAI Signals collector
+        run: python -m unittest tests.test_openai_signals_collector -v
+      - name: Validate Google observations
+        run: python -m json.tool data/ai-consumer/google-search-2026.json > /dev/null
+      - name: Clean checkout
+        run: test -z "$(git status --porcelain)"
