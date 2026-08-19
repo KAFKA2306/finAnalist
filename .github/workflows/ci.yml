@@ -70,4 +70,6 @@ jobs:
           })
           PY
       - name: Clean checkout
-        run: test -z "$(git status --porcelain)"
+        run: |
+          find . -type d -name __pycache__ -prune -exec rm -rf {} +
+          test -z "$(git status --porcelain --untracked-files=all)"
