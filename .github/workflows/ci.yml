@@ -24,6 +24,8 @@ jobs:
         run: python -m compileall -q research tests
       - name: Unit tests
         run: python -m unittest tests.test_openai_signals_collector tests.test_ai_consumer_ledger -v
+      - name: Check official source accessibility
+        run: python research/check_ai_consumer_sources.py
       - name: Build live primary-source evidence
         run: python research/update_ai_consumer.py --output /tmp/ai-consumer
       - name: Audit live outputs
