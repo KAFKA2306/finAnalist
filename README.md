@@ -1,116 +1,76 @@
-# finAnalist — 出典付き投資テーマ記述パイプライン
+# finAnalist — consumer AI adoption evidence
 
-入力テーマのニュースと、利用者が明示した市場シンボルの企業・財務・価格データを取得し、記述レポートへまとめるPythonプロトタイプです。
+[![CI](https://github.com/KAFKA2306/finAnalist/actions/workflows/ci.yml/badge.svg)](https://github.com/KAFKA2306/finAnalist/actions/workflows/ci.yml)
+[![AI consumer source](https://github.com/KAFKA2306/finAnalist/actions/workflows/ai-consumer-source.yml/badge.svg)](https://github.com/KAFKA2306/finAnalist/actions/workflows/ai-consumer-source.yml)
 
-**企業名の自動推測、センチメント、DCF、将来予測、異常値のAI判定、最適投資戦略の提案は行いません。**
+**OpenAI / Google / Meta のconsumer AIが、検索・意思決定・マルチモーダル操作・購入の入口へ広がっているかを、各社の一次情報だけで追跡します。**
 
-## 監査で確認した問題
+旧NewsAPI / Alpha Vantage投資レポートprototypeは正準成果物ではありません。現在の安定したmachine-readable surfaceは [`api/v1/ai-consumer/`](api/v1/ai-consumer/) です。
 
-過去実装は次の状態でした。
+## Canonical outputs
 
-- `main.py`が引数必須の`NewsAnalyzer`を引数なしで生成し、起動時に失敗
-- 廃止済みの`text-davinci-002`と旧Claude completion APIへ依存
-- ニュースAPIキーをURLへ埋め込み
-- HTTPタイムアウトなし
-- Alpha Vantage、Finnhub、Polygonの異なるJSONを同じ辞書へ上書き結合
-- 先行APIが失敗すると未初期化辞書を`.update()`して例外
-- Finnhubの取得期間が固定Unix時刻、Polygonの期間が固定日付
-- 企業分析が`分析結果のダミー`を返す
-- 財務分析と異常検知がダミー文字列を返す
-- 投資シミュレーションと評価がダミー文字列を返す
-- レポートが未計算センチメントを実結果として表示
+- [`metrics.json`](api/v1/ai-consumer/metrics.json) — provider/product/metricごとの公式usage observation
+- [`features.json`](api/v1/ai-consumer/features.json) — feature launch / rollout / announcement event。usageとは別table
+- [`comparison.json`](api/v1/ai-consumer/comparison.json) — provider × metric definitionの最新公表値。WAU↔MAUの換算はしない
+- [`openai-signals.json`](api/v1/ai-consumer/openai-signals.json) — OpenAI Signals公式CSV bundleのfile inventory / SHA-256
+- [`manifest.json`](api/v1/ai-consumer/manifest.json) — 全一次sourceのURL / retrieved evidence hash / file hash
+- [`index.json`](api/v1/ai-consumer/index.json) — 安定したentry point
 
-## 現在の処理
+## Data contract
 
-```text
-テーマと検証済み市場シンボルを明示
-  → NewsAPIで記事メタデータを取得
-  → 記事数・媒体・日付・欠損を記述集計
-  → Alpha Vantage OVERVIEWを出典別に保存
-  → 公開フィールドを企業情報・財務指標へ正規化
-  → Alpha Vantage TIME_SERIES_DAILYのraw closeを取得
-  → 単純買持ちの価格リターン・ボラティリティ・DDを記述
-  → MarkdownレポートとCSVを保存
-```
+各usage observationは以下を必須にします。
 
-NewsAPIの`/v2/everything`を記事探索に使い、APIキーは`X-Api-Key`ヘッダーで送信します。Alpha Vantageは`OVERVIEW`と`TIME_SERIES_DAILY`だけを使用し、プロバイダーを跨いだJSON結合は行いません。
+- `provider`
+- `product`
+- `metric`
+- `value` / `unit` / `qualifier`
+- `geography`
+- `period`
+- `as_of`
+- `definition`
+- `source_url`
 
-## セットアップ
+重要な分離規則:
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-export NEWS_API_KEY="..."
-export ALPHA_VANTAGE_API_KEY="..."
-```
+- weekly active users / monthly active users / subscriber count / query count / message countを別metricとして保持
+- `greater_than` / `nearly` 等の公式qualifierを捨てない
+- feature launchとactual usageを別tableにする
+- `announced` と `launched` を同一視しない
+- third-party traffic estimateをofficial observationに混ぜない
+- 数値非開示期間を補間しない
+- 異なるmetric definitionを月次換算等で疑似比較しない
 
-## 実行
+## Primary sources
 
-企業はニュース本文から推測せず、市場シンボルを明示します。
+- OpenAI Signals: https://openai.com/signals/data-download/
+- OpenAI product/company announcements: https://openai.com/news/
+- Google Search / Alphabet official posts: https://blog.google/products-and-platforms/products/search/
+- Meta Newsroom: https://about.fb.com/news/
 
-```bash
-python main.py \
-  "semiconductor manufacturing equipment" \
-  --symbol ASML \
-  --symbol AMAT
-```
+`research/update_ai_consumer.py` はledger内で参照する各公式URLをlive取得し、response SHA-256をmanifestへ保存します。OpenAI Signalsは公式CSV ZIP自体のSHA-256と各CSV metadataも保持します。
 
-## 現在の出力
-
-```text
-data/news_analysis/articles.json
-  - 記事タイトル、媒体、公開日時、URL、説明
-  - source_counts
-  - sentiment_status: not_computed
-  - company_extraction_status: not_computed
-
-data/company_analysis/results.csv
-  - 企業名、取引所、通貨、国、セクター、業種等
-data/financial_analysis/results.csv
-  - Alpha Vantage OVERVIEWの数値フィールド
-data/financial_analysis/quality_flags.csv
-  - 欠損値・負値等の決定論的品質フラグ
-data/simulations/results.csv
-  - raw closeの買持ち記述統計
-reports/investment_report.md
-```
-
-## 価格バックテストの意味
-
-`TIME_SERIES_DAILY`の`4. close`を使用します。
-
-- raw closeであり、配当を含みません
-- 株式分割調整済みとは扱いません
-- 総合リターンではありません
-- 手数料、税、スプレッド、約定を含みません
-- 価格リターン、年率ボラティリティ、最大ドローダウンの記述だけです
-- `descriptive_not_recommendation`と`no_strategy_optimization_performed`を保存します
-
-## 停止している機能
-
-- Twitter/X取得 — 認証、レート制限、個人情報、出典契約が未実装
-- 企業名自動抽出 — 評価済みEntity Linkingがない
-- センチメント — ラベル付き評価データ、モデル版、棄却規則がない
-- 可視化 — 出典、単位、as-of、グラフ意味検証が未実装
-- 企業価値評価・予測・推奨 — 根拠とOOS検証がない
-
-これらを呼ぶとダミー結果を返さず、`NotImplementedError`で停止します。
-
-## テスト
+## Rebuild
 
 ```bash
-python -m unittest discover -s tests -v
+python research/update_ai_consumer.py
 ```
 
-確認項目:
+GitHub Actionsの `AI consumer source` は平日に一次情報を再検証し、evidenceが変わった場合だけ [`api/v1/ai-consumer/`](api/v1/ai-consumer/) をcommitします。
 
-- NewsAPIキーをURLではなくヘッダーで送る
-- APIのレート制限・エラーpayloadを成功扱いしない
-- 企業・財務分析にダミー文字列が混入しない
-- 未実装センチメントが偽結果を返さない
-- raw closeバックテストが非推奨・配当なしと表示される
+## Verification
 
-本プロジェクトは投資助言や売買推奨ではありません。
+```bash
+python -m unittest tests.test_openai_signals_collector tests.test_ai_consumer_ledger -v
+```
 
-**README最終監査:** 2026-08-02
+CIはさらにlive sourceを取得して、次をfail-closedで検証します。
+
+- OpenAI / Google / Metaの3 providerが存在する
+- 公式公表履歴が12か月以上ある
+- metric definition / geography / period / sourceが欠落しない
+- usage / feature eventが分離されている
+- WAU / MAUを相互換算していない
+- third-party traffic sourceが混入していない
+- OpenAI Signals bundleが実際に取得できる
+
+Tracked work: https://github.com/KAFKA2306/finAnalist/issues/4

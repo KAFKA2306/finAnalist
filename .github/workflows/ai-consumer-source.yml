@@ -1,0 +1,73 @@
+name: AI consumer source
+
+on:
+  schedule:
+    - cron: '10 13 * * 1-5'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - research/collect_openai_signals.py
+      - research/update_ai_consumer.py
+      - .github/workflows/ai-consumer-source.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ai-consumer-source
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Refresh official adoption evidence
+        run: python research/update_ai_consumer.py
+      - name: Validate canonical outputs
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import date
+          from pathlib import Path
+          from urllib.parse import urlparse
+          root = Path('api/v1/ai-consumer')
+          metrics = json.loads((root/'metrics.json').read_text())['observations']
+          features = json.loads((root/'features.json').read_text())['events']
+          comparison = json.loads((root/'comparison.json').read_text())
+          signals = json.loads((root/'openai-signals.json').read_text())
+          manifest = json.loads((root/'manifest.json').read_text())
+          assert {r['provider'] for r in metrics} == {'OpenAI','Google','Meta'}
+          assert {r['provider'] for r in features} == {'OpenAI','Google','Meta'}
+          dates = sorted(date.fromisoformat(r['as_of']) for r in metrics)
+          assert (dates[-1] - dates[0]).days >= 365
+          assert 'never converted' in comparison['rule']
+          assert signals['files']
+          assert manifest['primary_source_count'] == 18
+          for item in manifest['sources']:
+              assert item['claim_count'] > 0 and len(item['claim_sha256']) == 64
+              if urlparse(item['url']).hostname == 'openai.com':
+                  assert item['retrieval_status'] in {'ok', 'origin_blocked_403'}
+              else:
+                  assert item['retrieval_status'] == 'ok' and item['sha256'] and item['bytes'] > 0
+          bundle = manifest['openai_signals_bundle']
+          assert bundle['sha256'] and bundle['bytes'] > 0
+          PY
+      - name: Commit changed evidence
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+KAFKA2306@users.noreply.github.com
+          git add api/v1/ai-consumer
+          if git diff --cached --quiet; then
+            echo 'No consumer-AI evidence change.'
+            exit 0
+          fi
+          git commit -m 'data: update consumer AI primary evidence'
+          git push
