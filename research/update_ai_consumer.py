@@ -9,6 +9,7 @@ import urllib.request
 from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 
 from collect_openai_signals import collect as collect_signals, download as download_signals
 
@@ -24,13 +25,11 @@ METRICS: list[dict[str, Any]] = [
     {"provider":"OpenAI","product":"ChatGPT","metric":"weekly_active_users","value":700_000_000,"unit":"users","qualifier":"greater_than","geography":"global","period":"weekly","as_of":"2025-09-29","definition":"People using ChatGPT each week.","source_url":"https://openai.com/index/buy-it-in-chatgpt/"},
     {"provider":"OpenAI","product":"ChatGPT","metric":"weekly_active_users","value":900_000_000,"unit":"users","qualifier":"greater_than","geography":"global","period":"weekly","as_of":"2026-02-27","definition":"Weekly active ChatGPT users.","source_url":"https://openai.com/index/scaling-ai-for-everyone/"},
     {"provider":"OpenAI","product":"ChatGPT","metric":"consumer_subscribers","value":50_000_000,"unit":"subscribers","qualifier":"greater_than","geography":"global","period":"current_as_of_date","as_of":"2026-02-27","definition":"Consumer subscribers, explicitly distinguished from paying business users in the source.","source_url":"https://openai.com/index/scaling-ai-for-everyone/"},
-
     {"provider":"Google","product":"AI Overviews","metric":"monthly_active_users","value":1_000_000_000,"unit":"users","qualifier":"greater_than","geography":"global","period":"monthly","as_of":"2024-10-28","definition":"Global users reached every month after expansion to more than 100 countries and territories.","source_url":"https://blog.google/products-and-platforms/products/search/ai-overviews-search-october-2024/"},
     {"provider":"Google","product":"AI Overviews","metric":"monthly_active_users","value":1_500_000_000,"unit":"users","qualifier":"greater_than","geography":"global","period":"monthly","as_of":"2025-04-24","definition":"Users per month reported in Alphabet Q1 2025 CEO remarks.","source_url":"https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q1-2025/"},
     {"provider":"Google","product":"AI Mode","metric":"monthly_active_users","value":1_000_000_000,"unit":"users","qualifier":"greater_than","geography":"global","period":"monthly","as_of":"2026-05-19","definition":"Monthly active users globally.","source_url":"https://blog.google/products-and-platforms/products/search/ai-mode-us-insights/"},
     {"provider":"Google","product":"AI Mode","metric":"planning_query_growth_relative_to_all_ai_mode_queries","value":80,"unit":"percent_faster_growth","qualifier":"reported","geography":"United States","period":"previous_6_months","as_of":"2026-05-19","definition":"Growth rate of planning-related AI Mode queries relative to overall AI Mode query growth.","source_url":"https://blog.google/products-and-platforms/products/search/ai-mode-us-insights/"},
     {"provider":"Google","product":"AI Overviews","metric":"monthly_active_users","value":2_500_000_000,"unit":"users","qualifier":"greater_than","geography":"global","period":"monthly","as_of":"2026-06-03","definition":"Monthly active users.","source_url":"https://blog.google/products-and-platforms/products/search/new-controls-website-owners/"},
-
     {"provider":"Meta","product":"Meta AI","metric":"monthly_active_users","value":400_000_000,"unit":"users","qualifier":"greater_than","geography":"global","period":"monthly","as_of":"2024-09-25","definition":"People using Meta AI monthly across Meta products.","source_url":"https://about.fb.com/news/2024/09/metas-ai-product-news-connect/"},
     {"provider":"Meta","product":"Meta AI","metric":"weekly_active_users","value":185_000_000,"unit":"users","qualifier":"reported","geography":"global","period":"weekly","as_of":"2024-09-25","definition":"People using Meta AI across Meta products each week.","source_url":"https://about.fb.com/news/2024/09/metas-ai-product-news-connect/"},
     {"provider":"Meta","product":"Meta AI","metric":"monthly_active_users","value":500_000_000,"unit":"users","qualifier":"nearly","geography":"global","period":"monthly","as_of":"2024-10-09","definition":"Active users monthly after expansion to additional countries and languages.","source_url":"https://about.fb.com/news/2024/07/meta-ai-is-now-multilingual-more-creative-and-smarter/"},
@@ -50,7 +49,7 @@ FEATURES: list[dict[str, Any]] = [
     {"provider":"Meta","product":"Meta AI","capability":"standalone_app","event_type":"product_launch","status":"launched","geography":"supported_markets","published_at":"2025-04-29","definition":"First standalone Meta AI app launched, connected to meta.ai and Meta AI glasses.","source_url":"https://about.fb.com/news/2025/04/introducing-meta-ai-app-new-way-access-ai-assistant/"},
 ]
 
-ALLOWED_HOST_SUFFIXES = ("openai.com", "blog.google", "about.fb.com")
+ALLOWED_HOSTS = {"openai.com", "blog.google", "about.fb.com"}
 
 
 def canonical_json(value: object) -> bytes:
@@ -93,8 +92,8 @@ def source_manifest() -> list[dict[str, object]]:
     urls = sorted({row["source_url"] for row in METRICS + FEATURES})
     items = []
     for url in urls:
-        host = urllib.request.urlparse(url).hostname or ""
-        if not any(host == suffix or host.endswith("." + suffix) for suffix in ALLOWED_HOST_SUFFIXES):
+        host = urlparse(url).hostname or ""
+        if host not in ALLOWED_HOSTS:
             raise ValueError(f"non-primary source domain: {url}")
         raw = fetch(url)
         items.append({"url": url, "bytes": len(raw), "sha256": sha256(raw)})
