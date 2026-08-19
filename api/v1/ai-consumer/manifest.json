@@ -6,19 +6,19 @@
     },
     "features.json": {
       "bytes": 3823,
-      "sha256": "8553af1dfe344be12ed629f957a5591888fe8a9ba63f65273b73cfc83a9b05e9"
+      "sha256": "3015633173a6c16a79bdcfa53f92e0bb16a0d164a178713b62025ac6bb489c08"
     },
     "index.json": {
       "bytes": 246,
-      "sha256": "959758f79eb7aec88ee9b520a00b6860c755ad0cbb43dadd1bf31792471a577b"
+      "sha256": "9eca94ad1028efd59cfeca0d942fd5fec41a4c92f3b06b36386ef6e98203733c"
     },
     "metrics.json": {
       "bytes": 8237,
-      "sha256": "ccbf82db4cbdb352eeecbd661a715b07e960ceb8d0c0837606aa272f7f5f5d6f"
+      "sha256": "13ff3dff5a1d4811f6ab6157d33b28b44b1f60a7ba57f71e92a777d411ff4a13"
     },
     "openai-signals.json": {
       "bytes": 29404,
-      "sha256": "c6e38588f0c6f87cef1aed98d1d81781684dcf2de9e7aefbd0f57d6551b4c16e"
+      "sha256": "481dd4a6e68221303952cb607946bf60ac34bc564c6758f66efdb4f7d403dcf6"
     }
   },
   "openai_signals_bundle": {
@@ -28,16 +28,16 @@
     "url": "https://cdn.openai.com/signals/data-download-csv.zip"
   },
   "primary_source_count": 18,
-  "retrieved_at": "2026-08-19T03:46:40.482891+00:00",
+  "retrieved_at": "2026-08-19T13:56:00.781499+00:00",
   "schema_version": 1,
   "sources": [
     {
-      "bytes": 525014,
+      "bytes": 496806,
       "claim_count": 1,
       "claim_sha256": "de4619365c613a57885d535aeccae82e20d18c2c5ba488437336650154454587",
       "http_status": 200,
       "retrieval_status": "ok",
-      "sha256": "f654874e6185693b96c908e85abaa92f6ea1b8cc6c46c307e808d4e3b45d80c6",
+      "sha256": "efe35c05c5ec0b3f8de630a162e566cd34578862a74f0b67eaf0cf58b91298d6",
       "url": "https://about.fb.com/news/2024/07/meta-ai-is-now-multilingual-more-creative-and-smarter/"
     },
     {
@@ -59,12 +59,12 @@
       "url": "https://about.fb.com/news/2024/12/our-year-in-review-metas-2024-highlights/"
     },
     {
-      "bytes": 361595,
+      "bytes": 333387,
       "claim_count": 2,
       "claim_sha256": "5a2ba0ed6aabffe767f1a1adb050895580e5a86af07040b6da5268853e1887ad",
       "http_status": 200,
       "retrieval_status": "ok",
-      "sha256": "b036ebb1c0a4c7c2e860fb678e67e26d6277c0f6de32911aedd9549dfe818ca8",
+      "sha256": "24c4423b8cd6174b09eaf4b775812a34398ac0a51f6f10a8499ce40e82c41c73",
       "url": "https://about.fb.com/news/2025/03/europe-meet-your-newest-assistant-meta-ai/"
     },
     {
@@ -136,7 +136,7 @@
       "claim_sha256": "647a507d7f40300e00d60639a5dd66a74f718d09c538eb1087126a4715ff0eca",
       "http_status": 200,
       "retrieval_status": "ok",
-      "sha256": "6b456b0874593e1fe33f68f2c2670b1b2ce1d7797838085308b7a21f8539688e",
+      "sha256": "f81d65ff484d426c17eaf152a3cebba827ec1773d4b821afb3c0a300a8c68280",
       "url": "https://blog.google/products-and-platforms/products/search/new-controls-website-owners/"
     },
     {
