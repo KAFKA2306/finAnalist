@@ -1,0 +1,10 @@
+{
+  "datasets": {
+    "comparison": "comparison.json",
+    "features": "features.json",
+    "metrics": "metrics.json",
+    "openai_signals": "openai-signals.json"
+  },
+  "retrieved_at": "2026-08-19T03:46:40.482891+00:00",
+  "schema_version": 1
+}

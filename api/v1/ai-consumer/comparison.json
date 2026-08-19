@@ -1,0 +1,110 @@
+{
+  "observations": [
+    {
+      "as_of": "2026-06-03",
+      "definition": "Monthly active users.",
+      "geography": "global",
+      "metric": "monthly_active_users",
+      "period": "monthly",
+      "product": "AI Overviews",
+      "provider": "Google",
+      "qualifier": "greater_than",
+      "source_url": "https://blog.google/products-and-platforms/products/search/new-controls-website-owners/",
+      "unit": "users",
+      "value": 2500000000
+    },
+    {
+      "as_of": "2026-05-19",
+      "definition": "Growth rate of planning-related AI Mode queries relative to overall AI Mode query growth.",
+      "geography": "United States",
+      "metric": "planning_query_growth_relative_to_all_ai_mode_queries",
+      "period": "previous_6_months",
+      "product": "AI Mode",
+      "provider": "Google",
+      "qualifier": "reported",
+      "source_url": "https://blog.google/products-and-platforms/products/search/ai-mode-us-insights/",
+      "unit": "percent_faster_growth",
+      "value": 80
+    },
+    {
+      "as_of": "2025-10-01",
+      "definition": "People using Meta AI every month.",
+      "geography": "global",
+      "metric": "monthly_active_users",
+      "period": "monthly",
+      "product": "Meta AI",
+      "provider": "Meta",
+      "qualifier": "greater_than",
+      "source_url": "https://about.fb.com/news/2025/10/improving-your-recommendations-apps-ai-meta/",
+      "unit": "users",
+      "value": 1000000000
+    },
+    {
+      "as_of": "2024-09-25",
+      "definition": "People using Meta AI across Meta products each week.",
+      "geography": "global",
+      "metric": "weekly_active_users",
+      "period": "weekly",
+      "product": "Meta AI",
+      "provider": "Meta",
+      "qualifier": "reported",
+      "source_url": "https://about.fb.com/news/2024/09/metas-ai-product-news-connect/",
+      "unit": "users",
+      "value": 185000000
+    },
+    {
+      "as_of": "2026-02-27",
+      "definition": "Consumer subscribers, explicitly distinguished from paying business users in the source.",
+      "geography": "global",
+      "metric": "consumer_subscribers",
+      "period": "current_as_of_date",
+      "product": "ChatGPT",
+      "provider": "OpenAI",
+      "qualifier": "greater_than",
+      "source_url": "https://openai.com/index/scaling-ai-for-everyone/",
+      "unit": "subscribers",
+      "value": 50000000
+    },
+    {
+      "as_of": "2025-04-23",
+      "definition": "Users who created images during the first week after ChatGPT image generation launch.",
+      "geography": "global",
+      "metric": "feature_users",
+      "period": "first_week",
+      "product": "ChatGPT image generation",
+      "provider": "OpenAI",
+      "qualifier": "greater_than",
+      "source_url": "https://openai.com/index/image-generation-api/",
+      "unit": "users",
+      "value": 130000000
+    },
+    {
+      "as_of": "2025-04-23",
+      "definition": "Images created during the first week after ChatGPT image generation launch.",
+      "geography": "global",
+      "metric": "images_created",
+      "period": "first_week",
+      "product": "ChatGPT image generation",
+      "provider": "OpenAI",
+      "qualifier": "greater_than",
+      "source_url": "https://openai.com/index/image-generation-api/",
+      "unit": "images",
+      "value": 700000000
+    },
+    {
+      "as_of": "2026-02-27",
+      "definition": "Weekly active ChatGPT users.",
+      "geography": "global",
+      "metric": "weekly_active_users",
+      "period": "weekly",
+      "product": "ChatGPT",
+      "provider": "OpenAI",
+      "qualifier": "greater_than",
+      "source_url": "https://openai.com/index/scaling-ai-for-everyone/",
+      "unit": "users",
+      "value": 900000000
+    }
+  ],
+  "rule": "Latest disclosed observation per provider and metric definition; weekly and monthly user metrics are never converted into each other.",
+  "schema_version": 1
+}

@@ -1,0 +1,94 @@
+{
+  "events": [
+    {
+      "capability": "native_image_generation",
+      "definition": "4o image generation began rolling out in ChatGPT to Plus, Pro, Team and Free users.",
+      "event_type": "feature_launch",
+      "geography": "global",
+      "product": "ChatGPT",
+      "provider": "OpenAI",
+      "published_at": "2025-03-25",
+      "source_url": "https://openai.com/index/introducing-4o-image-generation/",
+      "status": "launched"
+    },
+    {
+      "capability": "instant_checkout",
+      "definition": "U.S. Plus, Pro and Free users could buy from U.S. Etsy sellers directly in chat; additional merchants were announced as coming soon.",
+      "event_type": "commerce_launch",
+      "geography": "United States",
+      "product": "ChatGPT",
+      "provider": "OpenAI",
+      "published_at": "2025-09-29",
+      "source_url": "https://openai.com/index/buy-it-in-chatgpt/",
+      "status": "launched"
+    },
+    {
+      "capability": "reasoning_search",
+      "definition": "AI Mode introduced as an experimental Search experience.",
+      "event_type": "product_stage",
+      "geography": "United States",
+      "product": "AI Mode",
+      "provider": "Google",
+      "published_at": "2025-03-05",
+      "source_url": "https://blog.google/products-and-platforms/products/search/ai-mode-search/",
+      "status": "experiment"
+    },
+    {
+      "capability": "general_us_availability",
+      "definition": "AI Mode began rolling out to everyone in the United States.",
+      "event_type": "rollout",
+      "geography": "United States",
+      "product": "AI Mode",
+      "provider": "Google",
+      "published_at": "2025-05-20",
+      "source_url": "https://blog.google/products-and-platforms/products/search/google-search-ai-mode-update/",
+      "status": "launched"
+    },
+    {
+      "capability": "agentic_tasks_and_shopping",
+      "definition": "Google announced agentic capabilities for tickets, reservations, appointments and shopping; announced capabilities are not recorded as actual usage.",
+      "event_type": "capability_announcement",
+      "geography": "United States",
+      "product": "AI Mode",
+      "provider": "Google",
+      "published_at": "2025-05-20",
+      "source_url": "https://blog.google/products-and-platforms/products/search/google-search-ai-mode-update/",
+      "status": "announced"
+    },
+    {
+      "capability": "voice_and_photo_multimodal",
+      "definition": "Voice interaction and photo sharing/editing capabilities expanded in Meta AI.",
+      "event_type": "feature_expansion",
+      "geography": "multiple_markets",
+      "product": "Meta AI",
+      "provider": "Meta",
+      "published_at": "2024-09-25",
+      "source_url": "https://about.fb.com/news/2024/09/metas-ai-product-news-connect/",
+      "status": "launched"
+    },
+    {
+      "capability": "europe_chat_rollout",
+      "definition": "Meta AI chat began rolling out in Europe through Facebook, Instagram, WhatsApp and Messenger.",
+      "event_type": "rollout",
+      "geography": "41 European countries and 21 overseas territories",
+      "product": "Meta AI",
+      "provider": "Meta",
+      "published_at": "2025-03-19",
+      "source_url": "https://about.fb.com/news/2025/03/europe-meet-your-newest-assistant-meta-ai/",
+      "status": "rolling_out"
+    },
+    {
+      "capability": "standalone_app",
+      "definition": "First standalone Meta AI app launched, connected to meta.ai and Meta AI glasses.",
+      "event_type": "product_launch",
+      "geography": "supported_markets",
+      "product": "Meta AI",
+      "provider": "Meta",
+      "published_at": "2025-04-29",
+      "source_url": "https://about.fb.com/news/2025/04/introducing-meta-ai-app-new-way-access-ai-assistant/",
+      "status": "launched"
+    }
+  ],
+  "retrieved_at": "2026-08-19T03:46:40.482891+00:00",
+  "schema_version": 1
+}
