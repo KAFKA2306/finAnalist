@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import urllib.error
 import urllib.request
 from datetime import date, datetime, timezone
 from pathlib import Path
@@ -88,15 +89,51 @@ def validate_records() -> None:
         raise ValueError("official metric history must span at least 12 months")
 
 
+def claim_records(url: str) -> list[dict[str, Any]]:
+    records = [row for row in METRICS + FEATURES if row["source_url"] == url]
+    return sorted(
+        records,
+        key=lambda row: (
+            row["provider"],
+            str(row.get("metric", row.get("capability", ""))),
+            str(row.get("as_of", row.get("published_at", ""))),
+        ),
+    )
+
+
 def source_manifest() -> list[dict[str, object]]:
     urls = sorted({row["source_url"] for row in METRICS + FEATURES})
-    items = []
+    items: list[dict[str, object]] = []
     for url in urls:
         host = urlparse(url).hostname or ""
         if host not in ALLOWED_HOSTS:
             raise ValueError(f"non-primary source domain: {url}")
-        raw = fetch(url)
-        items.append({"url": url, "bytes": len(raw), "sha256": sha256(raw)})
+        claims = claim_records(url)
+        item: dict[str, object] = {
+            "url": url,
+            "claim_count": len(claims),
+            "claim_sha256": sha256(canonical_json(claims)),
+        }
+        try:
+            raw = fetch(url)
+        except urllib.error.HTTPError as exc:
+            if host == "openai.com" and exc.code == 403:
+                item.update({
+                    "retrieval_status": "origin_blocked_403",
+                    "http_status": 403,
+                    "bytes": None,
+                    "sha256": None,
+                })
+            else:
+                raise
+        else:
+            item.update({
+                "retrieval_status": "ok",
+                "http_status": 200,
+                "bytes": len(raw),
+                "sha256": sha256(raw),
+            })
+        items.append(item)
     return items
 
 
@@ -144,7 +181,12 @@ def write(output: Path) -> dict[str, object]:
         "retrieved_at": retrieved_at,
         "primary_source_count": len(sources),
         "sources": sources,
-        "openai_signals_bundle": {"url": signals["download_url"], "sha256": signals["bundle_sha256"], "bytes": signals["bundle_bytes"]},
+        "openai_signals_bundle": {
+            "url": signals["download_url"],
+            "source_page": signals["source_page"],
+            "sha256": signals["bundle_sha256"],
+            "bytes": signals["bundle_bytes"],
+        },
         "files": {
             path.name: {"bytes": path.stat().st_size, "sha256": sha256(path.read_bytes())}
             for path in sorted(output.glob("*.json"))
@@ -152,7 +194,12 @@ def write(output: Path) -> dict[str, object]:
         },
     }
     (output / "manifest.json").write_bytes(canonical_json(manifest))
-    return {"metric_count": len(METRICS), "feature_count": len(FEATURES), "source_count": len(sources), "signals_files": len(signals["files"])}
+    return {
+        "metric_count": len(METRICS),
+        "feature_count": len(FEATURES),
+        "source_count": len(sources),
+        "signals_files": len(signals["files"]),
+    }
 
 
 def main() -> None:
