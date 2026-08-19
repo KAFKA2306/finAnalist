@@ -20,11 +20,23 @@ LICENSE = "CC BY 4.0"
 def download() -> bytes:
     req = Request(URL, headers={"User-Agent": "ai-consumer/1.0 github.com/KAFKA2306/finAnalist"})
     with urlopen(req, timeout=120) as response:
-        return response.read()
+        raw = response.read()
+    if not raw:
+        raise ValueError("OpenAI Signals download returned an empty body")
+    return raw
+
+
+def decode_csv(raw: bytes) -> tuple[str, str]:
+    for encoding in ("utf-8-sig", "utf-16", "cp1252", "latin-1"):
+        try:
+            return raw.decode(encoding), encoding
+        except (UnicodeDecodeError, UnicodeError):
+            continue
+    raise ValueError("unable to decode OpenAI Signals CSV")
 
 
 def csv_metadata(name: str, raw: bytes) -> dict[str, object]:
-    text = raw.decode("utf-8-sig")
+    text, encoding = decode_csv(raw)
     reader = csv.reader(io.StringIO(text))
     try:
         header = next(reader)
@@ -35,6 +47,7 @@ def csv_metadata(name: str, raw: bytes) -> dict[str, object]:
         rows = sum(1 for _ in reader)
     return {
         "name": name,
+        "encoding": encoding,
         "columns": header,
         "rows": rows,
         "bytes": len(raw),
