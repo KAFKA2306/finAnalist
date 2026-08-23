@@ -32,6 +32,12 @@ class AiConsumerLedgerTest(unittest.TestCase):
         self.assertTrue(all("metric" in row and "capability" not in row for row in MODULE.METRICS))
         self.assertTrue(all("capability" in row and "metric" not in row for row in MODULE.FEATURES))
 
+    def test_feature_events_expose_availability_and_surfaces(self):
+        allowed = {"announced", "experiment", "rolling_out", "generally_available"}
+        self.assertTrue(all(row["availability_state"] in allowed for row in MODULE.FEATURES))
+        self.assertTrue(all(isinstance(row["surfaces"], list) and row["surfaces"] for row in MODULE.FEATURES))
+        self.assertTrue(any(row["published_at"].startswith("2026-") for row in MODULE.FEATURES))
+
     def test_comparison_never_converts_weekly_to_monthly(self):
         view = MODULE.comparison_view()
         openai = [row for row in view["observations"] if row["provider"] == "OpenAI"]
@@ -40,10 +46,33 @@ class AiConsumerLedgerTest(unittest.TestCase):
         self.assertNotIn("monthly_active_users", metrics)
         self.assertIn("never converted", view["rule"])
 
+    def test_semantic_diff_ignores_retrieval_only_refresh(self):
+        previous = {
+            "retrieved_at": "2026-08-21T00:00:00+00:00",
+            "events": [dict(MODULE.FEATURES[0])],
+        }
+        current = {
+            "retrieved_at": "2026-08-23T00:00:00+00:00",
+            "events": [dict(MODULE.FEATURES[0])],
+        }
+        diff = MODULE.semantic_diff(previous, current, kind="feature")
+        self.assertEqual(diff, [])
+
+    def test_semantic_diff_reports_added_feature(self):
+        previous = {"retrieved_at": "2026-08-21T00:00:00+00:00", "events": []}
+        current = {
+            "retrieved_at": "2026-08-23T00:00:00+00:00",
+            "events": [dict(MODULE.FEATURES[0])],
+        }
+        diff = MODULE.semantic_diff(previous, current, kind="feature")
+        self.assertEqual(len(diff), 1)
+        self.assertEqual(diff[0]["change_type"], "added")
+        self.assertEqual(diff[0]["record"]["capability"], MODULE.FEATURES[0]["capability"])
+
     def test_only_official_source_domains_are_used(self):
         urls = {row["source_url"] for row in MODULE.METRICS + MODULE.FEATURES}
         self.assertFalse(any("similarweb" in url or "statista" in url or "semrush" in url for url in urls))
-        self.assertTrue(any(url.startswith("https://openai.com/") for url in urls))
+        self.assertTrue(any(url.startswith("https://openai.com/") or url.startswith("https://help.openai.com/") for url in urls))
         self.assertTrue(any(url.startswith("https://blog.google/") for url in urls))
         self.assertTrue(any(url.startswith("https://about.fb.com/") for url in urls))
 
