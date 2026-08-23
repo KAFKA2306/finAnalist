@@ -12,16 +12,16 @@
     {
       "entity": "OpenAI",
       "coverage": "strong",
-      "observations": 11,
+      "observations": 12,
       "classes": ["company_reported", "media_reported", "third_party_estimate"],
-      "notes": "Official 2023-2025 ARR plus 2026 media/TickerTrends series; Codex estimate separately tracked."
+      "notes": "11 company-level observations plus one Codex product observation. Official 2023-2025 ARR and 2026 media/TickerTrends series are preserved separately."
     },
     {
       "entity": "Anthropic",
       "coverage": "strong",
       "observations": 12,
       "classes": ["company_reported", "media_reported", "third_party_estimate"],
-      "notes": "Official company run-rate disclosures through May 2026, Reuters July update, TickerTrends estimates, Claude Code product series."
+      "notes": "Nine company-level observations plus three Claude Code product observations. Official disclosures through May 2026, Reuters July update, and TickerTrends estimates remain separate."
     },
     {
       "entity": "Mistral AI",
