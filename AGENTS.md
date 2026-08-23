@@ -10,23 +10,19 @@ Own consumer-AI usage and agent/commerce behavior evidence for this repository. 
 - Preserve company/product/metric identity, definition, scope/geography, observation/reporting period, unit, source URL, retrieval time and provenance fields required by the dataset.
 - Keep users, subscribers, sessions, revenue, AI-mediated commerce and derived estimates as distinct metrics unless the source explicitly defines a relationship.
 - Cross-repository ARK forecast comparison belongs in `investor2`; do not duplicate forecast authority here.
+- Canonical generated consumer-AI outputs are validated by `research/validate_ai_consumer.py`; workflows must reuse that contract rather than carrying separate validation copies.
 
 ## Autonomous execution
 
 1. Inspect current `main`, README, open Issues/PRs, canonical metric feeds, workflows/tests and public outputs.
-2. Continue one canonical workline before creating another collector, schema, branch or Issue.
+2. Continue one canonical workline before creating another collector, schema or Issue.
 3. Prefer newly verified primary observations, definition/scope corrections, deterministic comparisons, public usability, then simplification.
 4. Require exact definition/unit/scope compatibility before connecting metrics or calculating forecast gaps.
-5. Run focused deterministic checks and verify the exact reviewed revision before merge.
-6. Stop at the fixed point; do not transform user/subscriber proxies into revenue or global-market measurements.
+5. Prefer deletion/consolidation over parallel validation, wrappers or duplicated generated authority.
+6. Run focused deterministic checks and verify the exact reviewed revision before merge.
+7. Broad simplification Issues are iterative checkpoints. Record each verified pass and keep the Issue open while later re-audit remains useful.
 
-## Branch lifecycle
-
-- Aside from the default branch and unavoidable platform-managed/protected branches, a persistent branch is permitted only while it is the head branch of a currently open PR.
-- Creating a work branch creates an obligation to open or reuse its canonical PR immediately; do not use branches as backlog, continuation state, backup, archive, or evidence storage.
-- After a PR is merged or closed, delete its head branch after verifying PR/main state. A branch with no open PR is an orphan and must be deleted.
-- Before and after work, compare repository branches with open PR heads. Do not report cleanup/fixed point while an orphan task branch remains.
-- If the available tool cannot delete a branch, record that as a tooling blocker and do not claim cleanup complete. Never create another orphan branch as a workaround.
+Branch deletion is not a repository-work completion condition. Do not create cleanup-only work or treat an otherwise verified implementation as blocked because branch deletion is unavailable to the current tool.
 
 ## Merge and release are separate
 
@@ -51,4 +47,4 @@ A merged PR does not prove product/data release or market adoption. A release/so
 
 ## Completion report
 
-Report verified consumer-AI evidence Before -> After, primary source/canonical artifact, Issue/PR/commit/check evidence, then report `merged` and `released` separately with direct evidence for each. Include branch cleanup state, manual work removed and remaining blocker.
+Report verified consumer-AI evidence Before -> After, primary source/canonical artifact, Issue/PR/commit/check evidence, then report `merged` and `released` separately with direct evidence for each. Include manual work/duplicate authority removed and the remaining blocker or next re-audit target.
