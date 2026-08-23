@@ -6,6 +6,16 @@ on:
     paths:
       - web/**
       - api/v1/ai-consumer/**
+      - research/collect_openai_signals.py
+      - research/update_ai_consumer.py
+      - research/validate_ai_consumer.py
+      - .github/workflows/pages.yml
+  pull_request:
+    paths:
+      - web/**
+      - api/v1/ai-consumer/**
+      - research/collect_openai_signals.py
+      - research/update_ai_consumer.py
       - research/validate_ai_consumer.py
       - .github/workflows/pages.yml
   workflow_dispatch:
@@ -16,36 +26,60 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Build live canonical projection from primary-source contract
+        run: |
+          rm -rf /tmp/pages-ai-consumer
+          python research/update_ai_consumer.py \
+            --output /tmp/pages-ai-consumer \
+            --previous-root api/v1/ai-consumer
+          python research/validate_ai_consumer.py /tmp/pages-ai-consumer
+      - name: Build Pages artifact from canonical projection
+        run: |
+          mkdir -p web/api/v1
+          rm -rf web/api/v1/ai-consumer
+          cp -R /tmp/pages-ai-consumer web/api/v1/ai-consumer
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          Path('web/deployment.json').write_text(json.dumps({'source_commit':os.environ['GITHUB_SHA']},indent=2)+'\n')
+          changes=json.loads(Path('web/api/v1/ai-consumer/changes.json').read_text())
+          features=json.loads(Path('web/api/v1/ai-consumer/features.json').read_text())
+          assert changes['status'] in {'verified_change','no_verified_change'}
+          assert max(row['published_at'] for row in features['events']) >= '2026-08-20'
+          html=Path('web/index.html').read_text()
+          assert 'api/v1/ai-consumer/changes.json' in html
+          assert 'No verified feature change in this refresh.' in html
+          assert 'LATEST VERIFIED CAPABILITY' in html
+          PY
+      - uses: actions/configure-pages@v5
+        if: github.event_name != 'pull_request'
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
+        with:
+          path: web
+
   deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - name: Validate public artifact inputs
-        run: python research/validate_ai_consumer.py
-      - name: Build Pages artifact from canonical API
-        run: |
-          mkdir -p web/api/v1
-          rm -rf web/api/v1/ai-consumer
-          cp -R api/v1/ai-consumer web/api/v1/ai-consumer
-          python - <<'PY'
-          import json, os
-          from pathlib import Path
-          Path('web/deployment.json').write_text(json.dumps({'source_commit':os.environ['GITHUB_SHA']},indent=2)+'\n')
-          PY
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: web
       - id: deployment
         uses: actions/deploy-pages@v4
-      - name: Verify exact deployed revision and canonical surface
+      - name: Verify exact deployed revision and semantic change surface
         env:
           PAGE_URL: ${{ steps.deployment.outputs.page_url }}
         run: |
@@ -60,11 +94,17 @@ jobs:
               try:
                   with urlopen(urljoin(base,'deployment.json'),timeout=10) as r: dep=json.load(r)
                   with urlopen(urljoin(base,'api/v1/ai-consumer/index.json'),timeout=10) as r: idx=json.load(r)
+                  with urlopen(urljoin(base,'api/v1/ai-consumer/changes.json'),timeout=10) as r: changes=json.load(r)
+                  with urlopen(urljoin(base,'api/v1/ai-consumer/features.json'),timeout=10) as r: features=json.load(r)
                   with urlopen(base,timeout=10) as r: html=r.read().decode()
                   assert dep['source_commit']==expected, dep
-                  assert idx['datasets']['metrics']=='metrics.json'
-                  assert 'AIは、実際に' in html and 'api/v1/ai-consumer/metrics.json' in html
-                  print({'page_url':base,'source_commit':expected,'retrieved_at':idx['retrieved_at']})
+                  assert idx['schema_version']==2 and idx['datasets']['changes']=='changes.json'
+                  assert changes['status'] in {'verified_change','no_verified_change'}
+                  assert max(row['published_at'] for row in features['events']) >= '2026-08-20'
+                  assert all(row['availability_state'] for row in features['events'])
+                  assert 'api/v1/ai-consumer/changes.json' in html
+                  assert 'LATEST VERIFIED CAPABILITY' in html
+                  print({'page_url':base,'source_commit':expected,'retrieved_at':idx['retrieved_at'],'change_status':changes['status']})
                   break
               except Exception as exc:
                   last=exc; time.sleep(2)
