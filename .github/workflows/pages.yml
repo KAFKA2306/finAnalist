@@ -6,6 +6,7 @@ on:
     paths:
       - web/**
       - api/v1/ai-consumer/**
+      - research/validate_ai_consumer.py
       - .github/workflows/pages.yml
   workflow_dispatch:
 
@@ -27,19 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Validate public artifact inputs
-        run: |
-          python -m json.tool api/v1/ai-consumer/index.json >/dev/null
-          python -m json.tool api/v1/ai-consumer/metrics.json >/dev/null
-          python -m json.tool api/v1/ai-consumer/features.json >/dev/null
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          metrics=json.loads(Path('api/v1/ai-consumer/metrics.json').read_text())['observations']
-          features=json.loads(Path('api/v1/ai-consumer/features.json').read_text())['events']
-          assert metrics and features
-          assert all(row.get('source_url') and row.get('as_of') for row in metrics)
-          assert all(row.get('source_url') and row.get('published_at') and row.get('status') for row in features)
-          PY
+        run: python research/validate_ai_consumer.py
       - name: Build Pages artifact from canonical API
         run: |
           mkdir -p web/api/v1
