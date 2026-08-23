@@ -2,10 +2,13 @@
 
 [![CI](https://github.com/KAFKA2306/finAnalist/actions/workflows/ci.yml/badge.svg)](https://github.com/KAFKA2306/finAnalist/actions/workflows/ci.yml)
 [![AI consumer source](https://github.com/KAFKA2306/finAnalist/actions/workflows/ai-consumer-source.yml/badge.svg)](https://github.com/KAFKA2306/finAnalist/actions/workflows/ai-consumer-source.yml)
+[![Deploy Pages](https://github.com/KAFKA2306/finAnalist/actions/workflows/pages.yml/badge.svg)](https://github.com/KAFKA2306/finAnalist/actions/workflows/pages.yml)
 
 **OpenAI / Google / Meta のconsumer AIが、検索・意思決定・マルチモーダル操作・購入の入口へ広がっているかを、各社の一次情報だけで追跡します。**
 
-旧NewsAPI / Alpha Vantage投資レポートprototypeは正準成果物ではありません。現在の安定したmachine-readable surfaceは [`api/v1/ai-consumer/`](api/v1/ai-consumer/) です。
+公開ダッシュボード: https://kafka2306.github.io/finAnalist/
+
+旧NewsAPI / Alpha Vantage投資レポートprototypeは正準成果物ではありません。現在の安定したmachine-readable surfaceは [`api/v1/ai-consumer/`](api/v1/ai-consumer/) です。Pagesはこの正準APIだけをread-onlyで表示し、別のcurrent値を持ちません。
 
 ## Canonical outputs
 
@@ -55,7 +58,7 @@
 python research/update_ai_consumer.py
 ```
 
-GitHub Actionsの `AI consumer source` は平日に一次情報を再検証し、evidenceが変わった場合だけ [`api/v1/ai-consumer/`](api/v1/ai-consumer/) をcommitします。
+GitHub Actionsの `AI consumer source` は平日に一次情報を再検証し、evidenceが変わった場合だけ [`api/v1/ai-consumer/`](api/v1/ai-consumer/) をcommitします。`Deploy Pages` はmain上の同じcanonical APIを静的artifactへ同梱し、公開後にexact source commitと主要JSONを再検証します。
 
 ## Verification
 
@@ -73,4 +76,4 @@ CIはさらにlive sourceを取得して、次をfail-closedで検証します�
 - third-party traffic sourceが混入していない
 - OpenAI Signals bundleが実際に取得できる
 
-Tracked work: https://github.com/KAFKA2306/finAnalist/issues/4
+Tracked work: https://github.com/KAFKA2306/finAnalist/issues/11
