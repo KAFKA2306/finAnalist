@@ -1,0 +1,84 @@
+name: Deploy Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - web/**
+      - api/v1/ai-consumer/**
+      - .github/workflows/pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Validate public artifact inputs
+        run: |
+          python -m json.tool api/v1/ai-consumer/index.json >/dev/null
+          python -m json.tool api/v1/ai-consumer/metrics.json >/dev/null
+          python -m json.tool api/v1/ai-consumer/features.json >/dev/null
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          metrics=json.loads(Path('api/v1/ai-consumer/metrics.json').read_text())['observations']
+          features=json.loads(Path('api/v1/ai-consumer/features.json').read_text())['events']
+          assert metrics and features
+          assert all(row.get('source_url') and row.get('as_of') for row in metrics)
+          assert all(row.get('source_url') and row.get('published_at') and row.get('status') for row in features)
+          PY
+      - name: Build Pages artifact from canonical API
+        run: |
+          mkdir -p web/api/v1
+          rm -rf web/api/v1/ai-consumer
+          cp -R api/v1/ai-consumer web/api/v1/ai-consumer
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          Path('web/deployment.json').write_text(json.dumps({'source_commit':os.environ['GITHUB_SHA']},indent=2)+'\n')
+          PY
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+      - id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Verify exact deployed revision and canonical surface
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          python - <<'PY'
+          import json, os, time
+          from urllib.parse import urljoin
+          from urllib.request import urlopen
+          base=os.environ['PAGE_URL']
+          expected=os.environ['GITHUB_SHA']
+          last=None
+          for _ in range(30):
+              try:
+                  with urlopen(urljoin(base,'deployment.json'),timeout=10) as r: dep=json.load(r)
+                  with urlopen(urljoin(base,'api/v1/ai-consumer/index.json'),timeout=10) as r: idx=json.load(r)
+                  with urlopen(base,timeout=10) as r: html=r.read().decode()
+                  assert dep['source_commit']==expected, dep
+                  assert idx['datasets']['metrics']=='metrics.json'
+                  assert 'AIは、実際に' in html and 'api/v1/ai-consumer/metrics.json' in html
+                  print({'page_url':base,'source_commit':expected,'retrieved_at':idx['retrieved_at']})
+                  break
+              except Exception as exc:
+                  last=exc; time.sleep(2)
+          else:
+              raise SystemExit(f'production verification failed: {last}')
+          PY
