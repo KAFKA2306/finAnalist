@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "comparison_rule": "Do not compare unlike definitions as if they were identical. Only records with currency=USD and plot_eligible=true share the default magnitude chart; SAP remains visible as native-currency evidence but is excluded from that bar scale.",
+  "records": [
+    {
+      "entity": "Microsoft",
+      "metric": "productivity_and_business_processes_quarterly_revenue",
+      "value": 37.847,
+      "currency": "USD",
+      "unit": "billion_per_quarter",
+      "period": "2026-Q4",
+      "measurement_type": "company_reported",
+      "plot_eligible": false,
+      "source_url": "https://news.microsoft.com/source/2026/07/29/microsoft-cloud-and-ai-strength-fuels-fourth-quarter-results-4/",
+      "definition": "Productivity and Business Processes segment revenue for the three months ended June 30, 2026."
+    },
+    {
+      "entity": "Microsoft",
+      "metric": "productivity_and_business_processes_annualized_revenue",
+      "value": 151.388,
+      "currency": "USD",
+      "unit": "billion_per_year",
+      "period": "2026-Q4 annualized",
+      "measurement_type": "derived",
+      "plot_eligible": true,
+      "source_url": "https://news.microsoft.com/source/2026/07/29/microsoft-cloud-and-ai-strength-fuels-fourth-quarter-results-4/",
+      "definition": "Q4 FY2026 Productivity and Business Processes revenue multiplied by four; this is an annualized comparison, not reported annual revenue.",
+      "inputs": ["Microsoft 2026-Q4 Productivity and Business Processes quarterly revenue = $37.847B"]
+    },
+    {
+      "entity": "Salesforce",
+      "metric": "subscription_and_support_revenue",
+      "value": 39.4,
+      "currency": "USD",
+      "unit": "billion_per_year",
+      "period": "FY2026",
+      "measurement_type": "company_reported",
+      "plot_eligible": true,
+      "source_url": "https://investor.salesforce.com/resources/investor-faqs/",
+      "definition": "Salesforce fiscal 2026 subscription and support revenue."
+    },
+    {
+      "entity": "Adobe",
+      "metric": "digital_media_arr",
+      "value": 19.2,
+      "currency": "USD",
+      "unit": "billion_per_year",
+      "period": "FY2025 ending ARR",
+      "measurement_type": "company_reported",
+      "plot_eligible": true,
+      "source_url": "https://www.adobe.com/cc-shared/assets/investor-relations/pdfs/adbe-2025-annual-report.pdf",
+      "definition": "Adobe Digital Media ending ARR for fiscal 2025."
+    },
+    {
+      "entity": "Adobe",
+      "metric": "total_revenue",
+      "value": 23.769,
+      "currency": "USD",
+      "unit": "billion_per_year",
+      "period": "FY2025",
+      "measurement_type": "company_reported",
+      "plot_eligible": false,
+      "source_url": "https://www.adobe.com/cc-shared/assets/investor-relations/pdfs/adbe-2025-annual-report.pdf",
+      "definition": "Adobe total fiscal 2025 revenue."
+    },
+    {
+      "entity": "SAP",
+      "metric": "total_revenue",
+      "value": 36.8,
+      "currency": "EUR",
+      "unit": "billion_per_year",
+      "period": "FY2025",
+      "measurement_type": "company_reported",
+      "plot_eligible": false,
+      "source_url": "https://www.sap.com/integrated-reports/2025/en/datahub/financial-data.html",
+      "definition": "SAP IFRS total revenue for fiscal 2025. Kept in EUR; no FX conversion is invented."
+    }
+  ]
+}

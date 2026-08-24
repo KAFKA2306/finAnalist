@@ -1,0 +1,59 @@
+name: AI economics source
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - research/data/ai-economics/**
+      - research/update_ai_economics.py
+      - research/validate_ai_economics.py
+      - tests/test_ai_economics.py
+      - .github/workflows/ai-economics-source.yml
+  schedule:
+    - cron: '17 21 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ai-economics-source
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Compile and test
+        run: |
+          python -m py_compile research/update_ai_economics.py research/validate_ai_economics.py tests/test_ai_economics.py
+          python -m unittest tests.test_ai_economics -v
+      - name: Refresh live source evidence
+        run: |
+          rm -rf /tmp/ai-economics
+          python research/update_ai_economics.py \
+            --output /tmp/ai-economics \
+            --previous-root api/v1/ai-economics \
+            --fetch-sources
+          python research/validate_ai_economics.py /tmp/ai-economics
+      - name: Publish canonical API only when evidence changes
+        run: |
+          rm -rf api/v1/ai-economics
+          mkdir -p api/v1
+          cp -R /tmp/ai-economics api/v1/ai-economics
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -f api/v1/ai-economics
+          if git diff --cached --quiet; then
+            echo 'No AI economics evidence change.'
+            exit 0
+          fi
+          git commit -m 'data: update AI economics evidence'
+          git push
