@@ -1,0 +1,14 @@
+{
+  "candidate_count": 0,
+  "datasets": {
+    "candidates": "candidates.json",
+    "comparables": "comparables.json",
+    "latest": "latest.json",
+    "manifest": "manifest.json",
+    "observations": "observations.ndjson",
+    "sources": "sources.json"
+  },
+  "observation_count": 36,
+  "schema_version": 1,
+  "updated_at": "2026-08-24T17:12:59Z"
+}

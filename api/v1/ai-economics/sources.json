@@ -1,0 +1,401 @@
+{
+  "policy": {
+    "discovery": "candidate discovery does not create canonical observations",
+    "live_check_scope": "first-party evidence plus discovery feeds; secondary evidence URLs remain provenance-only",
+    "reported_vs_estimated": "never collapse source classes"
+  },
+  "schema_version": 1,
+  "sources": [
+    {
+      "bytes": null,
+      "check_live": true,
+      "error": null,
+      "kind": "evidence",
+      "measurement_types": [
+        "company_reported"
+      ],
+      "name": "Anthropic",
+      "required": true,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "not_checked",
+      "url": "https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone"
+    },
+    {
+      "bytes": null,
+      "check_live": true,
+      "error": null,
+      "kind": "evidence",
+      "measurement_types": [
+        "company_reported"
+      ],
+      "name": "Anthropic",
+      "required": true,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "not_checked",
+      "url": "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation"
+    },
+    {
+      "bytes": null,
+      "check_live": true,
+      "error": null,
+      "kind": "evidence",
+      "measurement_types": [
+        "company_reported"
+      ],
+      "name": "Anthropic",
+      "required": true,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "not_checked",
+      "url": "https://www.anthropic.com/news/google-broadcom-partnership-compute"
+    },
+    {
+      "bytes": null,
+      "check_live": true,
+      "error": null,
+      "kind": "evidence",
+      "measurement_types": [
+        "company_reported"
+      ],
+      "name": "Anthropic",
+      "required": true,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "not_checked",
+      "url": "https://www.anthropic.com/news/series-h"
+    },
+    {
+      "bytes": null,
+      "check_live": false,
+      "error": null,
+      "kind": "evidence",
+      "measurement_types": [
+        "media_reported",
+        "third_party_estimate"
+      ],
+      "name": "Bloomberg via TickerTrends",
+      "required": false,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "provenance_only",
+      "url": "https://blog.tickertrends.io/p/openai-arr-tracking-44-3b-bloomberg-40b-run-rate"
+    },
+    {
+      "bytes": null,
+      "check_live": false,
+      "error": null,
+      "kind": "evidence",
+      "measurement_types": [
+        "media_reported"
+      ],
+      "name": "Financial Times",
+      "required": false,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "provenance_only",
+      "url": "https://www.ft.com/content/664249e7-e8d5-4425-b397-ad3ed590b305"
+    },
+    {
+      "bytes": null,
+      "check_live": true,
+      "error": null,
+      "kind": "evidence",
+      "measurement_types": [
+        "company_reported"
+      ],
+      "name": "OpenAI",
+      "required": true,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "not_checked",
+      "url": "https://openai.com/ja-JP/index/a-business-that-scales-with-the-value-of-intelligence/"
+    },
+    {
+      "bytes": null,
+      "check_live": false,
+      "error": null,
+      "kind": "evidence",
+      "measurement_types": [
+        "media_reported"
+      ],
+      "name": "Reuters",
+      "required": false,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "provenance_only",
+      "url": "https://www.reuters.com/business/ai-firm-cohere-doubles-annualized-revenue-100-million-enterprise-focus-2025-05-15/"
+    },
+    {
+      "bytes": null,
+      "check_live": false,
+      "error": null,
+      "kind": "evidence",
+      "measurement_types": [
+        "media_reported"
+      ],
+      "name": "Reuters",
+      "required": false,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "provenance_only",
+      "url": "https://www.reuters.com/business/ai-vibe-coding-startups-burst-onto-scene-with-sky-high-valuations-2025-06-03/"
+    },
+    {
+      "bytes": null,
+      "check_live": false,
+      "error": null,
+      "kind": "evidence",
+      "measurement_types": [
+        "media_reported"
+      ],
+      "name": "Reuters",
+      "required": false,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "provenance_only",
+      "url": "https://www.reuters.com/legal/transactional/spacex-buy-anysphere-60-billion-2026-06-16/"
+    },
+    {
+      "bytes": null,
+      "check_live": false,
+      "error": null,
+      "kind": "evidence",
+      "measurement_types": [
+        "media_reported"
+      ],
+      "name": "Reuters",
+      "required": false,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "provenance_only",
+      "url": "https://www.reuters.com/technology/anthropic-revenue-run-rate-tops-65-billion-source-says-2026-08-17/"
+    },
+    {
+      "bytes": null,
+      "check_live": false,
+      "error": null,
+      "kind": "evidence",
+      "measurement_types": [
+        "media_reported"
+      ],
+      "name": "Reuters",
+      "required": false,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "provenance_only",
+      "url": "https://www.reuters.com/world/asia-pacific/chinas-zhipu-posts-132-rise-annual-revenue-ai-boom-2026-03-31/"
+    },
+    {
+      "bytes": null,
+      "check_live": false,
+      "error": null,
+      "kind": "evidence",
+      "measurement_types": [
+        "media_reported"
+      ],
+      "name": "Reuters Breakingviews",
+      "required": false,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "provenance_only",
+      "url": "https://www.reuters.com/commentary/breakingviews/deepseek-ipo-lays-bare-chinas-shallow-capital-pool-2026-07-16/"
+    },
+    {
+      "bytes": null,
+      "check_live": false,
+      "error": null,
+      "kind": "evidence",
+      "measurement_types": [
+        "media_reported"
+      ],
+      "name": "Reuters citing Bloomberg",
+      "required": false,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "provenance_only",
+      "url": "https://www.reuters.com/technology/musks-xai-posts-net-quarterly-loss-146-billion-bloomberg-news-reports-2026-01-09/"
+    },
+    {
+      "bytes": null,
+      "check_live": false,
+      "error": null,
+      "kind": "evidence",
+      "measurement_types": [
+        "third_party_estimate"
+      ],
+      "name": "Sacra",
+      "required": false,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "provenance_only",
+      "url": "https://sacra.com/c/cursor/"
+    },
+    {
+      "bytes": null,
+      "check_live": false,
+      "error": null,
+      "kind": "evidence",
+      "measurement_types": [
+        "third_party_estimate"
+      ],
+      "name": "Sacra",
+      "required": false,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "provenance_only",
+      "url": "https://sacra.com/c/perplexity/"
+    },
+    {
+      "bytes": null,
+      "check_live": false,
+      "error": null,
+      "kind": "evidence",
+      "measurement_types": [
+        "media_reported"
+      ],
+      "name": "TechCrunch citing investor memo/CNBC",
+      "required": false,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "provenance_only",
+      "url": "https://techcrunch.com/2026/02/13/coheres-240m-year-sets-stage-for-ipo/"
+    },
+    {
+      "bytes": null,
+      "check_live": false,
+      "error": null,
+      "kind": "evidence",
+      "measurement_types": [
+        "media_reported"
+      ],
+      "name": "The Information",
+      "required": false,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "provenance_only",
+      "url": "https://www.theinformation.com/briefings/openai-cfo-says-revenue-growth-accelerated-july"
+    },
+    {
+      "bytes": null,
+      "check_live": false,
+      "error": null,
+      "kind": "evidence",
+      "measurement_types": [
+        "third_party_estimate"
+      ],
+      "name": "TickerTrends",
+      "required": false,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "provenance_only",
+      "url": "https://blog.tickertrends.io/p/anthropic-vs-openai-arr-tracking"
+    },
+    {
+      "bytes": null,
+      "check_live": false,
+      "error": null,
+      "kind": "evidence",
+      "measurement_types": [
+        "third_party_estimate"
+      ],
+      "name": "TickerTrends",
+      "required": false,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "provenance_only",
+      "url": "https://blog.tickertrends.io/p/claude-code-vs-openai-codex-arr"
+    },
+    {
+      "bytes": null,
+      "check_live": false,
+      "error": null,
+      "kind": "evidence",
+      "measurement_types": [
+        "third_party_estimate"
+      ],
+      "name": "TickerTrends",
+      "required": false,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "provenance_only",
+      "url": "https://blog.tickertrends.io/p/openai-arr-growth-accelerated-july-2026"
+    },
+    {
+      "bytes": null,
+      "check_live": false,
+      "error": null,
+      "kind": "evidence",
+      "measurement_types": [
+        "media_reported"
+      ],
+      "name": "Wall Street Journal",
+      "required": false,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "provenance_only",
+      "url": "https://www.wsj.com/finance/stocks/chinese-ai-firm-minimax-more-than-doubles-revenue-in-first-post-ipo-results-64498f3d"
+    },
+    {
+      "bytes": null,
+      "check_live": true,
+      "error": null,
+      "kind": "html",
+      "measurement_types": [
+        "discovery"
+      ],
+      "name": "ARK Invest newsletters",
+      "required": false,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "not_checked",
+      "url": "https://www.ark-invest.com/newsletters"
+    },
+    {
+      "bytes": null,
+      "check_live": true,
+      "error": null,
+      "kind": "html",
+      "measurement_types": [
+        "discovery"
+      ],
+      "name": "Anthropic News",
+      "required": true,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "not_checked",
+      "url": "https://www.anthropic.com/news"
+    },
+    {
+      "bytes": null,
+      "check_live": true,
+      "error": null,
+      "kind": "html",
+      "measurement_types": [
+        "discovery"
+      ],
+      "name": "OpenAI News",
+      "required": true,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "not_checked",
+      "url": "https://openai.com/news/"
+    },
+    {
+      "bytes": null,
+      "check_live": true,
+      "error": null,
+      "kind": "rss",
+      "measurement_types": [
+        "discovery"
+      ],
+      "name": "TickerTrends",
+      "required": false,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "not_checked",
+      "url": "https://blog.tickertrends.io/feed"
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "candidate_count": 0,
+  "comparables_source": {
+    "path": "research/data/ai-economics/comparables.json",
+    "sha256": "9b0d0d8ec594dfb7aa4d9cfd366a736db98339fa416b40d538bba0ac38a5f943"
+  },
+  "content_digest": "fd6a3f582ba974184d4dca9f3d4806f613dd373de62424a8898e0ca51744415e",
+  "coverage": [
+    {
+      "classes": [
+        "company_reported",
+        "media_reported",
+        "third_party_estimate"
+      ],
+      "coverage": "strong",
+      "entity": "OpenAI",
+      "notes": "11 company-level observations plus one Codex product observation. Official 2023-2025 ARR and 2026 media/TickerTrends series are preserved separately.",
+      "observations": 12
+    },
+    {
+      "classes": [
+        "company_reported",
+        "media_reported",
+        "third_party_estimate"
+      ],
+      "coverage": "strong",
+      "entity": "Anthropic",
+      "notes": "Nine company-level observations plus three Claude Code product observations. Official disclosures through May 2026, Reuters July update, and TickerTrends estimates remain separate.",
+      "observations": 12
+    },
+    {
+      "classes": [
+        "media_reported"
+      ],
+      "coverage": "partial",
+      "entity": "Mistral AI",
+      "notes": "2026 annualized run-rate reported by FT; company exact public revenue history remains sparse.",
+      "observations": 1
+    },
+    {
+      "classes": [
+        "media_reported"
+      ],
+      "coverage": "partial",
+      "entity": "Cohere",
+      "notes": "Reuters May 2025 annualized revenue and 2025 ARR reported from investor memo.",
+      "observations": 2
+    },
+    {
+      "classes": [
+        "third_party_estimate"
+      ],
+      "coverage": "partial",
+      "entity": "Perplexity",
+      "notes": "Sacra estimate available; no company-audited revenue disclosure identified in this pass.",
+      "observations": 1
+    },
+    {
+      "classes": [
+        "media_reported"
+      ],
+      "coverage": "partial",
+      "entity": "xAI",
+      "notes": "Quarterly revenue reported for Q3 2025. Forecasts exist but are excluded from seed observations.",
+      "observations": 1
+    },
+    {
+      "classes": [
+        "media_reported"
+      ],
+      "coverage": "partial",
+      "entity": "DeepSeek",
+      "notes": "Reuters Breakingviews reports a 2026 annualized revenue range; no first-party audited figure captured yet.",
+      "observations": 1
+    },
+    {
+      "classes": [
+        "media_reported"
+      ],
+      "coverage": "partial",
+      "entity": "Zhipu AI (Z.ai)",
+      "notes": "2025 revenue reported by Reuters; listed-company filings should become preferred primary evidence.",
+      "observations": 1
+    },
+    {
+      "classes": [
+        "media_reported"
+      ],
+      "coverage": "partial",
+      "entity": "MiniMax",
+      "notes": "2025 revenue reported from post-IPO results; HKEX filing should become preferred primary evidence.",
+      "observations": 1
+    },
+    {
+      "classes": [
+        "media_reported",
+        "third_party_estimate"
+      ],
+      "coverage": "strong",
+      "entity": "Anysphere / Cursor",
+      "notes": "Reuters company-data point and Sacra estimate differ materially; preserve both.",
+      "observations": 3
+    },
+    {
+      "classes": [
+        "media_reported"
+      ],
+      "coverage": "partial",
+      "entity": "Windsurf",
+      "notes": "Reuters 2025 annualized revenue point.",
+      "observations": 1
+    },
+    {
+      "classes": [],
+      "coverage": "gap",
+      "entity": "Google DeepMind / Gemini",
+      "notes": "No standalone DeepMind/Gemini revenue disclosure identified; Alphabet parent/cloud revenue is not comparable and is intentionally excluded.",
+      "observations": 0
+    },
+    {
+      "classes": [],
+      "coverage": "gap",
+      "entity": "Meta AI",
+      "notes": "No standalone Meta AI revenue disclosure identified; parent advertising revenue is not comparable.",
+      "observations": 0
+    },
+    {
+      "classes": [],
+      "coverage": "gap",
+      "entity": "Moonshot AI / Kimi",
+      "notes": "No sufficiently attributable revenue/run-rate observation captured in this pass.",
+      "observations": 0
+    },
+    {
+      "classes": [],
+      "coverage": "not_comparable_parent_segment",
+      "entity": "Alibaba / Qwen",
+      "notes": "Alibaba reports Cloud/AI service revenue, but it is not Qwen-only revenue.",
+      "observations": 0
+    },
+    {
+      "classes": [],
+      "coverage": "not_comparable_parent_segment",
+      "entity": "Baidu / ERNIE",
+      "notes": "Baidu reports AI-powered Core business revenue, but it is broader than ERNIE/model revenue.",
+      "observations": 0
+    }
+  ],
+  "files": {
+    "candidates.json": "1b34f2aa63cfc7a9254a19e81a804b1785e2ff5735b14e958904e06b0aeef72a",
+    "comparables.json": "a7597fab25970fb0556d7992b845cfed60485166badc5934098e69a3d4f4947e",
+    "latest.json": "7d53c80e99af509d955e9040c7df09376fd7918e50eaaeb77034d01379bab229",
+    "observations.ndjson": "062efdf34331d3d6daa070c835ce4df5670c0c8fd8a66df2201ac679548103ca",
+    "sources.json": "e3778df7a9e694712a0843e8167930fa1f399e89c5794982d90d203877b03707"
+  },
+  "inventory": {
+    "path": "research/data/ai-economics/source_inventory.json",
+    "sha256": "d5734e2faa67fd1ab06723711b3c5ad526680a484e4b485901df2b57efe55f40"
+  },
+  "observation_count": 36,
+  "schema_version": 1,
+  "seed": {
+    "path": "research/data/ai-economics/seed_observations.ndjson",
+    "record_count": 36,
+    "sha256": "b01534828d022d7c8d86781136f8dc4b9df658bdf204822d0efb46211fb04811"
+  },
+  "updated_at": "2026-08-24T17:12:59Z"
+}
