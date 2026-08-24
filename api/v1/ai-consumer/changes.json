@@ -1,84 +1,9 @@
 {
-  "compared_to_retrieved_at": "2026-08-23T08:47:54.084388+00:00",
-  "feature_changes": [
-    {
-      "change_type": "added",
-      "record": {
-        "availability_state": "generally_available",
-        "capability": "apple_messages_plugin",
-        "definition": "The Apple Messages plugin became available on all plans in the ChatGPT desktop app for macOS.",
-        "event_type": "plugin_launch",
-        "geography": "not_specified_by_source",
-        "product": "ChatGPT",
-        "provider": "OpenAI",
-        "published_at": "2026-08-20",
-        "source_url": "https://openai.com/products/release-notes/",
-        "status": "launched",
-        "surfaces": [
-          "ChatGPT desktop app for macOS"
-        ]
-      }
-    },
-    {
-      "change_type": "added",
-      "record": {
-        "availability_state": "generally_available",
-        "capability": "interactive_quizzes",
-        "definition": "Interactive quizzes became available to all consumer ChatGPT plans and Edu plans on web and mobile.",
-        "event_type": "feature_expansion",
-        "geography": "supported_markets",
-        "product": "ChatGPT",
-        "provider": "OpenAI",
-        "published_at": "2026-08-14",
-        "source_url": "https://openai.com/products/release-notes/",
-        "status": "launched",
-        "surfaces": [
-          "ChatGPT web",
-          "ChatGPT mobile"
-        ]
-      }
-    },
-    {
-      "change_type": "added",
-      "record": {
-        "availability_state": "rolling_out",
-        "capability": "agentic_tasks_connected_apps",
-        "definition": "Planning, email and calendar connections, research, slides and recurring tasks started rolling out in select markets.",
-        "event_type": "feature_expansion",
-        "geography": "select_markets",
-        "product": "Meta AI",
-        "provider": "Meta",
-        "published_at": "2026-07-24",
-        "source_url": "https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/",
-        "status": "rolling_out",
-        "surfaces": [
-          "Meta AI app",
-          "meta.ai"
-        ]
-      }
-    },
-    {
-      "change_type": "added",
-      "record": {
-        "availability_state": "rolling_out",
-        "capability": "connected_apps",
-        "definition": "Connected apps including Instacart, Canva and YouTube Music started rolling out in AI Mode in the United States.",
-        "event_type": "feature_expansion",
-        "geography": "United States",
-        "product": "AI Mode",
-        "provider": "Google",
-        "published_at": "2026-07-16",
-        "source_url": "https://blog.google/products-and-platforms/products/search/connected-apps/",
-        "status": "rolling_out",
-        "surfaces": [
-          "AI Mode in Google Search"
-        ]
-      }
-    }
-  ],
+  "compared_to_retrieved_at": "2026-08-23T14:14:31.158580+00:00",
+  "feature_changes": [],
   "metric_changes": [],
-  "retrieved_at": "2026-08-23T14:14:31.158580+00:00",
+  "retrieved_at": "2026-08-24T14:00:33.133701+00:00",
   "rule": "Only semantic canonical claim differences count as changes. Retrieval timestamps and raw source-page hash changes are verification evidence, not product changes.",
   "schema_version": 1,
-  "status": "verified_change"
+  "status": "no_verified_change"
 }
