@@ -58,17 +58,35 @@ def write_ndjson(path: Path, rows: list[dict[str, Any]]) -> None:
     path.write_text("".join(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n" for row in rows))
 
 
+def is_number(value: Any) -> bool:
+    return isinstance(value, (int, float)) and not isinstance(value, bool)
+
+
+def infer_currency(unit: str) -> str | None:
+    prefix = unit.split("_", 1)[0].upper() if unit else ""
+    return prefix if prefix in {"USD", "EUR", "CNY", "JPY", "GBP"} else None
+
+
 def normalize(raw: dict[str, Any], observed_at: str) -> dict[str, Any]:
     kind = raw.get("measurement_type")
     if kind not in ALLOWED:
         raise ValueError(f"unsupported measurement_type: {kind}")
     unit = str(raw.get("unit") or "")
-    currency = raw.get("currency") or ("USD" if unit.startswith("USD") else None)
+    currency = raw.get("currency") or infer_currency(unit)
+    value = raw.get("value")
+    value_min = raw.get("value_min")
+    value_max = raw.get("value_max")
+    has_scalar = is_number(value)
+    has_range = is_number(value_min) and is_number(value_max) and value_min <= value_max
+    if not (has_scalar or has_range):
+        raise ValueError(f"observation needs numeric value or ordered numeric range: {raw}")
     row = {
         "provider": raw.get("entity") or raw.get("provider"),
         "product": raw.get("product"),
         "metric": raw.get("metric"),
-        "value": raw.get("value"),
+        "value": value if has_scalar else None,
+        "value_min": value_min if has_range else None,
+        "value_max": value_max if has_range else None,
         "currency": currency,
         "unit": unit,
         "qualifier": raw.get("qualifier"),
@@ -82,13 +100,11 @@ def normalize(raw: dict[str, Any], observed_at: str) -> dict[str, Any]:
         "notes": raw.get("notes") or raw.get("evidence_summary"),
         "confidence": raw.get("confidence"),
     }
-    required = ("provider", "metric", "value", "currency", "unit", "effective_at", "observed_at", "source_name", "source_url")
+    required = ("provider", "metric", "currency", "unit", "effective_at", "observed_at", "source_name", "source_url")
     missing = [key for key in required if row.get(key) in (None, "")]
     if missing:
         raise ValueError(f"missing {missing}: {raw}")
-    if isinstance(row["value"], bool) or not isinstance(row["value"], (int, float)):
-        raise ValueError(f"non-numeric value: {raw}")
-    identity = {key: row.get(key) for key in ("provider", "product", "metric", "value", "currency", "unit", "qualifier", "effective_at", "measurement_type", "source_url")}
+    identity = {key: row.get(key) for key in ("provider", "product", "metric", "value", "value_min", "value_max", "currency", "unit", "qualifier", "effective_at", "measurement_type", "source_url")}
     row["observation_id"] = sha(stable(identity))
     return row
 

@@ -6,7 +6,7 @@ import sys
 from pathlib import Path
 
 ALLOWED = {"company_reported", "media_reported", "third_party_estimate", "derived", "modeled"}
-REQUIRED = {"provider", "metric", "value", "currency", "unit", "effective_at", "observed_at", "measurement_type", "source_name", "source_url", "methodology", "observation_id"}
+REQUIRED = {"provider", "metric", "currency", "unit", "effective_at", "observed_at", "measurement_type", "source_name", "source_url", "methodology", "observation_id"}
 
 
 def load_json(path: Path):
@@ -15,6 +15,10 @@ def load_json(path: Path):
 
 def sha(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def is_number(value) -> bool:
+    return isinstance(value, (int, float)) and not isinstance(value, bool)
 
 
 def validate(root: Path) -> None:
@@ -27,7 +31,9 @@ def validate(root: Path) -> None:
     for row in rows:
         assert REQUIRED <= row.keys(), row
         assert row["measurement_type"] in ALLOWED, row
-        assert isinstance(row["value"], (int, float)) and not isinstance(row["value"], bool), row
+        scalar = is_number(row.get("value"))
+        ranged = is_number(row.get("value_min")) and is_number(row.get("value_max")) and row["value_min"] <= row["value_max"]
+        assert scalar or ranged, row
         assert row["observation_id"] not in ids, row["observation_id"]
         ids.add(row["observation_id"])
     for provider in ("OpenAI", "Anthropic"):
@@ -35,6 +41,10 @@ def validate(root: Path) -> None:
         assert len({str(r["effective_at"]) for r in provider_rows}) >= 3, provider
         assert "company_reported" in {r["measurement_type"] for r in provider_rows}, provider
         assert "third_party_estimate" in {r["measurement_type"] for r in provider_rows}, provider
+    deepseek = next(r for r in rows if r["provider"] == "DeepSeek")
+    assert deepseek["value"] is None and deepseek["value_min"] == 0.4 and deepseek["value_max"] == 0.5
+    zhipu = next(r for r in rows if r["provider"] == "Zhipu AI (Z.ai)")
+    assert zhipu["currency"] == "CNY"
     latest = load_json(root / "latest.json")
     assert latest["series_key"] == ["provider", "product", "metric", "measurement_type"]
     assert all(row["observation_id"] in ids for row in latest["records"])

@@ -14,6 +14,15 @@ class AiEconomicsTest(unittest.TestCase):
         self.assertEqual(row["measurement_type"], "third_party_estimate")
         self.assertEqual(row["currency"], "USD")
 
+    def test_range_and_native_currency_are_preserved(self):
+        ranged = normalize({"entity": "DeepSeek", "metric": "annualized_revenue_run_rate", "value_min": 0.4, "value_max": 0.5, "unit": "USD_billion_per_year", "qualifier": "reported_range", "as_of": "2026-07", "measurement_type": "media_reported", "source_name": "Reuters", "source_url": "https://example.com/deepseek"}, "2026-08-24T00:00:00Z")
+        self.assertIsNone(ranged["value"])
+        self.assertEqual((ranged["value_min"], ranged["value_max"]), (0.4, 0.5))
+        self.assertEqual(ranged["currency"], "USD")
+        native = normalize({"entity": "Zhipu AI (Z.ai)", "metric": "annual_revenue", "value": 0.724, "unit": "CNY_billion", "qualifier": "reported", "as_of": "2025", "measurement_type": "media_reported", "source_name": "Reuters", "source_url": "https://example.com/zhipu"}, "2026-08-24T00:00:00Z")
+        self.assertEqual(native["currency"], "CNY")
+        self.assertEqual(native["value"], 0.724)
+
     def test_build_is_idempotent_offline(self):
         with tempfile.TemporaryDirectory() as tmp:
             first = Path(tmp) / "first"
