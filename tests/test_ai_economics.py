@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from research.update_ai_economics import build, normalize
+from research.update_ai_economics import build, normalize, registry
 from research.validate_ai_economics import validate
 
 
@@ -22,6 +22,17 @@ class AiEconomicsTest(unittest.TestCase):
         native = normalize({"entity": "Zhipu AI (Z.ai)", "metric": "annual_revenue", "value": 0.724, "unit": "CNY_billion", "qualifier": "reported", "as_of": "2025", "measurement_type": "media_reported", "source_name": "Reuters", "source_url": "https://example.com/zhipu"}, "2026-08-24T00:00:00Z")
         self.assertEqual(native["currency"], "CNY")
         self.assertEqual(native["value"], 0.724)
+
+    def test_secondary_evidence_is_provenance_only(self):
+        rows = [
+            normalize({"entity": "A", "metric": "arr", "value": 1, "unit": "USD_billion_per_year", "as_of": "2026", "measurement_type": "company_reported", "source_name": "A", "source_url": "https://example.com/a"}, "2026-08-24T00:00:00Z"),
+            normalize({"entity": "B", "metric": "arr", "value": 2, "unit": "USD_billion_per_year", "as_of": "2026", "measurement_type": "media_reported", "source_name": "Reuters", "source_url": "https://example.com/b"}, "2026-08-24T00:00:00Z"),
+        ]
+        sources = {r["url"]: r for r in registry(rows)}
+        self.assertTrue(sources["https://example.com/a"]["check_live"])
+        self.assertTrue(sources["https://example.com/a"]["required"])
+        self.assertFalse(sources["https://example.com/b"]["check_live"])
+        self.assertFalse(sources["https://example.com/b"]["required"])
 
     def test_build_is_idempotent_offline(self):
         with tempfile.TemporaryDirectory() as tmp:

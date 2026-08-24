@@ -20,10 +20,10 @@ COMPARABLES = ROOT / "research/data/ai-economics/comparables.json"
 OUTPUT = ROOT / "api/v1/ai-economics"
 ALLOWED = {"company_reported", "media_reported", "third_party_estimate", "derived", "modeled"}
 DISCOVERY = [
-    {"name": "TickerTrends", "url": "https://blog.tickertrends.io/feed", "kind": "rss", "required": False},
-    {"name": "OpenAI News", "url": "https://openai.com/news/", "kind": "html", "required": True},
-    {"name": "Anthropic News", "url": "https://www.anthropic.com/news", "kind": "html", "required": True},
-    {"name": "ARK Invest newsletters", "url": "https://www.ark-invest.com/newsletters", "kind": "html", "required": False},
+    {"name": "TickerTrends", "url": "https://blog.tickertrends.io/feed", "kind": "rss", "required": False, "check_live": True},
+    {"name": "OpenAI News", "url": "https://openai.com/news/", "kind": "html", "required": True, "check_live": True},
+    {"name": "Anthropic News", "url": "https://www.anthropic.com/news", "kind": "html", "required": True, "check_live": True},
+    {"name": "ARK Invest newsletters", "url": "https://www.ark-invest.com/newsletters", "kind": "html", "required": False, "check_live": True},
 ]
 KEYWORDS = ("arr", "annual recurring revenue", "annualized revenue", "revenue run rate", "run-rate revenue", "claude code", "codex", "openai", "anthropic")
 
@@ -168,9 +168,11 @@ def registry(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     out: dict[str, dict[str, Any]] = {}
     for row in rows:
         url = row["source_url"]
-        item = out.setdefault(url, {"name": row["source_name"], "url": url, "kind": "evidence", "measurement_types": [], "required": False})
+        item = out.setdefault(url, {"name": row["source_name"], "url": url, "kind": "evidence", "measurement_types": [], "required": False, "check_live": False})
         if row["measurement_type"] not in item["measurement_types"]: item["measurement_types"].append(row["measurement_type"])
-        item["required"] = item["required"] or row["measurement_type"] == "company_reported"
+        if row["measurement_type"] == "company_reported":
+            item["required"] = True
+            item["check_live"] = True
     for row in DISCOVERY:
         out.setdefault(row["url"], {**row, "measurement_types": ["discovery"]})
     return sorted(out.values(), key=lambda r: (r["kind"], r["name"], r["url"]))
@@ -181,7 +183,9 @@ def source_health(items: list[dict[str, Any]], previous: dict[str, Any], do_fetc
     for item in items:
         row = dict(item); prior = old.get(item["url"], {})
         if not do_fetch:
-            row.update({key: prior.get(key) for key in ("status", "retrieved_at", "sha256", "bytes", "error")}); row["status"] = row["status"] or "not_checked"; output.append(row); continue
+            row.update({key: prior.get(key) for key in ("status", "retrieved_at", "sha256", "bytes", "error")}); row["status"] = row["status"] or ("not_checked" if item.get("check_live") else "provenance_only"); output.append(row); continue
+        if not item.get("check_live"):
+            row.update({"status": "provenance_only", "retrieved_at": prior.get("retrieved_at"), "sha256": prior.get("sha256"), "bytes": prior.get("bytes"), "error": None}); output.append(row); continue
         try:
             data = fetch(item["url"]); digest = sha(data); same = prior.get("status") == "ok" and prior.get("sha256") == digest
             row.update({"status": "ok", "retrieved_at": prior.get("retrieved_at") if same else checked, "sha256": digest, "bytes": len(data), "error": None})
@@ -211,7 +215,7 @@ def build(output: Path, previous: Path | None = None, fetch_sources: bool = Fals
     write_ndjson(output / "observations.ndjson", rows)
     write_json(output / "latest.json", {"schema_version": 1, "series_key": ["provider", "product", "metric", "measurement_type"], "records": latest(rows)})
     write_json(output / "comparables.json", read_json(COMPARABLES, {"schema_version": 1, "records": []}))
-    write_json(output / "sources.json", {"schema_version": 1, "policy": {"reported_vs_estimated": "never collapse source classes", "discovery": "candidate discovery does not create canonical observations"}, "sources": sources})
+    write_json(output / "sources.json", {"schema_version": 1, "policy": {"reported_vs_estimated": "never collapse source classes", "discovery": "candidate discovery does not create canonical observations", "live_check_scope": "first-party evidence plus discovery feeds; secondary evidence URLs remain provenance-only"}, "sources": sources})
     write_json(output / "candidates.json", {"schema_version": 1, "status": "discovery_only", "candidates": candidates})
     names = ("observations.ndjson", "latest.json", "comparables.json", "sources.json", "candidates.json"); payloads = {name: (output / name).read_bytes() for name in names}; content_digest = digest_files(payloads)
     updated_at = prev_manifest.get("updated_at") if prev_manifest.get("content_digest") == content_digest else now_iso(); updated_at = updated_at or now_iso()
