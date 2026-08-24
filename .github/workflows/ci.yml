@@ -23,11 +23,15 @@ jobs:
       - name: Compile
         run: python -m compileall -q research tests
       - name: Unit tests
-        run: python -m unittest tests.test_openai_signals_collector tests.test_ai_consumer_ledger -v
-      - name: Build live primary-source evidence
+        run: python -m unittest tests.test_openai_signals_collector tests.test_ai_consumer_ledger tests.test_ai_economics -v
+      - name: Build live primary-source consumer evidence
         run: python research/update_ai_consumer.py --output /tmp/ai-consumer
-      - name: Validate live outputs
+      - name: Validate consumer outputs
         run: python research/validate_ai_consumer.py /tmp/ai-consumer
+      - name: Build deterministic AI economics evidence
+        run: |
+          python research/update_ai_economics.py --output /tmp/ai-economics
+          python research/validate_ai_economics.py /tmp/ai-economics
       - name: Clean checkout
         run: |
           find . -type d -name __pycache__ -prune -exec rm -rf {} +

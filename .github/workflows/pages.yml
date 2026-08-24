@@ -6,17 +6,25 @@ on:
     paths:
       - web/**
       - api/v1/ai-consumer/**
+      - api/v1/ai-economics/**
+      - research/data/ai-economics/**
       - research/collect_openai_signals.py
       - research/update_ai_consumer.py
       - research/validate_ai_consumer.py
+      - research/update_ai_economics.py
+      - research/validate_ai_economics.py
       - .github/workflows/pages.yml
   pull_request:
     paths:
       - web/**
       - api/v1/ai-consumer/**
+      - api/v1/ai-economics/**
+      - research/data/ai-economics/**
       - research/collect_openai_signals.py
       - research/update_ai_consumer.py
       - research/validate_ai_consumer.py
+      - research/update_ai_economics.py
+      - research/validate_ai_economics.py
       - .github/workflows/pages.yml
   workflow_dispatch:
 
@@ -37,30 +45,46 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
-      - name: Build live canonical projection from primary-source contract
+      - name: Build live canonical consumer projection
         run: |
           rm -rf /tmp/pages-ai-consumer
           python research/update_ai_consumer.py \
             --output /tmp/pages-ai-consumer \
             --previous-root api/v1/ai-consumer
           python research/validate_ai_consumer.py /tmp/pages-ai-consumer
-      - name: Build Pages artifact from canonical projection
+      - name: Build deterministic AI economics projection
+        run: |
+          rm -rf /tmp/pages-ai-economics
+          python research/update_ai_economics.py \
+            --output /tmp/pages-ai-economics \
+            --previous-root api/v1/ai-economics
+          python research/validate_ai_economics.py /tmp/pages-ai-economics
+      - name: Build Pages artifact from canonical projections
         run: |
           mkdir -p web/api/v1
-          rm -rf web/api/v1/ai-consumer
+          rm -rf web/api/v1/ai-consumer web/api/v1/ai-economics
           cp -R /tmp/pages-ai-consumer web/api/v1/ai-consumer
+          cp -R /tmp/pages-ai-economics web/api/v1/ai-economics
           python - <<'PY'
           import json, os
           from pathlib import Path
           Path('web/deployment.json').write_text(json.dumps({'source_commit':os.environ['GITHUB_SHA']},indent=2)+'\n')
           changes=json.loads(Path('web/api/v1/ai-consumer/changes.json').read_text())
           features=json.loads(Path('web/api/v1/ai-consumer/features.json').read_text())
+          economics=json.loads(Path('web/api/v1/ai-economics/index.json').read_text())
+          latest=json.loads(Path('web/api/v1/ai-economics/latest.json').read_text())
+          comparables=json.loads(Path('web/api/v1/ai-economics/comparables.json').read_text())
           assert changes['status'] in {'verified_change','no_verified_change'}
           assert max(row['published_at'] for row in features['events']) >= '2026-08-20'
+          assert economics['observation_count'] >= 36
+          assert any(row['provider']=='OpenAI' for row in latest['records'])
+          assert any(row['entity']=='Microsoft' for row in comparables['records'])
           html=Path('web/index.html').read_text()
+          econ=Path('web/economics.html').read_text()
           assert 'api/v1/ai-consumer/changes.json' in html
-          assert 'No verified feature change in this refresh.' in html
           assert 'LATEST VERIFIED CAPABILITY' in html
+          assert 'api/v1/ai-economics' in econ
+          assert 'Reported / estimated' in econ
           PY
       - uses: actions/configure-pages@v5
         if: github.event_name != 'pull_request'
@@ -79,7 +103,7 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
-      - name: Verify exact deployed revision and semantic change surface
+      - name: Verify exact deployed revision and both canonical surfaces
         env:
           PAGE_URL: ${{ steps.deployment.outputs.page_url }}
         run: |
@@ -87,24 +111,23 @@ jobs:
           import json, os, time
           from urllib.parse import urljoin
           from urllib.request import urlopen
-          base=os.environ['PAGE_URL']
-          expected=os.environ['GITHUB_SHA']
-          last=None
+          base=os.environ['PAGE_URL']; expected=os.environ['GITHUB_SHA']; last=None
           for _ in range(30):
               try:
                   with urlopen(urljoin(base,'deployment.json'),timeout=10) as r: dep=json.load(r)
-                  with urlopen(urljoin(base,'api/v1/ai-consumer/index.json'),timeout=10) as r: idx=json.load(r)
-                  with urlopen(urljoin(base,'api/v1/ai-consumer/changes.json'),timeout=10) as r: changes=json.load(r)
-                  with urlopen(urljoin(base,'api/v1/ai-consumer/features.json'),timeout=10) as r: features=json.load(r)
+                  with urlopen(urljoin(base,'api/v1/ai-consumer/index.json'),timeout=10) as r: consumer=json.load(r)
+                  with urlopen(urljoin(base,'api/v1/ai-economics/index.json'),timeout=10) as r: economics=json.load(r)
+                  with urlopen(urljoin(base,'api/v1/ai-economics/latest.json'),timeout=10) as r: latest=json.load(r)
+                  with urlopen(urljoin(base,'economics.html'),timeout=10) as r: econ_html=r.read().decode()
                   with urlopen(base,timeout=10) as r: html=r.read().decode()
                   assert dep['source_commit']==expected, dep
-                  assert idx['schema_version']==2 and idx['datasets']['changes']=='changes.json'
-                  assert changes['status'] in {'verified_change','no_verified_change'}
-                  assert max(row['published_at'] for row in features['events']) >= '2026-08-20'
-                  assert all(row['availability_state'] for row in features['events'])
-                  assert 'api/v1/ai-consumer/changes.json' in html
+                  assert consumer['schema_version']==2
+                  assert economics['schema_version']==1 and economics['observation_count']>=36
+                  assert any(row['provider']=='OpenAI' for row in latest['records'])
                   assert 'LATEST VERIFIED CAPABILITY' in html
-                  print({'page_url':base,'source_commit':expected,'retrieved_at':idx['retrieved_at'],'change_status':changes['status']})
+                  assert 'Reported / estimated' in econ_html
+                  assert 'AI Economics' in econ_html
+                  print({'page_url':base,'source_commit':expected,'economics_observations':economics['observation_count']})
                   break
               except Exception as exc:
                   last=exc; time.sleep(2)

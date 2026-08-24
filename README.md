@@ -1,79 +1,69 @@
-# finAnalist — consumer AI adoption evidence
+# finAnalist — consumer AI adoption & economics evidence
 
 [![CI](https://github.com/KAFKA2306/finAnalist/actions/workflows/ci.yml/badge.svg)](https://github.com/KAFKA2306/finAnalist/actions/workflows/ci.yml)
 [![AI consumer source](https://github.com/KAFKA2306/finAnalist/actions/workflows/ai-consumer-source.yml/badge.svg)](https://github.com/KAFKA2306/finAnalist/actions/workflows/ai-consumer-source.yml)
+[![AI economics source](https://github.com/KAFKA2306/finAnalist/actions/workflows/ai-economics-source.yml/badge.svg)](https://github.com/KAFKA2306/finAnalist/actions/workflows/ai-economics-source.yml)
 [![Deploy Pages](https://github.com/KAFKA2306/finAnalist/actions/workflows/pages.yml/badge.svg)](https://github.com/KAFKA2306/finAnalist/actions/workflows/pages.yml)
 
-**OpenAI / Google / Meta のconsumer AIが、検索・意思決定・マルチモーダル操作・購入の入口へ広がっているかを、各社の一次情報だけで追跡します。**
+Consumer AIの**利用・能力**と、frontier AI providersの**ARR / revenue run rate / revenue**を、定義とsource provenanceを保ったまま追跡するrepositoryです。
 
-公開ダッシュボード: https://kafka2306.github.io/finAnalist/
+- Consumer AI dashboard: https://kafka2306.github.io/finAnalist/
+- AI Economics dashboard: https://kafka2306.github.io/finAnalist/economics.html
 
-旧NewsAPI / Alpha Vantage投資レポートprototypeは正準成果物ではありません。現在の安定したmachine-readable surfaceは [`api/v1/ai-consumer/`](api/v1/ai-consumer/) です。Pagesはこの正準APIだけをread-onlyで表示し、別のcurrent値を持ちません。
+## Canonical APIs
 
-## Canonical outputs
+### Consumer AI
 
-- [`metrics.json`](api/v1/ai-consumer/metrics.json) — provider/product/metricごとの公式usage observation
-- [`features.json`](api/v1/ai-consumer/features.json) — feature launch / rollout / announcement event。usageとは別table
-- [`comparison.json`](api/v1/ai-consumer/comparison.json) — provider × metric definitionの最新公表値。WAU↔MAUの換算はしない
-- [`openai-signals.json`](api/v1/ai-consumer/openai-signals.json) — OpenAI Signals公式CSV bundleのfile inventory / SHA-256
-- [`manifest.json`](api/v1/ai-consumer/manifest.json) — 全一次sourceのURL / retrieved evidence hash / file hash
-- [`index.json`](api/v1/ai-consumer/index.json) — 安定したentry point
+`api/v1/ai-consumer/`
 
-## Data contract
+- `metrics.json` — provider/product/metricごとの公式usage observation
+- `features.json` — feature launch / rollout / announcement event
+- `comparison.json` —同一定義内のlatest comparison
+- `openai-signals.json` — OpenAI Signals公式CSV bundle metadata
+- `manifest.json` — source / retrieved evidence hash / output hash
+- `index.json` — stable entry point
 
-各usage observationは以下を必須にします。
+### AI Economics
 
-- `provider`
-- `product`
-- `metric`
-- `value` / `unit` / `qualifier`
-- `geography`
-- `period`
-- `as_of`
-- `definition`
-- `source_url`
+`api/v1/ai-economics/`
 
-重要な分離規則:
+- `observations.ndjson` — append-onlyの経済観測履歴
+- `latest.json` — `provider × product × metric × measurement_type` ごとのlatest observation
+- `comparables.json` — Microsoft / Salesforce / Adobe / SAP等の比較用一次財務値
+- `sources.json` — source class / source health / response SHA-256
+- `candidates.json` — RSS / official news indexから発見した候補。canonical observationとは分離
+- `manifest.json` — seed / inventory / output hash / coverage
+- `index.json` — stable entry point
 
-- weekly active users / monthly active users / subscriber count / query count / message countを別metricとして保持
-- `greater_than` / `nearly` 等の公式qualifierを捨てない
-- feature launchとactual usageを別tableにする
-- `announced` と `launched` を同一視しない
-- third-party traffic estimateをofficial observationに混ぜない
-- 数値非開示期間を補間しない
-- 異なるmetric definitionを月次換算等で疑似比較しない
+## Data rules
 
-## Primary sources
-
-- OpenAI Signals: https://openai.com/signals/data-download/
-- OpenAI product/company announcements: https://openai.com/news/
-- Google Search / Alphabet official posts: https://blog.google/products-and-platforms/products/search/
-- Meta Newsroom: https://about.fb.com/news/
-
-`research/update_ai_consumer.py` はledger内で参照する各公式URLをlive取得し、response SHA-256をmanifestへ保存します。OpenAI Signalsは公式CSV ZIP自体のSHA-256と各CSV metadataも保持します。
+- `company_reported` / `media_reported` / `third_party_estimate` / `derived` / `modeled` を混ぜない。
+- ARR、annualized revenue run rate、annual revenue、quarterly revenueを別metricとして保持する。
+- `effective_at` と `observed_at` を分離する。
+- 推定値が更新されても過去値を上書きしない。
+- standalone revenueが確認できないproviderを親会社segment revenueで埋めない。
+- 異なる通貨を無断換算しない。SAPのEUR値はUSD比較barから除外する。
+- discovery sourceの更新だけでcanonical observationを作らない。
 
 ## Rebuild
 
 ```bash
 python research/update_ai_consumer.py
+python research/validate_ai_consumer.py api/v1/ai-consumer
+
+python research/update_ai_economics.py
+python research/validate_ai_economics.py api/v1/ai-economics
 ```
 
-GitHub Actionsの `AI consumer source` は平日に一次情報を再検証し、evidenceが変わった場合だけ [`api/v1/ai-consumer/`](api/v1/ai-consumer/) をcommitします。`Deploy Pages` はmain上の同じcanonical APIを静的artifactへ同梱し、公開後にexact source commitと主要JSONを再検証します。
+`AI economics source` workflowは平日にsourceをlive取得し、一次sourceはfail-closedで検証します。TickerTrends / ARK / media source等のdiscovery候補はsource attributionを残して蓄積し、canonical observationへ自動昇格させません。内容が変わらなければ同じcanonical outputを維持します。
 
 ## Verification
 
 ```bash
-python -m unittest tests.test_openai_signals_collector tests.test_ai_consumer_ledger -v
+python -m unittest \
+  tests.test_openai_signals_collector \
+  tests.test_ai_consumer_ledger \
+  tests.test_ai_economics -v
 ```
 
-CIはさらにlive sourceを取得して、次をfail-closedで検証します。
-
-- OpenAI / Google / Metaの3 providerが存在する
-- 公式公表履歴が12か月以上ある
-- metric definition / geography / period / sourceが欠落しない
-- usage / feature eventが分離されている
-- WAU / MAUを相互換算していない
-- third-party traffic sourceが混入していない
-- OpenAI Signals bundleが実際に取得できる
-
-Tracked work: https://github.com/KAFKA2306/finAnalist/issues/11
+Pages workflowはconsumerとeconomicsのcanonical projectionを同じsource commitからbuildし、deployment後にexact commitと両APIを再取得して検証します。
