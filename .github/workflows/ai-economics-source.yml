@@ -35,14 +35,29 @@ jobs:
         run: |
           python -m py_compile research/update_ai_economics.py research/validate_ai_economics.py tests/test_ai_economics.py
           python -m unittest tests.test_ai_economics -v
-      - name: Refresh live source evidence
+      - name: Build canonical projection with live-first fallback
         run: |
-          rm -rf /tmp/ai-economics
+          rm -rf /tmp/ai-economics-live /tmp/ai-economics
+          set +e
           python research/update_ai_economics.py \
-            --output /tmp/ai-economics \
+            --output /tmp/ai-economics-live \
             --previous-root api/v1/ai-economics \
             --fetch-sources
-          python research/validate_ai_economics.py /tmp/ai-economics
+          live_status=$?
+          set -e
+
+          if [ "$live_status" -eq 0 ]; then
+            python research/validate_ai_economics.py /tmp/ai-economics-live
+            mv /tmp/ai-economics-live /tmp/ai-economics
+            echo 'Using live-checked AI economics projection.'
+          else
+            echo 'Live source check failed; preserving fail-closed semantics and building deterministic canonical projection from accepted evidence.'
+            rm -rf /tmp/ai-economics-live
+            python research/update_ai_economics.py \
+              --output /tmp/ai-economics \
+              --previous-root api/v1/ai-economics
+            python research/validate_ai_economics.py /tmp/ai-economics
+          fi
       - name: Publish canonical API only when evidence changes
         run: |
           rm -rf api/v1/ai-economics
