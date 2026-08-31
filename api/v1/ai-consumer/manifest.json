@@ -2,7 +2,7 @@
   "files": {
     "changes.json": {
       "bytes": 404,
-      "sha256": "e9fd4c77729da8a2a166bb025ca70d13a85bbb1058e77cef432e3fa27265f577"
+      "sha256": "1f91dca3bb86179f1248598d0c0dcbec1f553e2130130ecebe68c4283b20bd70"
     },
     "comparison.json": {
       "bytes": 3860,
@@ -10,19 +10,19 @@
     },
     "features.json": {
       "bytes": 7067,
-      "sha256": "aad2ffbb64b6fa886a1980d55dd72244837297cb3e65080397fef4a6bdb28982"
+      "sha256": "6a2f34804b8185de2bd7e5d50fb29d0e199efda0950431b53b2b9e5b3a37c099"
     },
     "index.json": {
       "bytes": 277,
-      "sha256": "1f1b0d6753dc494412b8e0e342ae56a7ac08df94af89dabd1ad5d9d51f0f2fbe"
+      "sha256": "e3dfb63805c5b7aba6aea6c0b2695444fe156d4db9e9b8bee3a4fb72feea3112"
     },
     "metrics.json": {
       "bytes": 8237,
-      "sha256": "dfa1c4502ff3cd8c1ca91e4e2893962cfeb9d67dab83dd303465368285220356"
+      "sha256": "47fbbb2fa74dd85475dc1ed6e6a6202be45a53b75520512e0d3bee751b10737b"
     },
     "openai-signals.json": {
       "bytes": 29404,
-      "sha256": "4d3626a4706c7e35f3737a4e24d7026257c758493909ea13077ed41ca2036764"
+      "sha256": "02e5fabd842a8fca6fc204d235e9b2ab01044de43c53ffe1ac31195c8140e7be"
     }
   },
   "openai_signals_bundle": {
@@ -32,7 +32,7 @@
     "url": "https://cdn.openai.com/signals/data-download-csv.zip"
   },
   "primary_source_count": 21,
-  "retrieved_at": "2026-08-28T23:01:00.139523+00:00",
+  "retrieved_at": "2026-08-31T19:29:37.323979+00:00",
   "schema_version": 2,
   "sources": [
     {
@@ -41,7 +41,7 @@
       "claim_sha256": "de4619365c613a57885d535aeccae82e20d18c2c5ba488437336650154454587",
       "http_status": 200,
       "retrieval_status": "ok",
-      "sha256": "8578270015a932f28d85e112dc61913c3efbe0546f00c21cefcc5b6379dfad45",
+      "sha256": "fe42f4a53c78b5eabf108d0f0c4ca667e88289567f67c04ff818d4022235d464",
       "url": "https://about.fb.com/news/2024/07/meta-ai-is-now-multilingual-more-creative-and-smarter/"
     },
     {
@@ -50,7 +50,7 @@
       "claim_sha256": "d2bad4d1b5bfbb63638ef308ddc1d451fcced075f90736278a737ed92b6ab266",
       "http_status": 200,
       "retrieval_status": "ok",
-      "sha256": "2020e2714f39da1d586de1e3c524194b8561e74fa603e84f69af5d097d4b6540",
+      "sha256": "027fbc381cf60d6392e202424e6e0f089d0273c838b509ff13a83329f65e6e6d",
       "url": "https://about.fb.com/news/2024/09/metas-ai-product-news-connect/"
     },
     {
@@ -59,7 +59,7 @@
       "claim_sha256": "f41fbbf2a8d5016602a2c2c0f1ceead22882130145b2d88db6ff48d431ca939f",
       "http_status": 200,
       "retrieval_status": "ok",
-      "sha256": "f94b86253de069552eb6fbd3483a2250d8ff32b5243fecc704f9ae8e45fad015",
+      "sha256": "89debba73731577c26353cacfa96da49d5dc85b75f29000bf68a8f38d82b4098",
       "url": "https://about.fb.com/news/2024/12/our-year-in-review-metas-2024-highlights/"
     },
     {
@@ -68,7 +68,7 @@
       "claim_sha256": "abf3bfb93e7f6315c876c410dacebe990a009cd0e9263c5075f03d876fbd30f1",
       "http_status": 200,
       "retrieval_status": "ok",
-      "sha256": "83a570934845585452f2f3bc6b489bdf186b856687d0b2939b0814b0aaa2fdb2",
+      "sha256": "16e756a58dfd829e9b9c2e4d8d42154161179b8ee4210add0cc3f022ec03c7d9",
       "url": "https://about.fb.com/news/2025/03/europe-meet-your-newest-assistant-meta-ai/"
     },
     {
@@ -77,7 +77,7 @@
       "claim_sha256": "26af185024efaa2752a480f71545b65bc61b90d25571e2a0f9cb8718ede6a96e",
       "http_status": 200,
       "retrieval_status": "ok",
-      "sha256": "dcc504b9f81458861b47afcad4d34f33252bc21ac01178f9013fcd3d9dec4cbd",
+      "sha256": "03327bd60670ede0ae53c89cbb2fe91a60faf5195625916d7f926c096c7d9b81",
       "url": "https://about.fb.com/news/2025/04/introducing-meta-ai-app-new-way-access-ai-assistant/"
     },
     {
@@ -86,16 +86,16 @@
       "claim_sha256": "5fb7bab5c48928110ba217808ebfec7a0a24dde1080d01346a6f9c6ca88f2da7",
       "http_status": 200,
       "retrieval_status": "ok",
-      "sha256": "589d18bd8d515e05908706cc380387203cae46e83a21a3bc8c644e97d3e50bab",
+      "sha256": "ca8cf45ade548884c1ef232d7cbac361df7b700a946dac28b9521356166c8a42",
       "url": "https://about.fb.com/news/2025/10/improving-your-recommendations-apps-ai-meta/"
     },
     {
-      "bytes": 567166,
+      "bytes": 538850,
       "claim_count": 1,
       "claim_sha256": "77c10d2f29e9a33a564f44a95c2aef492c869638f71558a14e220be2e8c81945",
       "http_status": 200,
       "retrieval_status": "ok",
-      "sha256": "da4d3ca5d72a323ad7d020385534428f455659e556e120b375d86da8a1ba0b92",
+      "sha256": "159d5a97aed4d7426dc6a722f65b53ed5136decac7e019e2540433477c4612de",
       "url": "https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/"
     },
     {
@@ -104,7 +104,7 @@
       "claim_sha256": "8bc227a6dbc12f42f3c6963c1907f552b94ab5a07ba34c3e87a7de716fb97572",
       "http_status": 200,
       "retrieval_status": "ok",
-      "sha256": "26591d412a391229dc3040b32a709fa8a3f6b18d4d9e2caa68e25c130fd9c81e",
+      "sha256": "3867eb747eb19d9d6fcda4c474907139dd37884aa6dc09414a06b8f2c0e09799",
       "url": "https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q1-2025/"
     },
     {
@@ -113,7 +113,7 @@
       "claim_sha256": "ea4d00456680ad273c0f33e3fdc18d88fe1b45cb2c0d03d805c0c3df251c53a0",
       "http_status": 200,
       "retrieval_status": "ok",
-      "sha256": "ffa6dacae0733ed91b0e55b219c3ba75b1ae859ba5371a7d1ad7143695db9e76",
+      "sha256": "27fe4de0921e848fc3213d90b75865c5dd760baf1dbbd694d9c16ec2f642766f",
       "url": "https://blog.google/products-and-platforms/products/search/ai-mode-search/"
     },
     {
@@ -122,7 +122,7 @@
       "claim_sha256": "4e0ac337124b74fdf49e68de3863d6b3fd1e74a0cbd4287edc89a2d8a80997e8",
       "http_status": 200,
       "retrieval_status": "ok",
-      "sha256": "4ed513b8dbecc53ec1b1c13791330235258d5555dd438fcf6a7e57c6f4b530da",
+      "sha256": "5a20f62a2ba485b209da65b081e0142ec986c3d50a9d04ff49f0a74b434cf70a",
       "url": "https://blog.google/products-and-platforms/products/search/ai-mode-us-insights/"
     },
     {
@@ -131,7 +131,7 @@
       "claim_sha256": "492a67aa98ac7bcb9d9ed13277eaeda3ffc64b71ef33996c06a57dab67d4cff5",
       "http_status": 200,
       "retrieval_status": "ok",
-      "sha256": "206750332a5afa64f6174cd73541e50a4fc0d2f7ac437d143b9f132a7b00e203",
+      "sha256": "2cbc8210175c799f1d8bcc8a27f52b367147a0a8c255b770d775db689f5e1792",
       "url": "https://blog.google/products-and-platforms/products/search/ai-overviews-search-october-2024/"
     },
     {
@@ -140,7 +140,7 @@
       "claim_sha256": "ef2cc971016ca5bab0501e7561d5761920bcdd332b7a9ccad9f51bd1172c9e44",
       "http_status": 200,
       "retrieval_status": "ok",
-      "sha256": "b0c0877433f7ece892aa8704a392658d7f253e282843e4079603cee086f6f984",
+      "sha256": "7753c94a4f7fcc324576077ac30090cc3e4b4dbe9e69090556db00f4aa2a0537",
       "url": "https://blog.google/products-and-platforms/products/search/connected-apps/"
     },
     {
@@ -149,16 +149,16 @@
       "claim_sha256": "af8c4c46561ca24fc5523c8094b9837e4422952587c43c6d31bcb6fad9b40142",
       "http_status": 200,
       "retrieval_status": "ok",
-      "sha256": "758b5850ca93e7e0405a657b23f7bfe7a995eb43dc8cdf62f5334f5fa2be7162",
+      "sha256": "dcb49507fdb66691a18acdf487b6735e548d4cef155dbad77a580a99b818b239",
       "url": "https://blog.google/products-and-platforms/products/search/google-search-ai-mode-update/"
     },
     {
-      "bytes": 353230,
+      "bytes": 354494,
       "claim_count": 1,
       "claim_sha256": "647a507d7f40300e00d60639a5dd66a74f718d09c538eb1087126a4715ff0eca",
       "http_status": 200,
       "retrieval_status": "ok",
-      "sha256": "9989f663a20cc8f61c9d649213085c33fb926fb29aa8a70ec75dabf15d9225bd",
+      "sha256": "a7a394b45c27f302e37ab67dd6d4051727a09948780b7bbf406de6fd2b205838",
       "url": "https://blog.google/products-and-platforms/products/search/new-controls-website-owners/"
     },
     {
