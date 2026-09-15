@@ -1,5 +1,174 @@
 {
-  "candidates": [],
+  "candidates": [
+    {
+      "candidate_id": "02b1cfe56d778b8e9b80067df9fcd569fbf6c84dd93c60c8ed6b8d189ff2272e",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "Anthropic News",
+      "title": "Claude Code",
+      "url": "https://claude.com/product/claude-code"
+    },
+    {
+      "candidate_id": "3ca4c17b79c091300491de874cdfaf298ea715a1d2ffe134d6e12ed50da8493c",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "Anthropic News",
+      "title": "Claude Code Enterprise",
+      "url": "https://claude.com/product/claude-code/enterprise"
+    },
+    {
+      "candidate_id": "8793445cc16a44fa6eb9e0e8476fc9ca52c010c1ef4ffc524dc94898e4ccaf99",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "Anthropic News",
+      "title": "Anthropic",
+      "url": "https://www.anthropic.com/company"
+    },
+    {
+      "candidate_id": "2c0585237e4406ac78f5f05f8d60371ae5999dce18b41433286ad27ccc33ece9",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "Anthropic News",
+      "title": "Engineering at Anthropic",
+      "url": "https://www.anthropic.com/engineering"
+    },
+    {
+      "candidate_id": "3bdace5b43b6b457bf196ab630c8c773b5c00e39586f9116066944f878ba0832",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "Anthropic News",
+      "title": "Aug 4, 2026 Announcements Mariano-Florentino (Tino) Cuéllar to join Anthropic as Chief Global Affairs Officer",
+      "url": "https://www.anthropic.com/news/tino-cuellar"
+    },
+    {
+      "candidate_id": "38b6f7a8ccf66359c62047709383ee904c26a73b42943b7986a4e28561b805af",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "Anthropic News",
+      "title": "press@anthropic.com",
+      "url": "mailto:press@anthropic.com"
+    },
+    {
+      "candidate_id": "48223dc3a47946cd13d2a6da8894c02e7aff477625debdc7c5d8bf0595fe8c73",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "OpenAI News",
+      "title": "Codex",
+      "url": "https://openai.com/codex/"
+    },
+    {
+      "candidate_id": "e72a953e232a24ddc8702beb78274a87f1b3423e345243e2f3356ab86c6d6228",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "OpenAI News",
+      "title": "Paul Christiano joins OpenAI Foundation Board Company Sep 9, 2026",
+      "url": "https://openai.com/index/paul-christiano-joins-openai-foundation-board/"
+    },
+    {
+      "candidate_id": "0df60ba41aee1af2cffd198b6f4bbf9e6d41b67362cd11c683b4ebe4426aaccb",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "OpenAI News",
+      "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules Applied AI Sep 10, 2026",
+      "url": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials/"
+    },
+    {
+      "candidate_id": "118ac1d5476b9235edb1ab25f54d6b06530d948900a22e7d995e85813d32b389",
+      "matched_by": "rss_keyword",
+      "published_at": "Fri, 14 Aug 2026 00:11:26 GMT",
+      "source_name": "TickerTrends",
+      "title": "OpenAI ARR Tracking Reached $44.3B as Bloomberg Reported $40B Run Rate",
+      "url": "https://blog.tickertrends.io/p/openai-arr-tracking-44-3b-bloomberg-40b-run-rate"
+    },
+    {
+      "candidate_id": "ac4ea479102b5eb20c64a10fa3a0545e1713876a5da9f795479b81647e304171",
+      "matched_by": "rss_keyword",
+      "published_at": "Fri, 21 Aug 2026 21:41:30 GMT",
+      "source_name": "TickerTrends",
+      "title": "Tracking OpenAI and Anthropic Adoption Within Major Enterprises",
+      "url": "https://blog.tickertrends.io/p/tracking-openai-anthropic-adoption-major-enterprises"
+    },
+    {
+      "candidate_id": "33d121a91513cf279fe5e4f2267ca25ebdc78167b2110cd2e1dea83f4c777248",
+      "matched_by": "rss_keyword",
+      "published_at": "Mon, 31 Aug 2026 18:14:14 GMT",
+      "source_name": "TickerTrends",
+      "title": "TickerTrends Launches Weekly ChatGPT Ads ARR Tracking",
+      "url": "https://blog.tickertrends.io/p/chatgpt-ads-arr-weekly-tracking"
+    },
+    {
+      "candidate_id": "8c161ffdba1d5f5dbbf01ff3cad8708ab844c4cb490af652a82765805586466a",
+      "matched_by": "rss_keyword",
+      "published_at": "Thu, 13 Aug 2026 15:42:03 GMT",
+      "source_name": "TickerTrends",
+      "title": "Claude Code Continues to Outpace Codex in Enterprise Adoption",
+      "url": "https://blog.tickertrends.io/p/claude-code-continues-to-outpace"
+    },
+    {
+      "candidate_id": "6929166c89b4386e306e5b6528f93163c6ba34c72f0bba55e6e2e576e0a77d34",
+      "matched_by": "rss_keyword",
+      "published_at": "Thu, 23 Jul 2026 13:48:26 GMT",
+      "source_name": "TickerTrends",
+      "title": "Anthropic Is Tracking Above OpenAI in ARR, but Its Growth Is Beginning to Decelerate",
+      "url": "https://blog.tickertrends.io/p/anthropic-vs-openai-arr-tracking"
+    },
+    {
+      "candidate_id": "0c210eea5a2f0dea2b466bb784cf9390f0dd6755667bfdbe96805db058606c0c",
+      "matched_by": "rss_keyword",
+      "published_at": "Thu, 30 Jul 2026 05:37:51 GMT",
+      "source_name": "TickerTrends",
+      "title": "OpenAI ARR Growth Accelerated Into July",
+      "url": "https://blog.tickertrends.io/p/openai-arr-growth-accelerated-july-2026"
+    },
+    {
+      "candidate_id": "b3ad7dfefeaf9ab44fd656386c6addc2ca346a0f6ee158eb5b4f23f65d73294f",
+      "matched_by": "rss_keyword",
+      "published_at": "Tue, 15 Sep 2026 16:46:05 GMT",
+      "source_name": "TickerTrends",
+      "title": "Codex Overtakes Claude Code on Reddit",
+      "url": "https://blog.tickertrends.io/p/codex-vs-claude-code-reddit-activity"
+    },
+    {
+      "candidate_id": "14322b18f606ed0bd3d6c4f3f9e07aeb51d9ef58c15122ee9431e3a44ae320a7",
+      "matched_by": "rss_keyword",
+      "published_at": "Tue, 18 Aug 2026 18:26:40 GMT",
+      "source_name": "TickerTrends",
+      "title": "Claude Code Reaches $15.1B in Tracked ARR as Codex Climbs to $8.8B",
+      "url": "https://blog.tickertrends.io/p/claude-code-vs-openai-codex-arr"
+    },
+    {
+      "candidate_id": "9aed392ae831908df655f0d8c9eb0cb7685b1f440e87b6f1c6c1261fe321838f",
+      "matched_by": "rss_keyword",
+      "published_at": "Wed, 02 Sep 2026 22:21:45 GMT",
+      "source_name": "TickerTrends",
+      "title": "Anthropic Fable 5.1 Launch Tracking Comes In Well Below Fable 5",
+      "url": "https://blog.tickertrends.io/p/anthropic-fable-5-1-launch-vs-fable-5-token-usage-social-interest"
+    },
+    {
+      "candidate_id": "44f018e3c1f7d724fa789a9e71e16ce4a9bdd059f8fda1e4680c9b735b7d89f7",
+      "matched_by": "rss_keyword",
+      "published_at": "Wed, 09 Sep 2026 22:05:23 GMT",
+      "source_name": "TickerTrends",
+      "title": "OpenAI’s Public GitHub Activity Hit a Record in August",
+      "url": "https://blog.tickertrends.io/p/openai-vs-anthropic-github-activity-august-2026"
+    },
+    {
+      "candidate_id": "2d5d247826c2779e7bbed11919d2338eec2c8ce23f0835ee354d1a87b9d2b4c8",
+      "matched_by": "rss_keyword",
+      "published_at": "Wed, 26 Aug 2026 02:20:21 GMT",
+      "source_name": "TickerTrends",
+      "title": "OpenAI and Anthropic Model Usage in GitHub Commits",
+      "url": "https://blog.tickertrends.io/p/openai-anthropic-model-usage-github-commits"
+    },
+    {
+      "candidate_id": "c7527841d1b320fa8468da9b1840c1b97a4093d7b9ebb481d6a72d152b46f744",
+      "matched_by": "rss_keyword",
+      "published_at": "Wed, 26 Aug 2026 18:17:39 GMT",
+      "source_name": "TickerTrends",
+      "title": "Codex Pulls Ahead as B2B Adoption Accelerates",
+      "url": "https://blog.tickertrends.io/p/claude-code-vs-codex-b2b-adoption"
+    }
+  ],
   "schema_version": 1,
   "status": "discovery_only"
 }

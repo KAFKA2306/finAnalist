@@ -7,7 +7,7 @@
   "schema_version": 1,
   "sources": [
     {
-      "bytes": null,
+      "bytes": 149207,
       "check_live": true,
       "error": null,
       "kind": "evidence",
@@ -16,13 +16,13 @@
       ],
       "name": "Anthropic",
       "required": true,
-      "retrieved_at": null,
-      "sha256": null,
-      "status": "not_checked",
+      "retrieved_at": "2026-09-15T23:32:34Z",
+      "sha256": "2060425ff02521cac6bf2a425358334dc9754408f06588cccf6a413501b9bd98",
+      "status": "ok",
       "url": "https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone"
     },
     {
-      "bytes": null,
+      "bytes": 160039,
       "check_live": true,
       "error": null,
       "kind": "evidence",
@@ -31,13 +31,13 @@
       ],
       "name": "Anthropic",
       "required": true,
-      "retrieved_at": null,
-      "sha256": null,
-      "status": "not_checked",
+      "retrieved_at": "2026-09-15T23:32:34Z",
+      "sha256": "d0987c4c8d31c550e9039c0062128de492d2e743263da721be1ca3f2174e6525",
+      "status": "ok",
       "url": "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation"
     },
     {
-      "bytes": null,
+      "bytes": 145081,
       "check_live": true,
       "error": null,
       "kind": "evidence",
@@ -46,13 +46,13 @@
       ],
       "name": "Anthropic",
       "required": true,
-      "retrieved_at": null,
-      "sha256": null,
-      "status": "not_checked",
+      "retrieved_at": "2026-09-15T23:32:34Z",
+      "sha256": "19913d7b698179b973998c96d4f6ead0e67674db9db1d5d7274dc05f5da520cf",
+      "status": "ok",
       "url": "https://www.anthropic.com/news/google-broadcom-partnership-compute"
     },
     {
-      "bytes": null,
+      "bytes": 149122,
       "check_live": true,
       "error": null,
       "kind": "evidence",
@@ -61,9 +61,9 @@
       ],
       "name": "Anthropic",
       "required": true,
-      "retrieved_at": null,
-      "sha256": null,
-      "status": "not_checked",
+      "retrieved_at": "2026-09-15T23:32:34Z",
+      "sha256": "b7d40ea2965044e111d07cac53bff426fce35b4c20106ceda26dafbe3b711e72",
+      "status": "ok",
       "url": "https://www.anthropic.com/news/series-h"
     },
     {
@@ -98,7 +98,7 @@
       "url": "https://www.ft.com/content/664249e7-e8d5-4425-b397-ad3ed590b305"
     },
     {
-      "bytes": null,
+      "bytes": 413595,
       "check_live": true,
       "error": null,
       "kind": "evidence",
@@ -107,9 +107,9 @@
       ],
       "name": "OpenAI",
       "required": true,
-      "retrieved_at": null,
-      "sha256": null,
-      "status": "not_checked",
+      "retrieved_at": "2026-09-15T23:32:34Z",
+      "sha256": "6e1ef7f2874892475f1d61e17cdfca567631bea2ca3363733b323e8b4144e025",
+      "status": "ok",
       "url": "https://openai.com/ja-JP/index/a-business-that-scales-with-the-value-of-intelligence/"
     },
     {
@@ -340,7 +340,7 @@
     {
       "bytes": null,
       "check_live": true,
-      "error": null,
+      "error": "HTTPError: HTTP Error 403: Forbidden",
       "kind": "html",
       "measurement_types": [
         "discovery"
@@ -349,11 +349,11 @@
       "required": false,
       "retrieved_at": null,
       "sha256": null,
-      "status": "not_checked",
+      "status": "error",
       "url": "https://www.ark-invest.com/newsletters"
     },
     {
-      "bytes": null,
+      "bytes": 465418,
       "check_live": true,
       "error": null,
       "kind": "html",
@@ -362,13 +362,13 @@
       ],
       "name": "Anthropic News",
       "required": true,
-      "retrieved_at": null,
-      "sha256": null,
-      "status": "not_checked",
+      "retrieved_at": "2026-09-15T23:32:34Z",
+      "sha256": "5982aa6980cfda9db5d3f448f6740b70d4308053ca59edfa8e8c2b836da9f9ac",
+      "status": "ok",
       "url": "https://www.anthropic.com/news"
     },
     {
-      "bytes": null,
+      "bytes": 362471,
       "check_live": true,
       "error": null,
       "kind": "html",
@@ -377,13 +377,13 @@
       ],
       "name": "OpenAI News",
       "required": true,
-      "retrieved_at": null,
-      "sha256": null,
-      "status": "not_checked",
+      "retrieved_at": "2026-09-15T23:32:34Z",
+      "sha256": "7e28f38e202b8513f44b2738b1a632133d304f4394ec34a70dc2a7018af9d744",
+      "status": "ok",
       "url": "https://openai.com/news/"
     },
     {
-      "bytes": null,
+      "bytes": 321800,
       "check_live": true,
       "error": null,
       "kind": "rss",
@@ -392,9 +392,9 @@
       ],
       "name": "TickerTrends",
       "required": false,
-      "retrieved_at": null,
-      "sha256": null,
-      "status": "not_checked",
+      "retrieved_at": "2026-09-15T23:32:34Z",
+      "sha256": "fb52e5151293eee6c6220e3737d16a9527b1c2227909019167ebf781c5f50cc5",
+      "status": "ok",
       "url": "https://blog.tickertrends.io/feed"
     }
   ]

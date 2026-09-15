@@ -1,10 +1,10 @@
 {
-  "candidate_count": 0,
+  "candidate_count": 21,
   "comparables_source": {
     "path": "research/data/ai-economics/comparables.json",
     "sha256": "9b0d0d8ec594dfb7aa4d9cfd366a736db98339fa416b40d538bba0ac38a5f943"
   },
-  "content_digest": "fd6a3f582ba974184d4dca9f3d4806f613dd373de62424a8898e0ca51744415e",
+  "content_digest": "45e53399699ed5d86ce88e8fbf98a8d275d9a1d5626b3cf43275c3193c390c66",
   "coverage": [
     {
       "classes": [
@@ -147,11 +147,11 @@
     }
   ],
   "files": {
-    "candidates.json": "1b34f2aa63cfc7a9254a19e81a804b1785e2ff5735b14e958904e06b0aeef72a",
+    "candidates.json": "0a0dc2fb6f05a21cf2e6b776ca2f871fa941c8aa09063087e80768712d515e6e",
     "comparables.json": "a7597fab25970fb0556d7992b845cfed60485166badc5934098e69a3d4f4947e",
     "latest.json": "7d53c80e99af509d955e9040c7df09376fd7918e50eaaeb77034d01379bab229",
     "observations.ndjson": "062efdf34331d3d6daa070c835ce4df5670c0c8fd8a66df2201ac679548103ca",
-    "sources.json": "e3778df7a9e694712a0843e8167930fa1f399e89c5794982d90d203877b03707"
+    "sources.json": "6ec15b30be4a43f3d7856e0edf37f04087106562b885c17d2b2131a39a746a54"
   },
   "inventory": {
     "path": "research/data/ai-economics/source_inventory.json",
@@ -164,5 +164,5 @@
     "record_count": 36,
     "sha256": "b01534828d022d7c8d86781136f8dc4b9df658bdf204822d0efb46211fb04811"
   },
-  "updated_at": "2026-08-24T17:12:59Z"
+  "updated_at": "2026-09-15T23:32:38Z"
 }
