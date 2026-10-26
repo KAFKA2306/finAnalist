@@ -1,261 +1,11 @@
 {
-  "bundle_bytes": 1172144,
-  "bundle_sha256": "83b49febe13e78b95ebdaacd847b62e283ea25c929786c3d56e1e9d73deeb690",
+  "bundle_bytes": 2011697,
+  "bundle_sha256": "04ab1a32e509aa75fd150f0d21c4d126305cc84018fc01a02a097088eaff6ef6",
   "dataset": "OpenAI Signals consumer data",
   "download_url": "https://cdn.openai.com/signals/data-download-csv.zip",
   "files": [
     {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._global_share_of_messages_by_gender_month.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._share_of_messages_by_age_group_country_month.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._share_of_messages_by_age_group_month.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._share_of_messages_by_age_group_topic_country_month.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._share_of_messages_by_age_group_topic_month.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._share_of_messages_by_country_quarter_rank.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._share_of_messages_by_gender_country_month.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._share_of_messages_by_gender_topic_country_month.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._share_of_messages_by_gender_topic_month.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._share_of_messages_by_topic_country_month.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._share_of_messages_by_topic_month.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._share_of_messages_by_topic_work_related_country_month.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._share_of_messages_by_topic_work_related_month.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._share_of_messages_by_work_related_ask_do_express_country_month.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._share_of_messages_by_work_related_ask_do_express_month.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._share_of_messages_by_work_related_country_month.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._share_of_messages_by_work_related_month.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._share_of_messages_by_work_related_plan_type_month.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._share_of_messages_by_work_related_topic_month.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._share_of_messages_by_work_schoolwork_month.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._usa_share_of_messages_by_onet_iwa_month.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._usa_share_of_messages_by_state_2025_rank.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._usa_share_of_messages_by_topic_2025.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._usa_share_of_messages_by_topic_state_2025.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 254,
-      "columns": [
-        "ԀܖȀ\u0000慍⁣协堠††††Ȁ\u0000ऀ\u0000㈀\u0000찀\u0000Ȁ\u0000︀\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000呁剔\u0000\u0000\u0000︀\u0000렀\u0000䘀\u0000\u0000\u0000\u0000\u0000\u0000\u0000Ȁ\u0000렀\u0000଀\u0000挕浯愮灰敬瀮潲敶慮据e\u0000쌀\u0000㬀\u0000挕浯愮灰敬焮慵慲瑮湩eȁ鼀渠﻿蒆燍〯㠰㬲愶〷㕢戶医慬正㜻㌱䐴ㄸⴷㅄ䘲㐭㡂ⴰ㕂䍂ㄭ䕃㐷㘸㜶〶B"
-      ],
-      "encoding": "utf-16",
-      "name": "__MACOSX/public_release_csv/._usa_share_of_work_related_messages_by_onet_iwa_month.csv",
-      "rows": 0,
-      "sha256": "83cea37c36fc1defbbae412bcef3071224e3a64d150638796275807374e4f67e"
-    },
-    {
-      "bytes": 1316,
+      "bytes": 1475,
       "columns": [
         "month",
         "typical_name_gender",
@@ -263,11 +13,11 @@
       ],
       "encoding": "utf-8-sig",
       "name": "public_release_csv/global_share_of_messages_by_gender_month.csv",
-      "rows": 48,
-      "sha256": "412dac46fa7a7c64f0bf361eaad5e00f35000df166e517f5b921c380bc1807b9"
+      "rows": 54,
+      "sha256": "362570703fc1db39273991953c47159e9394b06053dc4539186568d24f4607c2"
     },
     {
-      "bytes": 409066,
+      "bytes": 576772,
       "columns": [
         "month",
         "country",
@@ -276,11 +26,11 @@
       ],
       "encoding": "utf-8-sig",
       "name": "public_release_csv/share_of_messages_by_age_group_country_month.csv",
-      "rows": 15936,
-      "sha256": "33ebe2af3191429eeba7c56ff9fbf38bbd009ca3081b879ad678821777707652"
+      "rows": 22470,
+      "sha256": "5da9a64045dfc66e238897bae341075746b5cb7e63f060730eadb13f51e57602"
     },
     {
-      "bytes": 3298,
+      "bytes": 3706,
       "columns": [
         "month",
         "age_group",
@@ -288,11 +38,11 @@
       ],
       "encoding": "utf-8-sig",
       "name": "public_release_csv/share_of_messages_by_age_group_month.csv",
-      "rows": 144,
-      "sha256": "b54b0ef90bde942eca3ff8c37e4a0d4d5c829dbcf7436a1ff302549ca7e7fbb5"
+      "rows": 162,
+      "sha256": "6832813f55d3a43cdf7921521fb1b4235cbca242546a2034ba6736eff1d9501f"
     },
     {
-      "bytes": 1754928,
+      "bytes": 3584324,
       "columns": [
         "month",
         "country",
@@ -302,11 +52,11 @@
       ],
       "encoding": "utf-8-sig",
       "name": "public_release_csv/share_of_messages_by_age_group_topic_country_month.csv",
-      "rows": 43164,
-      "sha256": "8a7e42d6eab051470710b3e00cdcf90fd64517084b409993f296bbddeb26b1d7"
+      "rows": 88374,
+      "sha256": "09091473c3888d31ad4a46b2194688a62a1f955e3bfc466649ea64b1b6413751"
     },
     {
-      "bytes": 37720,
+      "bytes": 42430,
       "columns": [
         "month",
         "topic",
@@ -315,11 +65,11 @@
       ],
       "encoding": "utf-8-sig",
       "name": "public_release_csv/share_of_messages_by_age_group_topic_month.csv",
-      "rows": 1008,
-      "sha256": "98f5bcf771c65d158654023c6e6c9301775c134465b4a7ca3fe806bae0810125"
+      "rows": 1134,
+      "sha256": "88cc445fe56e9696e48314d17482eb657e0c72f359ee3d0ff81f36db79766589"
     },
     {
-      "bytes": 15087,
+      "bytes": 21117,
       "columns": [
         "quarter",
         "country",
@@ -327,11 +77,11 @@
       ],
       "encoding": "utf-8-sig",
       "name": "public_release_csv/share_of_messages_by_country_quarter_rank.csv",
-      "rows": 873,
-      "sha256": "71e2e8907213b6a5fb2a31abdb091cd136aa80239b0e77e5bf36fb0c72b906e7"
+      "rows": 1214,
+      "sha256": "01b9f896cdba646c039bf645dc4d31776bb3eb7970ac3e183bde76798aa3083f"
     },
     {
-      "bytes": 153275,
+      "bytes": 213219,
       "columns": [
         "month",
         "country",
@@ -340,11 +90,11 @@
       ],
       "encoding": "utf-8-sig",
       "name": "public_release_csv/share_of_messages_by_gender_country_month.csv",
-      "rows": 5194,
-      "sha256": "0b021fb83c961f20c482ca2ab2f3533d3da9d639056a32f22558e30969e40830"
+      "rows": 7226,
+      "sha256": "0a43df6ac486cafe36e4f8b6cdd64c3dfb38148ecf9f75dba17377b3e3ad0054"
     },
     {
-      "bytes": 631892,
+      "bytes": 1250794,
       "columns": [
         "month",
         "country",
@@ -354,11 +104,11 @@
       ],
       "encoding": "utf-8-sig",
       "name": "public_release_csv/share_of_messages_by_gender_topic_country_month.csv",
-      "rows": 14164,
-      "sha256": "914d106af82c57782dc43a77364740fdba4f31f920fc3536a9b9ba3310052fa3"
+      "rows": 28164,
+      "sha256": "836fcd8ce6e7d3f1e12cc0ee9d29d50e135e93988eb320125ea169e352ef4378"
     },
     {
-      "bytes": 13898,
+      "bytes": 15629,
       "columns": [
         "month",
         "topic",
@@ -367,11 +117,11 @@
       ],
       "encoding": "utf-8-sig",
       "name": "public_release_csv/share_of_messages_by_gender_topic_month.csv",
-      "rows": 336,
-      "sha256": "952fa496695bc0781209c315237070c1a148bc7fa56f57d354fb0ce43b5d8920"
+      "rows": 378,
+      "sha256": "be5ae2c14b5eced92b4029a54ed2ea4a3c81611c92ca4eaa6e591d9beab56477"
     },
     {
-      "bytes": 721991,
+      "bytes": 976655,
       "columns": [
         "month",
         "country",
@@ -380,11 +130,11 @@
       ],
       "encoding": "utf-8-sig",
       "name": "public_release_csv/share_of_messages_by_topic_country_month.csv",
-      "rows": 20797,
-      "sha256": "aaa146b06efd55deca3e679773d8c1ab96292d9a5c3700a06af0116d067325a4"
+      "rows": 28133,
+      "sha256": "9eaeb4c05bc0faa70385fe3993d6262a1cf9d82ed90323c4c3300e0deccf3b6a"
     },
     {
-      "bytes": 5358,
+      "bytes": 6024,
       "columns": [
         "month",
         "topic",
@@ -392,11 +142,11 @@
       ],
       "encoding": "utf-8-sig",
       "name": "public_release_csv/share_of_messages_by_topic_month.csv",
-      "rows": 168,
-      "sha256": "933b81fe7a1e3e525171e2a682ef6fc3e39c99dc53ea5bd7b9f6cca3731c3a69"
+      "rows": 189,
+      "sha256": "0fe8bbd9de59d98868a5d1b2792e77d541ea53725c99a6ba5d65b3241257a532"
     },
     {
-      "bytes": 1218745,
+      "bytes": 1842484,
       "columns": [
         "month",
         "country",
@@ -406,11 +156,11 @@
       ],
       "encoding": "utf-8-sig",
       "name": "public_release_csv/share_of_messages_by_topic_work_related_country_month.csv",
-      "rows": 33194,
-      "sha256": "a28b1a90d97be2b9614b6b42078bcc62f6e3c5e4d7569068293d916d4451d204"
+      "rows": 50183,
+      "sha256": "efacdbd56edd59f779733cb977c0d8e1ae94d4f8fdfbdbd0af02344eb03994b1"
     },
     {
-      "bytes": 11371,
+      "bytes": 12787,
       "columns": [
         "month",
         "work_related",
@@ -419,11 +169,11 @@
       ],
       "encoding": "utf-8-sig",
       "name": "public_release_csv/share_of_messages_by_topic_work_related_month.csv",
-      "rows": 336,
-      "sha256": "52bd95269b49aa3bcef18a14e99afb403e0253cb209e364f5e9a13f5c9ee96ff"
+      "rows": 378,
+      "sha256": "c277ee725784c2cfa3a8ee758d687c1858bbbc0b5fe65e6650ff825496afd4f7"
     },
     {
-      "bytes": 425670,
+      "bytes": 646170,
       "columns": [
         "month",
         "country",
@@ -433,11 +183,11 @@
       ],
       "encoding": "utf-8-sig",
       "name": "public_release_csv/share_of_messages_by_work_related_ask_do_express_country_month.csv",
-      "rows": 14187,
-      "sha256": "1d12935bb760e7da9054f4854953244ab97c7fb62f44b9813fd4d883cd17f8e3"
+      "rows": 21537,
+      "sha256": "4c5ee4ce34a4b908907496cfd44475b599b0c06ab58d152a29b20bd4bbaccd02"
     },
     {
-      "bytes": 3940,
+      "bytes": 4426,
       "columns": [
         "month",
         "work_related",
@@ -446,11 +196,11 @@
       ],
       "encoding": "utf-8-sig",
       "name": "public_release_csv/share_of_messages_by_work_related_ask_do_express_month.csv",
-      "rows": 144,
-      "sha256": "fcace37e6b640ba1955cc9c55041895b656822a0fea4df650f075fb3f58909be"
+      "rows": 162,
+      "sha256": "3b4bc45e229e3ac55a31dcd11993e0188fb2f4c4634fd7cc2e637925536b487f"
     },
     {
-      "bytes": 130549,
+      "bytes": 176045,
       "columns": [
         "month",
         "country",
@@ -459,11 +209,11 @@
       ],
       "encoding": "utf-8-sig",
       "name": "public_release_csv/share_of_messages_by_work_related_country_month.csv",
-      "rows": 5932,
-      "sha256": "c726e098f23cd6eec7e7b578c8b297a47e342c76101bb040042dfda1e024f1f5"
+      "rows": 8000,
+      "sha256": "0d5bf45df1f50abe0b0f1b02d66fa3c8c90a64cd52de6dde3b893b80bff884b2"
     },
     {
-      "bytes": 949,
+      "bytes": 1063,
       "columns": [
         "month",
         "work_related",
@@ -471,11 +221,11 @@
       ],
       "encoding": "utf-8-sig",
       "name": "public_release_csv/share_of_messages_by_work_related_month.csv",
-      "rows": 48,
-      "sha256": "c84f9d8938b8a79be6b49c9c572b934f13177f8e40a810f7257e83a38123716f"
+      "rows": 54,
+      "sha256": "d89dfe693f460ac5658755fc4b602bcbffa95eb3e9d4588601e5872d8222e7b8"
     },
     {
-      "bytes": 3517,
+      "bytes": 4075,
       "columns": [
         "month",
         "work_related",
@@ -484,11 +234,11 @@
       ],
       "encoding": "utf-8-sig",
       "name": "public_release_csv/share_of_messages_by_work_related_plan_type_month.csv",
-      "rows": 148,
-      "sha256": "936f6810813b35f351b3b577d2843e586298b8f406901a7abd6d4839b27a048d"
+      "rows": 172,
+      "sha256": "96c08904fd9b3ef71697f4736fdf2c81835cb4364e187d30addc7aa04aa1f2b9"
     },
     {
-      "bytes": 11371,
+      "bytes": 12787,
       "columns": [
         "month",
         "work_related",
@@ -497,11 +247,11 @@
       ],
       "encoding": "utf-8-sig",
       "name": "public_release_csv/share_of_messages_by_work_related_topic_month.csv",
-      "rows": 336,
-      "sha256": "54ec44f5f1c3aee5f51275e2e8e0fa8c0216795107dffd16d170e2ff386c7e06"
+      "rows": 378,
+      "sha256": "d3c062b412d6450991340bcbb28e4245f17393db281c1cbd8a0a533d0eee7ea3"
     },
     {
-      "bytes": 1792,
+      "bytes": 2011,
       "columns": [
         "month",
         "work_schoolwork",
@@ -509,77 +259,66 @@
       ],
       "encoding": "utf-8-sig",
       "name": "public_release_csv/share_of_messages_by_work_schoolwork_month.csv",
-      "rows": 72,
-      "sha256": "7c5ce5b796d87636f44976b080486a685b8db6bf10d1b5094d76552f94a451c4"
+      "rows": 81,
+      "sha256": "dc1fa1c280e754df7cbae237c0b8cecb2a1fafcc985a42c65f7d0fffb7f088eb"
     },
     {
-      "bytes": 130620,
+      "bytes": 3365758,
       "columns": [
-        "month",
+        "quarter",
+        "country",
         "iwa_cleaned",
         "share_of_messages"
       ],
       "encoding": "utf-8-sig",
-      "name": "public_release_csv/usa_share_of_messages_by_onet_iwa_month.csv",
-      "rows": 3960,
-      "sha256": "9344a7433200c01e9defb88ecfb8f0b5f7162e71270e663d1df784cc523970af"
+      "name": "public_release_csv/share_of_work_related_messages_by_onet_iwa_country_quarter.csv",
+      "rows": 93555,
+      "sha256": "7db205e3d151f9b5a740ddf355a6123fb918fc1764901028065fb19196a69f84"
     },
     {
-      "bytes": 1077,
+      "bytes": 9492,
       "columns": [
-        "year",
+        "quarter",
         "state_code",
         "state_name",
         "rank"
       ],
       "encoding": "utf-8-sig",
-      "name": "public_release_csv/usa_share_of_messages_by_state_2025_rank.csv",
-      "rows": 51,
-      "sha256": "8b6ad558232ff3686ca640a013c1928e88c4cc58eac52e09452fd37f03ec1593"
+      "name": "public_release_csv/usa_share_of_messages_by_state_quarter_rank.csv",
+      "rows": 357,
+      "sha256": "8d12707e6b3c566801995593fd919c846750be57a4a1dfdbc34ab071f1729479"
     },
     {
-      "bytes": 238,
+      "bytes": 1741,
       "columns": [
-        "year",
+        "quarter",
         "country",
         "topic",
         "share_of_messages"
       ],
       "encoding": "utf-8-sig",
-      "name": "public_release_csv/usa_share_of_messages_by_topic_2025.csv",
-      "rows": 7,
-      "sha256": "7006e500dbb18e9754d12c09def1cd9cb018a1b248a74a7dcb3e5d8868233d68"
+      "name": "public_release_csv/usa_share_of_messages_by_topic_quarter.csv",
+      "rows": 49,
+      "sha256": "c28820f549efdaeecb4ab1781da0c84d52e5a3ef095f1bc31de41fc09db8d7ab"
     },
     {
-      "bytes": 13753,
+      "bytes": 110962,
       "columns": [
-        "year",
+        "quarter",
         "state_code",
         "state_name",
         "topic",
         "share_of_messages"
       ],
       "encoding": "utf-8-sig",
-      "name": "public_release_csv/usa_share_of_messages_by_topic_state_2025.csv",
-      "rows": 357,
-      "sha256": "4de3cfed29536e20c0cc0cca4f8f58e2c257ddcea9403ab208358df29d7d56d6"
-    },
-    {
-      "bytes": 130620,
-      "columns": [
-        "month",
-        "iwa_cleaned",
-        "share_of_messages"
-      ],
-      "encoding": "utf-8-sig",
-      "name": "public_release_csv/usa_share_of_work_related_messages_by_onet_iwa_month.csv",
-      "rows": 3960,
-      "sha256": "97c9a3b9b1bb14df3f8c7d8bcdb48004c822a3d3cdac7feb821a1cbb65c8080e"
+      "name": "public_release_csv/usa_share_of_messages_by_topic_state_quarter.csv",
+      "rows": 2499,
+      "sha256": "56a3fb063319df94e5964e8a5471a866f154e242ef5df61baee54f88872c1652"
     }
   ],
   "license": "CC BY 4.0",
   "publisher": "OpenAI",
-  "retrieved_at": "2026-10-23T17:52:37.422971+00:00",
+  "retrieved_at": "2026-10-26T19:15:30.817726+00:00",
   "schema_version": 1,
   "source_page": "https://openai.com/signals/data-download/"
 }
