@@ -10,6 +10,10 @@ Consumer AIの**利用・能力**と、frontier AI providersの**ARR / revenue r
 - Consumer AI dashboard: https://kafka2306.github.io/finAnalist/
 - AI Economics dashboard: https://kafka2306.github.io/finAnalist/economics.html
 
+## Anthropic S-1 financial statements
+
+The October 26, 2026 [Anthropic SEC Form S-1](https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm) provides actual revenue, operating results, balance-sheet and cash-flow data. See the [Japanese-oriented financial statement workbook and concise filing summary](research/financial-statements/anthropic-s1-2026.md). The revenue actuals are recorded separately from ARR and revenue run-rate observations; 2026 H1 is unaudited.
+
 ## Canonical APIs
 
 ### Consumer AI

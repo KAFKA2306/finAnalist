@@ -68,6 +68,21 @@
     },
     {
       "bytes": null,
+      "check_live": true,
+      "error": null,
+      "kind": "evidence",
+      "measurement_types": [
+        "company_reported"
+      ],
+      "name": "Anthropic SEC Form S-1",
+      "required": true,
+      "retrieved_at": null,
+      "sha256": null,
+      "status": "not_checked",
+      "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm"
+    },
+    {
+      "bytes": null,
       "check_live": false,
       "error": null,
       "kind": "evidence",
