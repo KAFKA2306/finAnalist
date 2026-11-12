@@ -1,8 +1,8 @@
 {
-  "compared_to_retrieved_at": "2026-11-10T20:26:50.146562+00:00",
+  "compared_to_retrieved_at": "2026-11-11T20:10:22.510865+00:00",
   "feature_changes": [],
   "metric_changes": [],
-  "retrieved_at": "2026-11-11T20:10:22.510865+00:00",
+  "retrieved_at": "2026-11-12T20:47:05.816596+00:00",
   "rule": "Only semantic canonical claim differences count as changes. Retrieval timestamps and raw source-page hash changes are verification evidence, not product changes.",
   "schema_version": 1,
   "status": "no_verified_change"
