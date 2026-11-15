@@ -17,8 +17,8 @@ permissions:
   contents: write
 
 concurrency:
-  group: ai-economics-source
-  cancel-in-progress: true
+  group: canonical-evidence-writers
+  cancel-in-progress: false
 
 jobs:
   refresh:
