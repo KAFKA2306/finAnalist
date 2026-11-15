@@ -16,8 +16,8 @@ permissions:
   contents: write
 
 concurrency:
-  group: ai-consumer-source
-  cancel-in-progress: true
+  group: canonical-evidence-writers
+  cancel-in-progress: false
 
 jobs:
   refresh:
