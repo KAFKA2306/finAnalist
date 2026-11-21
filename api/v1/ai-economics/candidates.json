@@ -33,6 +33,110 @@
       "url": "https://www.anthropic.com/engineering"
     },
     {
+      "candidate_id": "f8a59d5eae172e59f614035953c41414541115a96ee35e221d849afc0f1b325b",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "Anthropic News",
+      "title": "The making of Claude Code",
+      "url": "https://www.anthropic.com/features/making-of-claude-code"
+    },
+    {
+      "candidate_id": "0eb12e5f8c2d6d1b0fe545a9006b01f6f0ddf535815e041166bdf4410d10fb56",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "Anthropic News",
+      "title": "To evaluate the safety of our systems, Anthropic is giving employee-like access to a team from METR, a nonprofit that evaluates frontier AI models, and we're in early discussions with several other organizations, including Hugging Face.",
+      "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators"
+    },
+    {
+      "candidate_id": "05998acf5e280e3f88b3d987ba42236e36082073c16f16c699c659dc987079b1",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "Anthropic News",
+      "title": "Introducing the Anthropic Cyber Mission",
+      "url": "https://www.anthropic.com/news/anthropic-cyber-mission"
+    },
+    {
+      "candidate_id": "a0845a9c433ce401041c059a6e6595b6a7bdb83746cac3c57666457b91db7074",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "Anthropic News",
+      "title": "Anthropic prices initial public offering",
+      "url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering"
+    },
+    {
+      "candidate_id": "3d62d007fd51f18bb96031ffc3fac2292b1c528add6541d953d2e31572dfb65b",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "Anthropic News",
+      "title": "Barclays, the British universal bank, is expanding its strategic collaboration with Anthropic to integrate secure, enterprise-grade AI systems across its global operations.",
+      "url": "https://www.anthropic.com/news/barclays-scales-claude"
+    },
+    {
+      "candidate_id": "0cdb358ecc74f296cc16b00545281dc2cf324dcf76b96ed649ce044c12eb7d44",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "Anthropic News",
+      "title": "Physicist Christopher Stubbs joins Anthropic's Long-Term Benefit Trust",
+      "url": "https://www.anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust"
+    },
+    {
+      "candidate_id": "63cf9e0dc1f73abbf4c92b6cefb698d5cf414996fd0580209f1e9b8ff958f420",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "Anthropic News",
+      "title": "Anthropic invests $100 million to train 10,000 engineers and tackle the enterprise AI talent gap",
+      "url": "https://www.anthropic.com/news/claude-frontier-academy"
+    },
+    {
+      "candidate_id": "ae42ffd15870bbd4e2a0999662426a78c0883665c76cf6712ebe77a2006b1bf3",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "Anthropic News",
+      "title": "Anthropic is committing $150 million over three years to the Genesis Mission, a federal initiative to accelerate scientific and technological discovery through AI.",
+      "url": "https://www.anthropic.com/news/genesis-mission-commitment"
+    },
+    {
+      "candidate_id": "14a26757800b510e8a1b328b4abd1b46b3debb54a70fc2a6d06eb28b8d0d1208",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "Anthropic News",
+      "title": "Anthropic announces closing of initial public offering, including full exercise of underwriters’ option to purchase additional shares, and closing of concurrent private placement",
+      "url": "https://www.anthropic.com/news/ipo-close"
+    },
+    {
+      "candidate_id": "ddd8107ffa7be1760610875c0fc6963459eb4808de69d5a50471ce8bd80ce010",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "Anthropic News",
+      "title": "Investing in the public benefit We’re committing a portion of Anthropic’s shares to the Anthropic Public Benefit Fund, a new entity with a structure that increases the stake as the company grows.",
+      "url": "https://www.anthropic.com/news/public-benefit-fund"
+    },
+    {
+      "candidate_id": "db27cb774b69151b346d95cec5361add7a2e22abb3846b81e76e1e10618c867b",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "Anthropic News",
+      "title": "Anthropic launches roadshow for proposed initial public offering",
+      "url": "https://www.anthropic.com/news/roadshow-launch"
+    },
+    {
+      "candidate_id": "d4e5abd5e48558ac146c4ecd0cc3ce828b148c65b4c1c8a6b649e7f7fd5d3397",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "Anthropic News",
+      "title": "Anthropic files S-1 with the SEC for proposed initial public offering Today, Anthropic, PBC filed a registration statement on Form S-1 with the U.S. Securities and Exchange Commission relating to its proposed initial public offering of its Class A common stock.",
+      "url": "https://www.anthropic.com/news/s1-sec"
+    },
+    {
+      "candidate_id": "ea45422edc9d119bc8be2374e190b3f997c9592655e85df39d51d5337e01edcc",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "Anthropic News",
+      "title": "Anthropic opens Singapore office and signs MOU with the Government of Singapore",
+      "url": "https://www.anthropic.com/news/singapore-office-opening"
+    },
+    {
       "candidate_id": "3bdace5b43b6b457bf196ab630c8c773b5c00e39586f9116066944f878ba0832",
       "matched_by": "html_link_keyword",
       "published_at": null,
@@ -49,12 +153,52 @@
       "url": "mailto:press@anthropic.com"
     },
     {
+      "candidate_id": "6124c1ba10c95bedcdcd8d52da0ff24414f5d7aba722feb66130d03fa5919c13",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "OpenAI News",
+      "title": "Codex",
+      "url": "https://chatgpt.com/codex/"
+    },
+    {
       "candidate_id": "48223dc3a47946cd13d2a6da8894c02e7aff477625debdc7c5d8bf0595fe8c73",
       "matched_by": "html_link_keyword",
       "published_at": null,
       "source_name": "OpenAI News",
       "title": "Codex",
       "url": "https://openai.com/codex/"
+    },
+    {
+      "candidate_id": "c533e12289ab24df0495cd4cab581a590be234a4bc054aa500b61ca09e9b68b1",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "OpenAI News",
+      "title": "Advancing chip design with OpenAI models Research Nov 18, 2026",
+      "url": "https://openai.com/index/advancing-chip-design-with-our-models/"
+    },
+    {
+      "candidate_id": "af95697400f29575060927e447a74c6d67031d7a4acc1d85e28d3500ce860197",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "OpenAI News",
+      "title": "How OpenAI’s Performance Factory keeps ChatGPT fast Engineering Nov 19, 2026",
+      "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast/"
+    },
+    {
+      "candidate_id": "5f1c55e49f09ffa327ac9bbbde396d7ea84c838e2481c656ed35050226a201bb",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "OpenAI News",
+      "title": "Inside the Codex sandbox Engineering Nov 18, 2026",
+      "url": "https://openai.com/index/inside-the-codex-sandbox/"
+    },
+    {
+      "candidate_id": "dcfd56a62e6ca180d1b5994a895121f3526fbb898bdf5414f617a5fcc21c2859",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "OpenAI News",
+      "title": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT Company Nov 18, 2026",
+      "url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership/"
     },
     {
       "candidate_id": "e72a953e232a24ddc8702beb78274a87f1b3423e345243e2f3356ab86c6d6228",
@@ -71,6 +215,22 @@
       "source_name": "OpenAI News",
       "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules Applied AI Sep 10, 2026",
       "url": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials/"
+    },
+    {
+      "candidate_id": "441472bd9c2ef3e5fbe54bc11106a65e608a02683a342c7e26ad0cee938d8bd9",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "OpenAI News",
+      "title": "OpenAI Status (opens in a new window)",
+      "url": "https://status.openai.com"
+    },
+    {
+      "candidate_id": "d4c927af72fc383f9a6bfb978f0233416d94c5dd2ae0af4d5c36a9c42a8da2f1",
+      "matched_by": "rss_keyword",
+      "published_at": "Fri, 06 Nov 2026 06:09:52 GMT",
+      "source_name": "TickerTrends",
+      "title": "Anthropic’s October ARR Topped $80B Consistent With TickerTrends Tracking",
+      "url": "https://blog.tickertrends.io/p/anthropics-october-arr-topped-80b"
     },
     {
       "candidate_id": "118ac1d5476b9235edb1ab25f54d6b06530d948900a22e7d995e85813d32b389",
@@ -97,12 +257,28 @@
       "url": "https://blog.tickertrends.io/p/chatgpt-ads-arr-weekly-tracking"
     },
     {
+      "candidate_id": "b5000a6955535c8dcfcf8dfdf529f20c78d777d6cce77e92b9fb7a72b94930e8",
+      "matched_by": "rss_keyword",
+      "published_at": "Thu, 08 Oct 2026 17:25:06 GMT",
+      "source_name": "TickerTrends",
+      "title": "TickerTrends Tracked OpenAI Revenue at $50B",
+      "url": "https://blog.tickertrends.io/p/tickertrends-tracked-openai-revenue"
+    },
+    {
       "candidate_id": "8c161ffdba1d5f5dbbf01ff3cad8708ab844c4cb490af652a82765805586466a",
       "matched_by": "rss_keyword",
       "published_at": "Thu, 13 Aug 2026 15:42:03 GMT",
       "source_name": "TickerTrends",
       "title": "Claude Code Continues to Outpace Codex in Enterprise Adoption",
       "url": "https://blog.tickertrends.io/p/claude-code-continues-to-outpace"
+    },
+    {
+      "candidate_id": "cbdc71b99a13c807d13be8b4d05c074d29bd1950817835acfa9e5aedbe0e81d8",
+      "matched_by": "rss_keyword",
+      "published_at": "Thu, 19 Nov 2026 02:22:21 GMT",
+      "source_name": "TickerTrends",
+      "title": "Anthropic and OpenAI Compute Cost Tracking",
+      "url": "https://blog.tickertrends.io/p/anthropic-and-openai-compute-cost"
     },
     {
       "candidate_id": "6929166c89b4386e306e5b6528f93163c6ba34c72f0bba55e6e2e576e0a77d34",
@@ -121,6 +297,22 @@
       "url": "https://blog.tickertrends.io/p/openai-arr-growth-accelerated-july-2026"
     },
     {
+      "candidate_id": "9b599c03e3dc8e31e6af8defa946043b5c22402cf1db02d509f39ba4e858bab9",
+      "matched_by": "rss_keyword",
+      "published_at": "Tue, 03 Nov 2026 00:33:18 GMT",
+      "source_name": "TickerTrends",
+      "title": "Cooling Enterprise Coding Demand May Be Constraining Anthropic’s ARR Growth",
+      "url": "https://blog.tickertrends.io/p/cooling-claude-enterprise-coding-demand"
+    },
+    {
+      "candidate_id": "dc74daaaf623b1302398e74e6b240685a68318790a739a218a3c5f8aa141929a",
+      "matched_by": "rss_keyword",
+      "published_at": "Tue, 03 Nov 2026 12:03:23 GMT",
+      "source_name": "TickerTrends",
+      "title": "OpenAI’s Search Crawler Reaches 18% of Googlebot’s Request Volume",
+      "url": "https://blog.tickertrends.io/p/openai-google-search-crawler-growth"
+    },
+    {
       "candidate_id": "b3ad7dfefeaf9ab44fd656386c6addc2ca346a0f6ee158eb5b4f23f65d73294f",
       "matched_by": "rss_keyword",
       "published_at": "Tue, 15 Sep 2026 16:46:05 GMT",
@@ -137,6 +329,14 @@
       "url": "https://blog.tickertrends.io/p/claude-code-vs-openai-codex-arr"
     },
     {
+      "candidate_id": "2796a866c0423a7f127acc2f23e02d633f8b1a71487d2dc0af0f238fe0b8182e",
+      "matched_by": "rss_keyword",
+      "published_at": "Tue, 29 Sep 2026 02:59:47 GMT",
+      "source_name": "TickerTrends",
+      "title": "OpenAI and Anthropic ARR Tracking",
+      "url": "https://blog.tickertrends.io/p/openai-and-anthropic-arr-tracking"
+    },
+    {
       "candidate_id": "9aed392ae831908df655f0d8c9eb0cb7685b1f440e87b6f1c6c1261fe321838f",
       "matched_by": "rss_keyword",
       "published_at": "Wed, 02 Sep 2026 22:21:45 GMT",
@@ -151,6 +351,14 @@
       "source_name": "TickerTrends",
       "title": "OpenAI’s Public GitHub Activity Hit a Record in August",
       "url": "https://blog.tickertrends.io/p/openai-vs-anthropic-github-activity-august-2026"
+    },
+    {
+      "candidate_id": "bc73579a5eea51bc64ee3b55f75cb5bc8749afc6cfed5424221843e1f49ec29b",
+      "matched_by": "rss_keyword",
+      "published_at": "Wed, 14 Oct 2026 23:07:51 GMT",
+      "source_name": "TickerTrends",
+      "title": "Anthropic’s Q3 Revenue Growth Slowed, Consistent With TickerTrends’ ARR Tracking",
+      "url": "https://blog.tickertrends.io/p/anthropics-q3-revenue-growth-slowed"
     },
     {
       "candidate_id": "2d5d247826c2779e7bbed11919d2338eec2c8ce23f0835ee354d1a87b9d2b4c8",
