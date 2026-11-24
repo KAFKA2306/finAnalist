@@ -1,5 +1,5 @@
 {
-  "candidate_count": 47,
+  "candidate_count": 48,
   "datasets": {
     "candidates": "candidates.json",
     "comparables": "comparables.json",
@@ -10,5 +10,5 @@
   },
   "observation_count": 41,
   "schema_version": 1,
-  "updated_at": "2026-11-21T02:24:56Z"
+  "updated_at": "2026-11-24T05:20:52Z"
 }

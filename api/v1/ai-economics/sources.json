@@ -67,7 +67,7 @@
       "url": "https://www.anthropic.com/news/series-h"
     },
     {
-      "bytes": 14169612,
+      "bytes": 14169623,
       "check_live": true,
       "error": null,
       "kind": "evidence",
@@ -76,8 +76,8 @@
       ],
       "name": "Anthropic SEC Form S-1",
       "required": true,
-      "retrieved_at": "2026-11-21T02:24:53Z",
-      "sha256": "897b1a9881f216035539e5ae5bb0abc8c0260e0c796ebddd1544779587bf9b85",
+      "retrieved_at": "2026-11-24T05:20:50Z",
+      "sha256": "5ac360cce5d9d379fbde9939b0f94fcba07a9ba77ac230d9d56954d5639a6ba8",
       "status": "ok",
       "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm"
     },
@@ -113,7 +113,7 @@
       "url": "https://www.ft.com/content/664249e7-e8d5-4425-b397-ad3ed590b305"
     },
     {
-      "bytes": 404641,
+      "bytes": 406806,
       "check_live": true,
       "error": null,
       "kind": "evidence",
@@ -122,8 +122,8 @@
       ],
       "name": "OpenAI",
       "required": true,
-      "retrieved_at": "2026-11-21T02:24:53Z",
-      "sha256": "af814f3dc2a90f5961e5c544c73c2a73f39d752483528f64f7b54ab0fba527d9",
+      "retrieved_at": "2026-11-24T05:20:50Z",
+      "sha256": "61ed4902bd63ece8c034d339357981ddbc6e08e88d8ea51b68aea637c368cb2b",
       "status": "ok",
       "url": "https://openai.com/ja-JP/index/a-business-that-scales-with-the-value-of-intelligence/"
     },
@@ -368,7 +368,7 @@
       "url": "https://www.ark-invest.com/newsletters"
     },
     {
-      "bytes": 344099,
+      "bytes": 344228,
       "check_live": true,
       "error": null,
       "kind": "html",
@@ -377,13 +377,13 @@
       ],
       "name": "Anthropic News",
       "required": true,
-      "retrieved_at": "2026-11-21T02:24:53Z",
-      "sha256": "c5d718d5329303a59c27c60e140b6c05646931f4484d362c2912e7d7505b2533",
+      "retrieved_at": "2026-11-24T05:20:50Z",
+      "sha256": "faa2662ca532e890de3ce0cbfb4d3ba32ffcd975321da7165dd57fe59f8016c5",
       "status": "ok",
       "url": "https://www.anthropic.com/news"
     },
     {
-      "bytes": 405599,
+      "bytes": 410697,
       "check_live": true,
       "error": null,
       "kind": "html",
@@ -392,8 +392,8 @@
       ],
       "name": "OpenAI News",
       "required": true,
-      "retrieved_at": "2026-11-21T02:24:53Z",
-      "sha256": "bb021b80a3991b98a2c5490e166b9dd5f2ee93b1485a9a30b19bb028744a84cb",
+      "retrieved_at": "2026-11-24T05:20:50Z",
+      "sha256": "65b9c2b5ea6b29ef62b5e357274333505ea005e0e1e7b2aa3ae6daf7f26cca03",
       "status": "ok",
       "url": "https://openai.com/news/"
     },
@@ -407,8 +407,8 @@
       ],
       "name": "TickerTrends",
       "required": false,
-      "retrieved_at": "2026-11-21T02:24:53Z",
-      "sha256": "603e6a26cd5b91129ae33fa76e5745344fb08bb4256e999afcbab574d85dfc5d",
+      "retrieved_at": "2026-11-24T05:20:50Z",
+      "sha256": "c51f935862e109b54395b191a7456f9e4a205f51a95c8a55b5ccaeb9da7f6b5f",
       "status": "ok",
       "url": "https://blog.tickertrends.io/feed"
     }

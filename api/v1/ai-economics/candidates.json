@@ -193,6 +193,14 @@
       "url": "https://openai.com/index/inside-the-codex-sandbox/"
     },
     {
+      "candidate_id": "203df112c267190c9ddf71c4a9f795e8115dd7d2e3aaf4a7a201104098e5508c",
+      "matched_by": "html_link_keyword",
+      "published_at": null,
+      "source_name": "OpenAI News",
+      "title": "OpenAI and Cisco introduce Shirudo Security Nov 23, 2026",
+      "url": "https://openai.com/index/introducing-shirudo/"
+    },
+    {
       "candidate_id": "dcfd56a62e6ca180d1b5994a895121f3526fbb898bdf5414f617a5fcc21c2859",
       "matched_by": "html_link_keyword",
       "published_at": null,
