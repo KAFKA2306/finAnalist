@@ -7,7 +7,7 @@
   "schema_version": 1,
   "sources": [
     {
-      "bytes": 140029,
+      "bytes": 139887,
       "check_live": true,
       "error": null,
       "kind": "evidence",
@@ -16,13 +16,13 @@
       ],
       "name": "Anthropic",
       "required": true,
-      "retrieved_at": "2026-11-21T02:24:53Z",
-      "sha256": "4ec2b5e03b8464bfe5c8e4d91842d62342a47684976477718b37799153d12a55",
+      "retrieved_at": "2026-11-26T03:37:29Z",
+      "sha256": "76e912049fceffa38f7bb4d0dddf6e4c74508a676bc9a2777a48e6e8bb2889cc",
       "status": "ok",
       "url": "https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone"
     },
     {
-      "bytes": 150329,
+      "bytes": 150187,
       "check_live": true,
       "error": null,
       "kind": "evidence",
@@ -31,13 +31,13 @@
       ],
       "name": "Anthropic",
       "required": true,
-      "retrieved_at": "2026-11-21T02:24:53Z",
-      "sha256": "4d2e65a4a0ad847564b69609eff836e6f69e93a950f5ebe30edade30ee15e595",
+      "retrieved_at": "2026-11-26T03:37:29Z",
+      "sha256": "30903599f8a36cc3f5bb9ba7710259ab9d153fc86fd14acd9eea65066d5997e7",
       "status": "ok",
       "url": "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation"
     },
     {
-      "bytes": 136200,
+      "bytes": 136058,
       "check_live": true,
       "error": null,
       "kind": "evidence",
@@ -46,13 +46,13 @@
       ],
       "name": "Anthropic",
       "required": true,
-      "retrieved_at": "2026-11-21T02:24:53Z",
-      "sha256": "3cf5d2a6d170d87b00c5edc612dcd5eb0c469ac2d502c0f2ff7f2391ff83f973",
+      "retrieved_at": "2026-11-26T03:37:29Z",
+      "sha256": "ecaaa879dc1b6cc91de62c93a394dafd906ecc46ee9ab9c497737662661d3eb9",
       "status": "ok",
       "url": "https://www.anthropic.com/news/google-broadcom-partnership-compute"
     },
     {
-      "bytes": 141444,
+      "bytes": 141259,
       "check_live": true,
       "error": null,
       "kind": "evidence",
@@ -61,13 +61,13 @@
       ],
       "name": "Anthropic",
       "required": true,
-      "retrieved_at": "2026-11-21T02:24:53Z",
-      "sha256": "72f665a3de63da5688e075dbb3b19ac50772a972f943b928e9fbe5ced66fe46d",
+      "retrieved_at": "2026-11-26T03:37:29Z",
+      "sha256": "2618fc5443096a0db91147cf28469ba9d2fd8848fb64195629e6902f67756205",
       "status": "ok",
       "url": "https://www.anthropic.com/news/series-h"
     },
     {
-      "bytes": 14169610,
+      "bytes": 14169619,
       "check_live": true,
       "error": null,
       "kind": "evidence",
@@ -76,8 +76,8 @@
       ],
       "name": "Anthropic SEC Form S-1",
       "required": true,
-      "retrieved_at": "2026-11-25T04:16:18Z",
-      "sha256": "8ddba7c33cfc3a94d15c4f62dbc62e74454bd0ddc82944668ef7a27347ee40d8",
+      "retrieved_at": "2026-11-26T03:37:29Z",
+      "sha256": "a71952ce25b3935c124dd81fa4b663e3ee8ad98dc3cd44302d3cc6ab9d42e3cd",
       "status": "ok",
       "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm"
     },
@@ -113,7 +113,7 @@
       "url": "https://www.ft.com/content/664249e7-e8d5-4425-b397-ad3ed590b305"
     },
     {
-      "bytes": 407422,
+      "bytes": 407258,
       "check_live": true,
       "error": null,
       "kind": "evidence",
@@ -122,8 +122,8 @@
       ],
       "name": "OpenAI",
       "required": true,
-      "retrieved_at": "2026-11-25T04:16:18Z",
-      "sha256": "39cddaf638bf44dd22c54b7a93d7086b3531d7aeab53541b0187268e76820e9c",
+      "retrieved_at": "2026-11-26T03:37:29Z",
+      "sha256": "e150b9f1324b93f8b93203dfada2f5ed8b7e10a382488f9f8bd98d5a4995b110",
       "status": "ok",
       "url": "https://openai.com/ja-JP/index/a-business-that-scales-with-the-value-of-intelligence/"
     },
@@ -368,7 +368,7 @@
       "url": "https://www.ark-invest.com/newsletters"
     },
     {
-      "bytes": 344013,
+      "bytes": 343914,
       "check_live": true,
       "error": null,
       "kind": "html",
@@ -377,13 +377,13 @@
       ],
       "name": "Anthropic News",
       "required": true,
-      "retrieved_at": "2026-11-25T04:16:18Z",
-      "sha256": "b6bd9e66be4a92878f7fa32837da69372e4e2b6928ed5cae49f5d074b0cb878b",
+      "retrieved_at": "2026-11-26T03:37:29Z",
+      "sha256": "b452068472d1e2aa35ac5e06a652703afdf1572aa8ca68df82825f33f2459464",
       "status": "ok",
       "url": "https://www.anthropic.com/news"
     },
     {
-      "bytes": 388412,
+      "bytes": 388364,
       "check_live": true,
       "error": null,
       "kind": "html",
@@ -392,8 +392,8 @@
       ],
       "name": "OpenAI News",
       "required": true,
-      "retrieved_at": "2026-11-25T04:16:18Z",
-      "sha256": "f8cbed2c6a90d4b01971723f242d5dddad6c670ca0f80e005919b0422282ef53",
+      "retrieved_at": "2026-11-26T03:37:29Z",
+      "sha256": "84af0a518e79a9f312b3debd9f12af1d2a033da8a1a4e849808b48dbe78b7f8a",
       "status": "ok",
       "url": "https://openai.com/news/"
     },
@@ -407,8 +407,8 @@
       ],
       "name": "TickerTrends",
       "required": false,
-      "retrieved_at": "2026-11-25T04:16:18Z",
-      "sha256": "007123adb63463304c7a36f12659011575a26f2ef9a94c65045065c098f0734a",
+      "retrieved_at": "2026-11-26T03:37:29Z",
+      "sha256": "34371b433d526fd0adf239733c6174357f4e4d4cc06ede76c2f495fcc6d37a23",
       "status": "ok",
       "url": "https://blog.tickertrends.io/feed"
     }
