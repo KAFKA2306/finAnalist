@@ -4,7 +4,7 @@
     "path": "research/data/ai-economics/comparables.json",
     "sha256": "9b0d0d8ec594dfb7aa4d9cfd366a736db98339fa416b40d538bba0ac38a5f943"
   },
-  "content_digest": "cbfef14c8211a0ba2b3c90a15732e1ee7e9e650ea4be29164c3df0ea976ee31f",
+  "content_digest": "2e5d9bb89464f0f9a6f3d4eca59b43148b00f14ea799989dd7acb5d01b443a4e",
   "coverage": [
     {
       "classes": [
@@ -151,7 +151,7 @@
     "comparables.json": "a7597fab25970fb0556d7992b845cfed60485166badc5934098e69a3d4f4947e",
     "latest.json": "8f7634b5e33c447f6ace017f812e4369a26d271bc663dbb2294b4957e81e70d8",
     "observations.ndjson": "8e498b8ed45847a6ad9958b4cb18f4077daaaebe3cba471bfa11217c70ee8271",
-    "sources.json": "902821f2a02708fc4fd4b28994b590abd6ad020a5f97e8ed27398635913e5f70"
+    "sources.json": "d67c9e879612a448b3eec177af1f72d650319d7918c31853922b33ad5df1e4d5"
   },
   "inventory": {
     "path": "research/data/ai-economics/source_inventory.json",
@@ -164,5 +164,5 @@
     "record_count": 41,
     "sha256": "b671264bded3de2cd1331529a9fe3f171eb79bf8f16c2259ced708516891f131"
   },
-  "updated_at": "2026-11-26T03:37:31Z"
+  "updated_at": "2026-11-27T03:39:40Z"
 }

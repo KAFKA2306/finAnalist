@@ -52,7 +52,7 @@
       "url": "https://www.anthropic.com/news/google-broadcom-partnership-compute"
     },
     {
-      "bytes": 141259,
+      "bytes": 141302,
       "check_live": true,
       "error": null,
       "kind": "evidence",
@@ -61,13 +61,13 @@
       ],
       "name": "Anthropic",
       "required": true,
-      "retrieved_at": "2026-11-26T03:37:29Z",
-      "sha256": "2618fc5443096a0db91147cf28469ba9d2fd8848fb64195629e6902f67756205",
+      "retrieved_at": "2026-11-27T03:39:30Z",
+      "sha256": "b65f2ff3f79e421e28e3832f1c776f616c3558d0873f78234c209145c6cc1ee8",
       "status": "ok",
       "url": "https://www.anthropic.com/news/series-h"
     },
     {
-      "bytes": 14169619,
+      "bytes": 14169617,
       "check_live": true,
       "error": null,
       "kind": "evidence",
@@ -76,8 +76,8 @@
       ],
       "name": "Anthropic SEC Form S-1",
       "required": true,
-      "retrieved_at": "2026-11-26T03:37:29Z",
-      "sha256": "a71952ce25b3935c124dd81fa4b663e3ee8ad98dc3cd44302d3cc6ab9d42e3cd",
+      "retrieved_at": "2026-11-27T03:39:30Z",
+      "sha256": "dcced2ce6e3b6ec8b84409346698810d642558f91df19c4c544750a7b5ec78f9",
       "status": "ok",
       "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm"
     },
@@ -113,7 +113,7 @@
       "url": "https://www.ft.com/content/664249e7-e8d5-4425-b397-ad3ed590b305"
     },
     {
-      "bytes": 407258,
+      "bytes": 407300,
       "check_live": true,
       "error": null,
       "kind": "evidence",
@@ -122,8 +122,8 @@
       ],
       "name": "OpenAI",
       "required": true,
-      "retrieved_at": "2026-11-26T03:37:29Z",
-      "sha256": "e150b9f1324b93f8b93203dfada2f5ed8b7e10a382488f9f8bd98d5a4995b110",
+      "retrieved_at": "2026-11-27T03:39:30Z",
+      "sha256": "d83f495a8eab8fbe650c293637b89491207158507d9a1ee882d01f602c931032",
       "status": "ok",
       "url": "https://openai.com/ja-JP/index/a-business-that-scales-with-the-value-of-intelligence/"
     },
@@ -368,7 +368,7 @@
       "url": "https://www.ark-invest.com/newsletters"
     },
     {
-      "bytes": 343914,
+      "bytes": 343871,
       "check_live": true,
       "error": null,
       "kind": "html",
@@ -377,13 +377,13 @@
       ],
       "name": "Anthropic News",
       "required": true,
-      "retrieved_at": "2026-11-26T03:37:29Z",
-      "sha256": "b452068472d1e2aa35ac5e06a652703afdf1572aa8ca68df82825f33f2459464",
+      "retrieved_at": "2026-11-27T03:39:30Z",
+      "sha256": "6d1fae61adf1af8b78e080b7df8a45cfb81dab6391f4ef1a55bf57e1fa2dcc51",
       "status": "ok",
       "url": "https://www.anthropic.com/news"
     },
     {
-      "bytes": 388364,
+      "bytes": 388365,
       "check_live": true,
       "error": null,
       "kind": "html",
@@ -392,8 +392,8 @@
       ],
       "name": "OpenAI News",
       "required": true,
-      "retrieved_at": "2026-11-26T03:37:29Z",
-      "sha256": "84af0a518e79a9f312b3debd9f12af1d2a033da8a1a4e849808b48dbe78b7f8a",
+      "retrieved_at": "2026-11-27T03:39:30Z",
+      "sha256": "8d8657207246fd6ace31865a665b91331b4079fc8a06713b47545180d9ca24b6",
       "status": "ok",
       "url": "https://openai.com/news/"
     },
@@ -407,8 +407,8 @@
       ],
       "name": "TickerTrends",
       "required": false,
-      "retrieved_at": "2026-11-26T03:37:29Z",
-      "sha256": "34371b433d526fd0adf239733c6174357f4e4d4cc06ede76c2f495fcc6d37a23",
+      "retrieved_at": "2026-11-27T03:39:30Z",
+      "sha256": "e2a22c04c11eab9a4964503e17bdcaa271d76510276ca90d1b8ff3e9f4fa32ee",
       "status": "ok",
       "url": "https://blog.tickertrends.io/feed"
     }
